@@ -1,0 +1,81 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.card, .box {
+  width: 500px;
+  background: #fff;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.cardButtons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.editBtn, .deleteBtn {
+  padding: 8px 15px;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.editBtn { background: #2874f0; }
+.deleteBtn { background: #d32f2f; }
+
+.formButtons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.btn, .cancelBtn {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.btn { background: #2874f0; color: #fff; }
+.cancelBtn { background: #aaa; color: #fff; }
+
+.addButtonContainer {
+  margin-top: 10px;
+}
+
+.addButton {
+  padding: 6px 12px;
+  font-size: 14px;
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.addButton:hover {
+  background: #115293;
+}
+
+/* Mobile View (max-width: 768px) */
+@media (max-width: 768px) {
+  .card, .box {
+    width: 100%;
+  }
+}

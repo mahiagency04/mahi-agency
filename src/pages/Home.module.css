@@ -1,0 +1,311 @@
+/* 1st CSS */
+.main {
+    width: 100%;
+    background: #f9f9f9;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20pxvw
+}
+
+.h1 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 45px;
+}
+
+.textanimation {
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    min-height: 30px;
+    margin-bottom: 20px;
+}
+
+.card {
+    margin-top: 40px;
+}
+
+.my1 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.cardItems {
+    background: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.cardItems:hover {
+    transform: translateY(-5px);
+}
+
+.cardItems img {
+    margin-bottom: 10px;
+}
+
+.textCenter {
+    text-align: center;
+}
+
+.my2 {
+    margin: 5px 0;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* .flexAllCentre {
+  margin-top: 60px;
+  padding: 20px;
+  padding-bottom: 90px; 
+  text-align: center;
+  background: #000;
+  color: #fff;
+  border-radius: 10px;
+} */
+
+.flexAllCentre {
+    margin-top: 60px;
+    padding: 20px;
+    padding-bottom: 90px;
+    /* BottomNav ke liye */
+    text-align: center;
+    background: #000;
+    color: #fff;
+
+    /*  FULL SCREEN WIDTH FIX */
+    width: 99.2vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+
+    border-radius: 0;
+    
+}
+
+.flexAllCentre p {
+    margin: 5px 0;
+    font-size: 0.95rem;
+}
+
+/* Mobile View (max-width: 768px) */
+@media (max-width: 768px) {
+    .h1 {
+        margin-top: 50px;
+        font-size: 2.2rem;
+    }
+
+    .textanimation {
+        font-size: 1.2rem;
+    }
+
+    .my1 {
+        font-size: 1.5rem;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .cardItems {
+        padding: 12px;
+    }
+
+    .cardItems img {
+        width: 90px !important;
+    }
+
+    .flexAllCentre {
+        padding-bottom: 80px;
+        width: 100vw;
+    }
+
+}
+
+
+
+/* 2nd CSS */
+/* body {
+    background-color: #f1f3f6;
+}
+
+.main {
+    margin: 70px;
+}
+
+.h1 {
+    font: bold;
+    justify-content: center;
+    display: flex;
+    font-size: 50px;
+    cursor: default;
+    margin-top: -20px
+}
+
+.textanimation {
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    cursor: default; */
+/* min-height: 40px; Page agar jump kare */
+/* }
+
+.card {
+    max-width: 93vw;
+    margin: 5px 0 0 0;
+    background-color: aqua;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.my1 {
+    margin: 26px 2px;
+    cursor: default;
+}
+
+.cards {
+    display: flex;
+    overflow: scroll;
+    align-items: flex-start;
+}
+
+.cardItems {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 140px; */
+/*  FIXED WIDTH */
+/* margin: 0 15px;
+}
+
+.cardItems img {
+    border: 2px solid black;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.cardItems:hover img {
+    transform: scale(1.08);
+    z-index: 1;
+}
+
+.my2 {
+    margin: 5px 0;
+    font-weight: bold;
+    cursor: pointer;
+    min-height: 20px; */
+/* }
+
+.textCenter {
+    text-align: center;
+}
+
+hr {
+    border: none;
+    background-color: black;
+    height: 2px;
+    padding: 0px;
+}
+
+.container {
+    min-height: calc(77.15vh - 58px - 12vh);
+} */
+
+/* Mobile View (max-width: 768px) */
+/* @media (max-width: 768px) {
+    .h1 {
+        font-size: 30px;
+        margin-top: -15px;
+    }
+
+    .textanimation {
+        font-size: 20px;
+        margin-top: -10px; */
+/* min-height: 40px; Page agar jump kare */
+/* } */
+
+
+/* hr {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 83.7vw; */
+/* poori screen width */
+/* margin-top: -10px;
+        margin-bottom: 5px;
+        height: 1.5px;
+        background-color: black;
+        border: none;
+
+    }
+
+    .card{
+        margin-inline-start: -40px;
+        margin-inline-end: -40px;
+    }
+
+    .my1{
+        font-size: 20px;
+        margin: 2px 0 5px 2px;
+    }
+
+    .my2{
+        margin: 0 0;
+        font-size: 11px;
+    }
+}
+
+.footer {
+    height: 14.5vh;
+    background-color: #333;
+    color: white;
+} */
+
+/* .flexAllCentre{
+     height: 14.5vh;
+    background-color: #333;
+    color: white;
+    /* display: flex; */
+/* justify-content: center;
+    align-items: center;
+    text-align: center; */
+/* } * */
+
+/* Tablet View (max-width: 1024px) */
+/* @media (max-width: 1024px) and (min-width: 769px) {
+    .card {
+        height: 315px;
+    }
+
+    .container {
+        min-height: calc(73.8vh - 58px - 12vh);
+    }
+} */
+
+/* @media (max-width: 768px) {
+    .flexAllCentre { */
+/* width: auto; */
+/* height: 18vh;
+    }
+} */

@@ -1,0 +1,116 @@
+/* ===== Container ===== */
+.coming-container {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+
+  background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #141e30);
+  background-size: 400% 400%;
+  animation: gradientBG 25s ease infinite;
+
+  color: white;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+/* ===== Headings ===== */
+.coming-container h1 {
+  font-size: 52px;
+  margin-bottom: 12px;
+  letter-spacing: 2px;
+  animation: textSlide 2s ease forwards;
+}
+
+.coming-container h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #7fffd4;
+  animation: textSlide 2.2s ease forwards;
+}
+
+.coming-container h2 {
+  font-size: 30px;
+  color: #ffd700;
+  margin-bottom: 20px;
+  animation: textSlide 2.5s ease forwards;
+}
+
+/* ===== Paragraph ===== */
+.coming-container p {
+  font-size: 18px;
+  margin-bottom: 15px;
+  line-height: 1.6;
+  animation: fadeInText 2s ease forwards;
+}
+
+/* ===== Contact ===== */
+.contact a {
+  color: #ffd700;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.contact a:hover {
+  color: #ffb700;
+  text-decoration: underline;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes textSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 768px) {
+  .coming-container h1 {
+    font-size: 38px;
+  }
+
+  .coming-container h3 {
+    font-size: 18px;
+  }
+
+  .coming-container h2 {
+    font-size: 22px;
+  }
+
+  .coming-container p {
+    font-size: 16px;
+  }
+}

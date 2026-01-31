@@ -1,0 +1,152 @@
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 26px;
+}
+
+.empty {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 22px;
+  color: #777;
+}
+
+/* ===== CART ITEM ===== */
+.cartItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== PRODUCT INFO (CLICKABLE) ===== */
+.productInfo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+}
+
+/* ===== PRODUCT IMAGE ===== */
+.productImage {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* ===== PRODUCT TEXT ===== */
+.productText h4 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.productText p {
+  margin: 4px 0;
+  color: #555;
+}
+
+/* ===== REMOVE BUTTON ===== */
+.removeBtn {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.removeBtn:hover {
+  background-color: #c82333;
+}
+
+/* ===== BUY SECTION ===== */
+.buySection {
+  margin-top: 25px;
+  text-align: center;
+}
+
+/* ===== BUY BUTTON ===== */
+.buyBtn {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 14px 30px;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 250px;
+}
+
+.buyBtn:hover {
+  background-color: #218838;
+}
+
+.totalSection {
+  text-align: right;
+  margin-bottom: 12px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+
+/* =====================================
+   📱 MOBILE VIEW (max-width: 768px)
+===================================== */
+@media (max-width: 768px) {
+
+  .container {
+    padding: 12px;
+  }
+
+  .heading {
+    font-size: 22px;
+  }
+
+  .cartItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .productInfo {
+    width: 100%;
+  }
+
+  .productImage {
+    width: 70px;
+    height: 70px;
+  }
+
+  .productText h4 {
+    font-size: 16px;
+  }
+
+  .productText p {
+    font-size: 14px;
+  }
+
+  .removeBtn {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    font-size: 15px;
+  }
+
+  .buyBtn {
+    width: 100%;
+    font-size: 16px;
+    padding: 12px;
+  }
+}

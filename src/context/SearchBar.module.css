@@ -1,0 +1,120 @@
+/* Wrapper */
+.searchWrapper {
+  position: relative;
+  width: 420%;
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+/* Search Input */
+.searchWrapper input {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  height: 40px;
+}
+
+.searchWrapper input:focus {
+  border-color: #2b7cff;
+}
+
+/* Suggestion Box */
+.suggestionBox {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+  max-height: 350px;
+  overflow-y: auto;
+  z-index: 999;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Suggestion Item */
+.suggestionBox li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #f1f1f1;
+  transition: background 0.2s ease;
+}
+
+.suggestionBox li:last-child {
+  border-bottom: none;
+}
+
+.suggestionBox li:hover {
+  background: #f5f8ff;
+}
+
+/* Product Image */
+.suggestionBox img {
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* Product Info */
+.suggestionBox div {
+  display: flex;
+  flex-direction: column;
+}
+
+.suggestionBox p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.suggestionBox span {
+  font-size: 13px;
+  color: #2b7cff;
+  font-weight: 600;
+}
+
+/* =======================
+   📱 Mobile Responsive
+   ======================= */
+@media (max-width: 768px) {
+  .searchWrapper {
+    max-width: 100%;
+  }
+
+  .searchWrapper input {
+    font-size: 15px;
+    padding: 10px 12px;
+  }
+
+  .suggestionBox {
+    max-height: 280px;
+  }
+
+  .suggestionBox li {
+    padding: 8px;
+    gap: 10px;
+  }
+
+  .suggestionBox img {
+    width: 38px;
+    height: 38px;
+  }
+
+  .suggestionBox p {
+    font-size: 13px;
+  }
+
+  .suggestionBox span {
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,88 @@
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.orderCard {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  background-color: #fff;
+  transition: transform 0.3s ease;
+}
+
+.orderCard:hover {
+  transform: translateY(-3px);
+}
+
+.cancelled {
+  background-color: #f8d7da; /* light red */
+}
+
+.cancelledText {
+  color: red;
+  font-weight: bold;
+}
+
+.activeText {
+  color: green;
+  font-weight: bold;
+}
+
+.productItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.productImage {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.cancelBtn {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+.cancelBtn:hover {
+  background-color: darkred;
+}
+
+/* Mobile View (max-width: 768px) */
+@media (max-width: 768px) {
+  .container {
+    margin: 10px;
+    padding: 10px;
+  }
+
+  .productImage {
+    width: 40px;
+    height: 40px;
+  }
+
+  .cancelBtn {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+
+  .orderCard {
+    padding: 10px;
+  }
+
+  .productItem {
+    font-size: 14px;
+  }
+}

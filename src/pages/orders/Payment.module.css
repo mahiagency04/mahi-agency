@@ -1,0 +1,165 @@
+.container {
+  max-width: 420px;
+  margin: auto;
+  padding: 16px;
+  font-family: Arial, sans-serif;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  font-size: 15px;
+}
+
+.placeBtn {
+  width: 100%;
+  padding: 12px;
+  background: #fb641b;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.upiBox {
+  margin-top: 10px;
+}
+
+.upiBtn {
+  width: 100%;
+  padding: 12px;
+  background: #1a73e8;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 15px;
+}
+
+.qrBox {
+  margin-top: 16px;
+  text-align: center;
+}
+
+.qrBox img {
+  width: 220px;
+  height: 220px;
+  margin-top: 10px;
+}
+
+.note {
+  font-size: 13px;
+  color: gray;
+  margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+  .qrBox {
+    display: none;
+  }
+}
+
+
+/* .container {
+  max-width: 400px;
+  margin: 20px auto;
+  text-align: center;
+  padding: 0 15px;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #222;
+}
+
+.paymentOptions {
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: #333;
+}
+
+.paymentOptions label {
+  display: block;
+  margin-bottom: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.paymentOptions input[type="radio"] {
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.upiInput {
+  margin-bottom: 15px;
+}
+
+.upiInput input {
+  padding: 8px;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.placeOrderBtn {
+  padding: 12px 25px;
+  background-color: crimson;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.placeOrderBtn:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  background-color: #a00017;
+}
+
+.successMessage {
+  margin-top: 20px;
+  color: green;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* Mobile View (max-width: 768px) */
+/* @media (max-width: 768px) {
+  .container {
+    max-width: 90%;
+    margin: 15px auto;
+    padding: 0 10px;
+  }
+
+  .paymentOptions {
+    font-size: 14px;
+  }
+
+  .upiInput input {
+    font-size: 14px;
+    padding: 7px;
+  }
+
+  .placeOrderBtn {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 16px;
+  }
+
+  .successMessage {
+    font-size: 16px;
+  }
+} */ 
