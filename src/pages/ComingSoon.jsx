@@ -42,7 +42,7 @@ const ComingSoon = () => {
       </p>
 
       <p>
-        <strong>GSTIN:</strong> 09XXXXXXXXXX1Z5
+        <strong>GSTIN:</strong> 09DIDPM4340H1Z9
       </p>
 
       <p className={styles.contact}>
