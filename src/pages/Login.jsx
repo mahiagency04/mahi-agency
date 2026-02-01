@@ -17,7 +17,8 @@ const Login = () => {
         useEffect(() => {
                 if (isAuthenticated) {
                         const timer = setTimeout(() => {
-                                navigate("/", { replace: true });
+                                // navigate("/", { replace: true });
+                                navigate(redirectPath, { replace: true });
                         }, 2000);
                         return () => clearTimeout(timer);
                 }

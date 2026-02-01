@@ -42,7 +42,8 @@ const SignUp = () => {
   useEffect(() => {
     if (isAuthenticated) {
       const timer = setTimeout(() => {
-        navigate("/", { replace: true });
+        // navigate("/", { replace: true });
+        navigate(redirectPath, { replace: true });
       }, 2000);
       return () => clearTimeout(timer);
     }
@@ -104,9 +105,9 @@ const SignUp = () => {
       //   navigate(redirectPath, { replace: true });
       // }, 2000);
 
-      setTimeout(() => {
-        navigate("/", { replace: true });
-      }, 1500);
+      // setTimeout(() => {
+      //   navigate("/", { replace: true });
+      // }, 1500);
 
       // navigate(redirectPath, { replace: true });
       // window.history.replaceState(null, document.title, redirectPath);
