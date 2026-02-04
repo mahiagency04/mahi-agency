@@ -2,18 +2,17 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
 import BASE_URL from "../config";
-import styles from "./MyOrders.module.css";
 
 const getImageUrl = (img) => {
-    if (!img) return "";
+  if (!img) return "";
 
-    // already full url
-    if (img.startsWith("http")) return img;
+  // already full url
+  if (img.startsWith("http")) return img;
 
-    // remove starting slash if exists
-    if (img.startsWith("/")) img = img.slice(1);
+  // remove starting slash if exists
+  if (img.startsWith("/")) img = img.slice(1);
 
-    return `${BASE_URL}/${img}`;
+  return `${BASE_URL}/${img}`;
 };
 
 const MyOrders = () => {
@@ -78,98 +77,98 @@ const MyOrders = () => {
 
             if (res.data.success) {
                 alert(res.data.message);
-                fetchOrders();
+                fetchOrders(); 
             } else {
                 alert("Failed to cancel order");
             }
-
+            console.log(products);
         } catch (error) {
             alert(error.response?.data?.message || "Failed to cancel order");
         }
     };
 
     return (
-        <div className={styles.container}>
-            <h2 className={styles.heading}>My Orders</h2>
+        <div style={{ maxWidth: "800px", margin: "20px auto" }}>
+            <h2>My Orders</h2>
             {orders.length === 0 ? (
-                <p className={styles.noOrders}>No orders yet.</p>
+                <p>No orders yet.</p>
             ) : (
                 orders.map((order) => (
                     <div
                         key={order._id}
-                        className={
-                            `${styles.orderCard} ` +
-                            (order.orderStatus === "Cancelled" ? styles.orderCardCancelled : "")
-                        }
+                        style={{
+                            border: "1px solid #ccc",
+                            padding: "15px",
+                            marginBottom: "15px",
+                            borderRadius: "8px",
+                            backgroundColor: order.orderStatus === "Cancelled" ? "#f8d7da" : "#fff",
+                        }}
                     >
-                        <p className={styles.orderDetail}>
+                        <p>
                             <b>Delivery Date:</b> {getDeliveryDate(order.createdAt)}
                         </p>
-                        <p className={styles.orderDetail}>
+                        <p>
                             <b>Payment Method:</b> {order.paymentMethod}
                             {order.paymentMethod === "UPI" && ` (UPI ID: ${order.upiId})`}
                         </p>
-                        <p className={styles.orderDetail}>
+                        <p>
                             <b>Status:</b>{" "}
-                            <span className={`${styles.status} ${order.orderStatus === "Cancelled" ? styles.statusCancelled : styles.statusActive
-                                }`}
-                            >
+                            <span style={{ color: order.orderStatus === "Cancelled" ? "red" : "green" }}>
                                 {order.orderStatus}
                             </span>
                         </p>
-                        <p className={styles.orderDetail}>
+                        <p>
                             <b>Total Amount:</b> ₹{order.grandTotal.toFixed(2)}
                         </p>
 
-                        <p className={styles.orderDetail}>
+                        <p>
                             <b>Products:</b>
                         </p>
-                        <ul className={styles.productList}>
-                            {order.products.map((product, index) => {
-                                const variant = product.variant || {};
-                                const price = product.price || variant.price || 0;
-                                return (
-                                    <li
-                                        onClick={() =>
-                                            // navigate(`/product/${slugify(p.name)}`)
-                                            navigate(`/product/${(product.productId)}`)
-                                        }
-                                        key={index}
-                                        className={styles.productItem}
-                                    >
-
-                                        <img
-                                            // src={p.image}
-                                            src={getImageUrl(product.image)}
-                                            alt={product.name}
-                                            // width={60}
-                                            className={styles.productImage}
-                                        />
-                                        <div className={styles.productInfo}>
-                                            <b>{product.name}</b>
-                                            {/* <br /> */}
-                                            {/* ₹{p.price} × {p.quantity} = ₹{p.total} */}
-                                            {variant.size && (
-                                                <>
-                                                    <br />
-                                                    Variant: {variant.size}{variant.unit}
-                                                </>
-                                            )}
-                                            {/* ✅ Total calculation fallback if backend doesn't save total */}
-                                            {/* ₹{product.price || 0} × {product.quantity} = ₹{product.total || (product.price || 0) * product.quantity} */}
-                                            <br />
-                                            ₹{price} × {product.quantity} Qty = ₹
-                                            {(price * product.quantity).toFixed(2)}
-                                        </div>
-                                    </li>
-                                );
-                            })}
+                        <ul>
+                            {order.products.map((p, index) => (
+                                <li
+                                    onClick={() =>
+                                        // navigate(`/product/${slugify(p.name)}`)
+                                        navigate(`/product/${(p.productId)}`)
+                                    }
+                                    key={index}
+                                    style={{
+                                        display: "flex",
+                                        alignItems: "center",
+                                        gap: "10px",
+                                        marginBottom: "10px",
+                                        cursor: "pointer",
+                                    }}
+                                >
+        
+                                    <img
+                                        // src={p.image}
+                                        src={getImageUrl(p.image)}
+                                        alt={p.name}
+                                        width={60}
+                                        style={{ objectFit: "cover", borderRadius: "6px" }}
+                                    />
+                                    <div>
+                                        <b>{p.name}</b>
+                                        <br />
+                                        ₹{p.price} × {p.quantity} = ₹{p.total}
+                                    </div>
+                                </li>
+                            ))}
                         </ul>
 
                         {order.orderStatus !== "Cancelled" && (
                             <button
                                 onClick={() => cancelOrder(order._id)}
-                                className={styles.cancelButton}
+                                style={{
+                                    backgroundColor: "red",
+                                    color: "white",
+                                    border: "none",
+                                    padding: "8px 12px",
+                                    borderRadius: "4px",
+                                    cursor: "pointer",
+                                    marginTop: "10px",
+                                }}
                             >
                                 Cancel Order
                             </button>

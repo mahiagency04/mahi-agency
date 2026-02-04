@@ -11,12 +11,6 @@ const products = [
     image: "/uploads/products/sbherbals/Apple cider vinegar.webp",
     description: "Helps burn extra fat.",
     slug: "apple-cider-vinegar",
-    // unit: "ml", // unit type
-    variants: [
-    { size: 100, unit: "ml", price: 60 },
-  { size: 150, unit: "ml", price: 90 },
-  { size: 300, unit: "ml", price: 180 }
-  ]
   },
   {
     // 2
@@ -27,11 +21,6 @@ const products = [
     image: "/uploads/products/sbherbals/CYST_YOG-600x600-2.webp",
     description: "Helps in hormonal balance.",
     slug: "cyst-yog",
-     variants: [
-    { size: 100, unit: "ml", price: 60 },
-  { size: 150, unit: "ml", price: 90 },
-  { size: 300, unit: "ml", price: 180 }
-  ]
   },
   {
     // 3
@@ -42,11 +31,6 @@ const products = [
     image: "/uploads/products/sbherbals/dentoAct.webp",
     description: "Maintains oral hygiene.",
     slug: "dentoact",
-     variants: [
-    { size: 100, unit: "ml", price: 60 },
-  { size: 150, unit: "ml", price: 90 },
-  { size: 300, unit: "ml", price: 180 }
-  ]
   },
 
   {
@@ -58,11 +42,6 @@ const products = [
     image: "/uploads/products/sbherbals/EZYDAY-PD.webp",
     description: "Helps burn extra fat.",
     slug: "EZYDAY-PD",
-     variants: [
-    { size: 100, unit: "ml", price: 60 },
-  { size: 150, unit: "ml", price: 90 },
-  { size: 300, unit: "ml", price: 180 }
-  ]
   },
   {
     // 5
@@ -73,11 +52,6 @@ const products = [
     image: "/uploads/products/sbherbals/Ibs set.webp",
     description: "Helps in hormonal balance.",
     slug: "Ibs set",
-     variants: [
-    { size: 100, unit: "ml", price: 60 },
-  { size: 150, unit: "ml", price: 90 },
-  { size: 300, unit: "ml", price: 180 }
-  ]
   },
   {
     // 6

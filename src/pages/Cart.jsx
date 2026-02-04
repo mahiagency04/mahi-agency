@@ -20,9 +20,7 @@ const Cart = () => {
   };
 
   const totalAmount = cart.reduce((total, item) => {
-    const price = item.variant?.price || item.price || 0;
-    // return total + item.price * item.quantity;
-    return total + price * item.quantity;
+    return total + item.price * item.quantity;
   }, 0);
 
   const handleBuyNow = () => {
@@ -42,60 +40,43 @@ const Cart = () => {
     <div className={styles.container}>
       <h2 className={styles.heading}>My Cart</h2>
 
-      {cart.map((item, index) => {
-        const variant = item.variant || {};
-        const price = variant.price || item.price || 0;
+      {cart.map((item, index) => (
+        <div key={index} className={styles.cartItem}>
 
-        return (
-          <div key={index} className={styles.cartItem}>
+          <div
+            className={styles.productInfo}
+            onClick={() => navigate(`/product/${item.productId}`)}
+          >
+            <img
+              // src={item.image}
+              src={`${BASE_URL}${item.image}`}
+              alt={item.name}
+              className={styles.productImage}
+            />
 
-            <div
-              className={styles.productInfo}
-              onClick={() => navigate(`/product/${item.productId}`)}
-            >
-              <img
-                // src={item.image}
-                src={`${BASE_URL}${item.image}`}
-                alt={item.name}
-                className={styles.productImage}
-              />
-
-              <div className={styles.productText}>
-                <h4>{item.name}</h4>
-                {variant.size && (
-                  <p>
-                    Variant: {variant.size}{variant.unit}
-                  </p>
-                )}
-
-                {/* <p>₹{item.price}</p> */}
-                <p>₹{price}</p>
-                {/* <p>Qty: {item.quantity}</p> */}
-
-                <p>
-                  {/* Subtotal: ₹{(price * item.quantity).toFixed(2)} */}
-                </p>
-              </div>
+            <div className={styles.productText}>
+              <h4>{item.name}</h4>
+              <p>₹{item.price}</p>
+              <p>Qty: {item.quantity}</p>
             </div>
-
-            <button
-              className={styles.removeBtn}
-              onClick={(e) => {
-                e.stopPropagation();
-                removeFromCart(item.productId);
-              }}
-            >
-              Remove
-            </button>
           </div>
-        )
-      })}
+
+          <button
+            className={styles.removeBtn}
+            onClick={(e) => {
+              e.stopPropagation();
+              removeFromCart(item.productId);
+            }}
+          >
+            Remove
+          </button>
+        </div>
+      ))}
 
       <div className={styles.buySection}>
 
         <div className={styles.totalSection}>
-          {/* <h3>Total Amount: ₹{totalAmount}</h3> */}
-          {/* <h3>Total Amount: ₹{totalAmount.toFixed(2)}</h3> */}
+          <h3>Total Amount: ₹{totalAmount}</h3>
         </div>
 
         <button
@@ -108,7 +89,7 @@ const Cart = () => {
 
     </div>
   );
-}
+};
 
 export default Cart;
 
@@ -171,7 +152,7 @@ export default Cart;
 //           <button
 //             className={styles.removeBtn}
 //             onClick={(e) => {
-//               e.stopPropagation();
+//               e.stopPropagation(); 
 //               removeFromCart(item.productId);
 //             }}
 //           >

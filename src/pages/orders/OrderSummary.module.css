@@ -1,42 +1,18 @@
-/* ===============================
-   MAIN CONTAINER
-================================= */
+/* ================= CONTAINER ================= */
 .container {
-  max-width: 1100px;
-  margin: 40px auto;
-  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+  padding: 16px;
   color: #fff;
-  font-family: "Segoe UI", sans-serif;
 }
 
-/* Heading */
-.container h2 {
-  text-align: center;
-  font-size: 32px;
-  margin-bottom: 30px;
-  font-weight: 600;
-}
-
-/* ===============================
-   PRODUCT / CART COMMON CARD
-================================= */
-.productBox,
-.cartBox,
-.summaryBox {
-  background: #1b1b1b;
-  border-radius: 14px;
-  padding: 22px;
-  margin-bottom: 25px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.45);
-}
-
-/* ===============================
-   SINGLE PRODUCT
-================================= */
+/* ================= SINGLE PRODUCT ================= */
 .productBox {
-  display: flex;
-  align-items: center;
-  gap: 20px;
+  background: #111;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .productBox img {
@@ -44,59 +20,48 @@
   height: 120px;
   object-fit: contain;
   background: #fff;
-  border-radius: 10px;
-  padding: 10px;
-}
-
-/* product text */
-.productInfo {
-  flex: 1;
+  border-radius: 6px;
 }
 
 .productName {
-  font-size: 20px;
   font-weight: 600;
-  margin-bottom: 6px;
+  margin-top: 8px;
 }
 
-.selectedVariant {
-  font-size: 14px;
-  color: #cfcfcf;
-  margin-top: 4px;
-}
-
-/* ===============================
-   OPTIONS ROW
-================================= */
 .optionsRow {
   display: flex;
   gap: 10px;
   align-items: center;
-  margin-top: 12px;
+  justify-content: center;
+  margin-top: 10px;
+  flex-wrap: wrap;
 }
 
 .optionsRow select,
 .optionsRow input {
-  padding: 6px 10px;
-  border-radius: 6px;
+  padding: 6px;
+  border-radius: 4px;
   border: none;
-  font-size: 14px;
 }
 
 .selectedQty {
-  margin-top: 8px;
-  font-size: 14px;
+  margin-top: 10px;
 }
 
-/* ===============================
-   CART ITEMS
-================================= */
+/* ================= CART PRODUCTS ================= */
+.cartBox {
+  background: #111;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
 .cartItem {
   display: flex;
   align-items: center;
-  gap: 18px;
-  padding: 14px 0;
-  border-bottom: 1px solid #2f2f2f;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid #333;
 }
 
 .cartItem:last-child {
@@ -104,22 +69,31 @@
 }
 
 .cartItem img {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   object-fit: contain;
   background: #fff;
-  border-radius: 8px;
-  padding: 6px;
+  border-radius: 6px;
 }
 
 .cartItem p {
-  margin: 3px 0;
+  margin: 2px 0;
   font-size: 14px;
 }
 
-/* ===============================
-   PRICE SUMMARY
-================================= */
+.cartItem p:first-child {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+/* ================= SUMMARY ================= */
+.summaryBox {
+  background: #111;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
 .summaryBox ul {
   list-style: none;
   padding: 0;
@@ -129,62 +103,35 @@
 .summaryBox li {
   display: flex;
   justify-content: space-between;
-  padding: 6px 0;
-  font-size: 15px;
+  margin-bottom: 6px;
 }
 
 .summaryBox hr {
-  border: 0;
-  height: 1px;
-  background: #333;
-  margin: 10px 0;
+  border: 1px solid #333;
 }
 
-/* ===============================
-   BUTTON
-================================= */
+/* ================= BUTTON ================= */
 .btn {
   width: 100%;
-  background: #00b894;
-  color: white;
-  padding: 14px;
+  margin-top: 20px;
+  padding: 12px;
+  background: #0d6efd;
+  color: #fff;
   font-size: 16px;
-  border-radius: 10px;
   border: none;
+  border-radius: 6px;
   cursor: pointer;
-  font-weight: 600;
-  transition: 0.25s;
 }
 
 .btn:hover {
-  background: #00a383;
-  transform: translateY(-1px);
+  background: #0b5ed7;
 }
 
-/* =====================================================
-   📱 MOBILE RESPONSIVE ( <= 768px )
-===================================================== */
+/* ================= MOBILE (<= 768px) ================= */
 @media (max-width: 768px) {
-  .container {
-    padding: 12px;
-  }
-
-  /* product stack */
-  .productBox {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .productBox img {
-    width: 100px;
-    height: 100px;
-  }
-
-  /* options vertical */
   .optionsRow {
     flex-direction: column;
-    gap: 8px;
-    width: 100%;
+    align-items: stretch;
   }
 
   .optionsRow select,
@@ -192,22 +139,120 @@
     width: 100%;
   }
 
-  /* cart stack */
   .cartItem {
-    flex-direction: column;
-    text-align: center;
+    align-items: flex-start;
   }
 
   .cartItem img {
-    width: 90px;
-    height: 90px;
+    width: 50px;
+    height: 50px;
   }
 
   .summaryBox li {
     font-size: 14px;
   }
-
-  .btn {
-    font-size: 15px;
-  }
 }
+
+
+/* .container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+.productBox {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.productBox img {
+  width: 100px;
+  align-self: center;
+}
+
+.productBox p {
+  text-align: center;
+  margin: 0;
+}
+
+.productName {
+  font-weight: bold;
+}
+
+.optionsRow {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.optionsRow select,
+.optionsRow input {
+  padding: 5px;
+  flex: 1;
+  min-width: 60px;
+}
+
+.selectedQty {
+  font-weight: bold;
+  text-align: center;
+}
+
+.summaryBox {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.summaryBox ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.summaryBox li {
+  margin-bottom: 5px;
+}
+
+.summaryBox hr {
+  margin: 10px 0;
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: crimson;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+/* Mobile View (max-width: 768px) */
+/* @media screen and (max-width: 768px) {
+  .container {
+    max-width: 95%;
+  }
+
+  .optionsRow {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .optionsRow select,
+  .optionsRow input {
+    flex: unset;
+    width: 100%;
+  }
+
+  .productBox img {
+    width: 80px;
+  }
+} */ 
