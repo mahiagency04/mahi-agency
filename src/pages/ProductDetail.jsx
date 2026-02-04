@@ -6,6 +6,23 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import BASE_URL from "./config";
 
+// const getProductUnit = (name) => {
+//   const lowerName = name.toLowerCase();
+
+//   if (lowerName.includes("syrup") || lowerName.includes("vinegar")) {
+//     return "ml";
+//   }
+
+//   if (
+//     lowerName.includes("tablet") ||
+//     lowerName.includes("capsule")
+//   ) {
+//     return "tablets";
+//   }
+
+//   return "kg"; // default (powder etc.)
+// };
+
 const ProductDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -14,13 +31,57 @@ const ProductDetail = () => {
   const product = products.find(p => p.productId === id);
   if (!product) return <h2>Product not found</h2>;
 
+  const defaultVariant =
+    product.variants?.[0] || {
+      size: 1,
+      unit: product.unit || "unit",
+      price: product.price
+    };
+
+  // const productUnit = getProductUnit(product.name);
+  // const [selectedUnit, setSelectedUnit] = useState("");
+  // const [quantity, setQuantity] = useState(1);
+  //  const defaultVariant = product.variants?.[0] || { size: 1, price: product.price };
+  const [selectedVariant, setSelectedVariant] = useState(defaultVariant);
+  const [finalPrice, setFinalPrice] = useState(product.price);
   const [isInCart, setIsInCart] = useState(false);
 
   useEffect(() => {
+    if (selectedVariant) {
+      setFinalPrice(selectedVariant.price);
+    }
+  }, [selectedVariant]);
+
+  useEffect(() => {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const exists = cart.find(item => item.productId === product.productId);
+    const exists = cart.find(
+      (item) =>
+        item.productId === product.productId &&
+        // item.size === selectedVariant.size
+        item.variant?.size === selectedVariant.size
+    );
     if (exists) setIsInCart(true);
-  }, [product.productId]);
+  }, [product.productId, selectedVariant]);
+
+
+  // useEffect(() => {
+  //   if (selectedUnit) {
+  //     setFinalPrice(product.price * quantity);
+  //   }
+  // // }, [selectedUnit, quantity, product.price]);
+  //  }, [product.price, quantity]);
+
+  //  useEffect(() => {
+  //   if (selectedUnit) {
+  //     setFinalPrice(product.price * quantity);
+  //   }
+  // }, [selectedUnit, quantity, product.price]);
+
+  // useEffect(() => {
+  //   const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  //   const exists = cart.find(item => item.productId === product.productId);
+  //   if (exists) setIsInCart(true);
+  // }, [product.productId]);
 
   const buyNow = () => {
     const token = localStorage.getItem("token");
@@ -32,8 +93,33 @@ const ProductDetail = () => {
       return;
     }
 
+    if (!selectedVariant) {
+      toast.error("Please select variant");
+      return;
+    }
+
+    const quantity = 1;
+
     navigate("/address", {
-      state: { fromCheckout: true, product }
+      // state: { fromCheckout: true, product }
+      state: {
+        fromCheckout: true,
+        product: {
+          ...product,
+          // size: selectedVariant.size,
+          // unit: product.unit,
+          // totalPrice: finalPrice
+          // variant: {
+          //   size: selectedVariant.size,
+          //   unit: selectedVariant.unit,
+          //   price: selectedVariant.price,
+          // },
+          variant: selectedVariant,
+          quantity: quantity,
+          total: selectedVariant.price * quantity,
+          // total: selectedVariant.price * 1,
+        }
+      }
     });
   };
 
@@ -47,13 +133,34 @@ const ProductDetail = () => {
       return;
     }
 
+    if (!selectedVariant) {
+      toast.error("Please select variant");
+      return;
+    }
+
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     const alreadyInCart = cart.find(
-      item => item.productId === product.productId
+      (item) => item.productId === product.productId &&
+        item.variant?.size === selectedVariant.size
     );
 
     if (!alreadyInCart) {
-      cart.push({ ...product, quantity: 1 });
+      // cart.push({ ...product, quantity: 1 });
+      cart.push({
+        ...product,
+        // size: selectedVariant.size,
+        // unit: product.unit,
+        // totalPrice: finalPrice
+        // variant: {
+        //     size: selectedVariant.size,
+        //     unit: selectedVariant.unit,
+        //     price: selectedVariant.price
+        //   },
+         variant: selectedVariant,
+        // quantity: 1,
+        total: selectedVariant.price * 1,
+      });
+
       localStorage.setItem("cart", JSON.stringify(cart));
       toast.success("Added to cart");
       setIsInCart(true);
@@ -69,7 +176,7 @@ const ProductDetail = () => {
       <div className={productdetailCSS.box}>
         {/* <img src={product.image} */}
         <img src={`${BASE_URL}${product.image}`}
-         alt={product.name} />
+          alt={product.name} />
 
         <div className={productdetailCSS.details}>
           <p className={productdetailCSS["product-info"]}>
@@ -77,7 +184,8 @@ const ProductDetail = () => {
           </p>
 
           <p className={productdetailCSS["product-info"]}>
-            ₹{product.price}
+            {/* ₹{product.price} */}
+            ₹{finalPrice}
           </p>
 
           <p className={productdetailCSS["product-info"]}>
@@ -86,6 +194,33 @@ const ProductDetail = () => {
               {" "}{product.description}
             </span>
           </p>
+
+          {/* Variant selection */}
+          {product.variants?.length > 0 && (
+            <>
+              <p className={productdetailCSS.label}>Select {product.unit || selectedVariant?.unit || ""}</p>
+              <div className={productdetailCSS.unitBox}>
+                {product.variants.map((v) => (
+                  <button
+                    key={v.size}
+                    className={`${productdetailCSS.unitBtn} ${selectedVariant?.size === v.size ? productdetailCSS.active : ""
+                      }`}
+                    onClick={() => setSelectedVariant(v)}
+                  >
+                    {v.size} {v.unit}
+                  </button>
+                ))}
+              </div>
+            </>
+          )}
+
+          {/* 🔹 QUANTITY */}
+          {/* <p className={productdetailCSS.label}>Quantity</p>
+          <div className={productdetailCSS.qtyBox}>
+            <button onClick={decreaseQty}>−</button>
+            <span>{quantity}</span>
+            <button onClick={increaseQty}>+</button>
+          </div> */}
 
           <div className={productdetailCSS.buttons}>
             <button
@@ -119,7 +254,7 @@ export default ProductDetail;
 // import "react-toastify/dist/ReactToastify.css";
 
 // const ProductDetail = () => {
-//   const { id } = useParams(); 
+//   const { id } = useParams();
 //   const navigate = useNavigate();
 //   const location = useLocation();
 

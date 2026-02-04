@@ -5,10 +5,10 @@
 
 /* Mobile View (max-width: 768px) */
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .Toastify__toast-container {
     width: 240px;
     left: 50%;
     transform: translateX(-50%);
   }
-}
+} */

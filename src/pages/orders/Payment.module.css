@@ -1,165 +1,135 @@
+/* Payment.module.css */
+
 .container {
-  max-width: 420px;
-  margin: auto;
-  padding: 16px;
-  font-family: Arial, sans-serif;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 24px 32px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
 }
 
 .title {
   text-align: center;
-  margin-bottom: 16px;
+  font-size: 28px;
+  margin-bottom: 28px;
+  font-weight: 700;
+  color: #0a2e8f;
 }
 
 .option {
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 12px;
-  font-size: 15px;
-}
-
-.placeBtn {
-  width: 100%;
-  padding: 12px;
-  background: #fb641b;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  font-size: 16px;
-}
-
-.upiBox {
-  margin-top: 10px;
-}
-
-.upiBtn {
-  width: 100%;
-  padding: 12px;
-  background: #1a73e8;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  font-size: 15px;
-}
-
-.qrBox {
-  margin-top: 16px;
-  text-align: center;
-}
-
-.qrBox img {
-  width: 220px;
-  height: 220px;
-  margin-top: 10px;
-}
-
-.note {
-  font-size: 13px;
-  color: gray;
-  margin-top: 8px;
-}
-
-@media (max-width: 768px) {
-  .qrBox {
-    display: none;
-  }
-}
-
-
-/* .container {
-  max-width: 400px;
-  margin: 20px auto;
-  text-align: center;
-  padding: 0 15px;
-  font-family: Arial, sans-serif;
-}
-
-h2 {
+  gap: 12px;
+  font-size: 18px;
+  padding: 14px 20px;
+  border: 2px solid #0a2e8f;
+  border-radius: 8px;
   margin-bottom: 20px;
-  font-weight: 600;
-  color: #222;
-}
-
-.paymentOptions {
-  margin-bottom: 15px;
-  font-size: 16px;
-  color: #333;
-}
-
-.paymentOptions label {
-  display: block;
-  margin-bottom: 10px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
   user-select: none;
 }
 
-.paymentOptions input[type="radio"] {
-  margin-right: 8px;
+.option input[type="radio"] {
+  width: 20px;
+  height: 20px;
   cursor: pointer;
 }
 
-.upiInput {
-  margin-bottom: 15px;
+.option:hover {
+  background-color: #f0f4ff;
 }
 
-.upiInput input {
-  padding: 8px;
+.placeBtn, .upiBtn {
+  display: block;
   width: 100%;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  font-size: 16px;
-  box-sizing: border-box;
-}
-
-.placeOrderBtn {
-  padding: 12px 25px;
-  background-color: crimson;
+  padding: 14px 0;
+  font-size: 20px;
+  font-weight: 600;
+  background-color: #0a2e8f;
   color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
-  font-weight: 600;
-  font-size: 16px;
   transition: background-color 0.3s ease;
+  margin-top: 10px;
+  user-select: none;
 }
 
-.placeOrderBtn:disabled {
+.placeBtn:disabled, .upiBtn:disabled {
+  background-color: #7a7a7a;
   cursor: not-allowed;
-  opacity: 0.6;
-  background-color: #a00017;
 }
 
-.successMessage {
-  margin-top: 20px;
-  color: green;
-  font-weight: bold;
-  font-size: 18px;
+.placeBtn:hover:not(:disabled), .upiBtn:hover:not(:disabled) {
+  background-color: #07306b;
 }
 
-/* Mobile View (max-width: 768px) */
-/* @media (max-width: 768px) {
+.upiBox {
+  margin-top: 15px;
+  padding: 16px;
+  border: 1.8px solid #0a2e8f;
+  border-radius: 12px;
+  background-color: #f9faff;
+  text-align: center;
+}
+
+.qrBox {
+  margin-top: 12px;
+}
+
+.qrBox p {
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #333;
+}
+
+.qrBox img {
+  max-width: 220px;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(10, 46, 143, 0.3);
+}
+
+/* Responsive Mobile Styles */
+@media (max-width: 768px) {
   .container {
-    max-width: 90%;
-    margin: 15px auto;
-    padding: 0 10px;
+    max-width: 95%;
+    margin: 20px auto;
+    padding: 18px 20px;
+    border-radius: 8px;
   }
 
-  .paymentOptions {
-    font-size: 14px;
+  .title {
+    font-size: 24px;
+    margin-bottom: 20px;
   }
 
-  .upiInput input {
-    font-size: 14px;
-    padding: 7px;
+  .option {
+    font-size: 16px;
+    padding: 12px 16px;
   }
 
-  .placeOrderBtn {
-    width: 100%;
+  .option input[type="radio"] {
+    width: 18px;
+    height: 18px;
+  }
+
+  .placeBtn, .upiBtn {
+    font-size: 18px;
     padding: 12px 0;
-    font-size: 16px;
+    border-radius: 8px;
   }
 
-  .successMessage {
-    font-size: 16px;
+  .upiBox {
+    padding: 12px;
   }
-} */ 
+
+  .qrBox img {
+    max-width: 180px;
+  }
+}

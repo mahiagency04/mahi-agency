@@ -1,18 +1,42 @@
-/* ================= CONTAINER ================= */
+/* ===============================
+   MAIN CONTAINER
+================================= */
 .container {
-  max-width: 900px;
-  margin: auto;
-  padding: 16px;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 20px;
   color: #fff;
+  font-family: "Segoe UI", sans-serif;
 }
 
-/* ================= SINGLE PRODUCT ================= */
-.productBox {
-  background: #111;
-  padding: 15px;
-  border-radius: 8px;
-  margin-bottom: 20px;
+/* Heading */
+.container h2 {
   text-align: center;
+  font-size: 32px;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+/* ===============================
+   PRODUCT / CART COMMON CARD
+================================= */
+.productBox,
+.cartBox,
+.summaryBox {
+  background: #1b1b1b;
+  border-radius: 14px;
+  padding: 22px;
+  margin-bottom: 25px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.45);
+}
+
+/* ===============================
+   SINGLE PRODUCT
+================================= */
+.productBox {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 .productBox img {
@@ -20,48 +44,59 @@
   height: 120px;
   object-fit: contain;
   background: #fff;
-  border-radius: 6px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+/* product text */
+.productInfo {
+  flex: 1;
 }
 
 .productName {
+  font-size: 20px;
   font-weight: 600;
-  margin-top: 8px;
+  margin-bottom: 6px;
 }
 
+.selectedVariant {
+  font-size: 14px;
+  color: #cfcfcf;
+  margin-top: 4px;
+}
+
+/* ===============================
+   OPTIONS ROW
+================================= */
 .optionsRow {
   display: flex;
   gap: 10px;
   align-items: center;
-  justify-content: center;
-  margin-top: 10px;
-  flex-wrap: wrap;
+  margin-top: 12px;
 }
 
 .optionsRow select,
 .optionsRow input {
-  padding: 6px;
-  border-radius: 4px;
+  padding: 6px 10px;
+  border-radius: 6px;
   border: none;
+  font-size: 14px;
 }
 
 .selectedQty {
-  margin-top: 10px;
+  margin-top: 8px;
+  font-size: 14px;
 }
 
-/* ================= CART PRODUCTS ================= */
-.cartBox {
-  background: #111;
-  padding: 12px;
-  border-radius: 8px;
-  margin-bottom: 20px;
-}
-
+/* ===============================
+   CART ITEMS
+================================= */
 .cartItem {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 10px 0;
-  border-bottom: 1px solid #333;
+  gap: 18px;
+  padding: 14px 0;
+  border-bottom: 1px solid #2f2f2f;
 }
 
 .cartItem:last-child {
@@ -69,31 +104,22 @@
 }
 
 .cartItem img {
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   object-fit: contain;
   background: #fff;
-  border-radius: 6px;
+  border-radius: 8px;
+  padding: 6px;
 }
 
 .cartItem p {
-  margin: 2px 0;
+  margin: 3px 0;
   font-size: 14px;
 }
 
-.cartItem p:first-child {
-  font-weight: 600;
-  font-size: 15px;
-}
-
-/* ================= SUMMARY ================= */
-.summaryBox {
-  background: #111;
-  padding: 15px;
-  border-radius: 8px;
-  margin-top: 15px;
-}
-
+/* ===============================
+   PRICE SUMMARY
+================================= */
 .summaryBox ul {
   list-style: none;
   padding: 0;
@@ -103,35 +129,62 @@
 .summaryBox li {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 6px;
+  padding: 6px 0;
+  font-size: 15px;
 }
 
 .summaryBox hr {
-  border: 1px solid #333;
+  border: 0;
+  height: 1px;
+  background: #333;
+  margin: 10px 0;
 }
 
-/* ================= BUTTON ================= */
+/* ===============================
+   BUTTON
+================================= */
 .btn {
   width: 100%;
-  margin-top: 20px;
-  padding: 12px;
-  background: #0d6efd;
-  color: #fff;
+  background: #00b894;
+  color: white;
+  padding: 14px;
   font-size: 16px;
+  border-radius: 10px;
   border: none;
-  border-radius: 6px;
   cursor: pointer;
+  font-weight: 600;
+  transition: 0.25s;
 }
 
 .btn:hover {
-  background: #0b5ed7;
+  background: #00a383;
+  transform: translateY(-1px);
 }
 
-/* ================= MOBILE (<= 768px) ================= */
+/* =====================================================
+   📱 MOBILE RESPONSIVE ( <= 768px )
+===================================================== */
 @media (max-width: 768px) {
+  .container {
+    padding: 12px;
+  }
+
+  /* product stack */
+  .productBox {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .productBox img {
+    width: 100px;
+    height: 100px;
+  }
+
+  /* options vertical */
   .optionsRow {
     flex-direction: column;
-    align-items: stretch;
+    gap: 8px;
+    width: 100%;
   }
 
   .optionsRow select,
@@ -139,120 +192,22 @@
     width: 100%;
   }
 
+  /* cart stack */
   .cartItem {
-    align-items: flex-start;
+    flex-direction: column;
+    text-align: center;
   }
 
   .cartItem img {
-    width: 50px;
-    height: 50px;
+    width: 90px;
+    height: 90px;
   }
 
   .summaryBox li {
     font-size: 14px;
   }
-}
 
-
-/* .container {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  max-width: 400px;
-  margin: 0 auto;
-  font-family: Arial, sans-serif;
-}
-
-.productBox {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  border: 1px solid #ccc;
-  padding: 15px;
-  border-radius: 8px;
-}
-
-.productBox img {
-  width: 100px;
-  align-self: center;
-}
-
-.productBox p {
-  text-align: center;
-  margin: 0;
-}
-
-.productName {
-  font-weight: bold;
-}
-
-.optionsRow {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.optionsRow select,
-.optionsRow input {
-  padding: 5px;
-  flex: 1;
-  min-width: 60px;
-}
-
-.selectedQty {
-  font-weight: bold;
-  text-align: center;
-}
-
-.summaryBox {
-  border: 1px solid #ccc;
-  padding: 15px;
-  border-radius: 8px;
-}
-
-.summaryBox ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.summaryBox li {
-  margin-bottom: 5px;
-}
-
-.summaryBox hr {
-  margin: 10px 0;
-}
-
-.btn {
-  padding: 10px 20px;
-  background-color: crimson;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  text-align: center;
-}
-
-/* Mobile View (max-width: 768px) */
-/* @media screen and (max-width: 768px) {
-  .container {
-    max-width: 95%;
+  .btn {
+    font-size: 15px;
   }
-
-  .optionsRow {
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .optionsRow select,
-  .optionsRow input {
-    flex: unset;
-    width: 100%;
-  }
-
-  .productBox img {
-    width: 80px;
-  }
-} */ 
+}
