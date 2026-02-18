@@ -2,6 +2,7 @@ import React from "react";
 import { useLocation, Link } from "react-router-dom";
 import products from "../data/products";
 import searchresult from "./SearchResult.module.css";
+import BASE_URL from "./config";
 
 const SearchResult = () => {
   const query = decodeURIComponent(
@@ -18,21 +19,25 @@ const SearchResult = () => {
 
       {results.length === 0 && <p className={searchresult.noResults}>No product found</p>}
 
-      {results.map((item) => (
-        <Link
-          key={item.productId}
-          to={`/product/${item.productId}`}
-          className={searchresult.productLink}
-        >
-            <img
-            src={item.image}
-            alt={item.name}
-            className={searchresult.productImage}
-          />
-          {item.name} – ₹{item.price}
-        </Link>
-      ))}
-    </div>
+     {results.map((item) => {
+  const imageUrl = `${BASE_URL}${item.image}`;
+  console.log("IMAGE:", imageUrl);
+
+  return (
+    <Link
+      key={item.productId}
+      to={`/product/${item.productId}`}
+      className={searchresult.productLink}
+    >
+      <img
+        src={imageUrl}
+        alt={item.name}
+        className={searchresult.productImage}
+      />
+      {item.name} – ₹{item.price}
+    </Link>
+  );
+})}</div>
   );
 };
 

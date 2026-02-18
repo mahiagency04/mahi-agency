@@ -1,0 +1,135 @@
+/* ===== MAIN LAYOUT ===== */
+
+.main {
+  min-height: 100vh;
+  background: #f6f7fb;
+  padding: 30px 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 1300px;
+}
+
+
+/* ===== CARD SECTION ===== */
+
+.card {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+.my1 {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+
+/* ===== PRODUCTS GRID ===== */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 22px;
+}
+
+
+/* ===== SINGLE CARD ===== */
+
+.cardItems {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 15px 10px;
+  text-align: center;
+  cursor: pointer;
+
+  border: 1px solid #ececec;
+
+  transition: all 0.25s ease;
+}
+
+.cardItems:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+
+/* ===== IMAGE ===== */
+
+.cardItems img {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+
+
+/* ===== TEXT ===== */
+
+.textCenter {
+  text-align: center;
+}
+
+.my2 {
+  margin: 4px 0;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+
+/* ===== VIEW ALL LINK ===== */
+
+.card a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card > div:last-child a {
+  color: #1976d2;
+  font-weight: 600;
+}
+
+.card > div:last-child a:hover {
+  text-decoration: underline;
+}
+
+
+
+/* ===================================================== */
+/* ================= MOBILE RESPONSIVE ================= */
+/* ===================================================== */
+
+@media (max-width: 768px) {
+
+  .main {
+    padding: 15px 10px;
+  }
+
+  .card {
+    padding: 15px;
+  }
+
+  .my1 {
+    font-size: 20px;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .cardItems img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .my2 {
+    font-size: 13px;
+  }
+}

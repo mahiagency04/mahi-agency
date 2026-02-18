@@ -21,12 +21,14 @@
 // import MyOrders from "./pages/orders/MyOrders.jsx";
 // import SearchResult from "./pages/SearchResult.jsx";
 // import ProtectedRoute from "./routes/ProtectedRoute";
+// import SBherbals from "./pages/company products/SBherbals-products.jsx";
 
 // const App = () => {
 //   return (
 //     <>
 //       <Routes>
 //         <Route path="/" element={<> <Home /> <Navbar /> <BottomNav /> </>} />
+//         <Route path="/sbherbals-product" element={<SBherbals />} />
 //         <Route path="/login" element={<Login />} />
 //         <Route path="/signup" element={<SignUp />} />
 //         {/* <Route path="/profile" element={<Profile />} /> */}
@@ -44,7 +46,7 @@
 //         {/* <Route path="/payment" element={<Payment />} /> */}
 //         {/* <Route path="/order-success" element={<OrderSuccess />} /> */}
 //         <Route path="/my-orders" element={<> <MyOrders /> <BottomNav /> </>} />
-//         <Route path="/search" element={<SearchResult />} />
+//         <Route path="/search/*" element={<SearchResult />} />
 
 //         <Route element={<ProtectedRoute />}>
 //         <Route path="/profile" element={<Profile />} />

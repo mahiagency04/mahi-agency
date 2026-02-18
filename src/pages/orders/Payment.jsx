@@ -8,29 +8,35 @@ const Payment = () => {
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
 
+  if (!state?.orderData) {
+    navigate("/");
+    return null;
+  }
+
   const [paymentMethod, setPaymentMethod] = useState("COD");
   const [showQR, setShowQR] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const amount = state?.orderData?.totalAmount || 1;
+  // const amount = state?.orderData?.totalAmount || 1;
+  const amount = state?.orderData?.grandTotal || 0;
 
   const isMobile = window.innerWidth <= 768;
 
   // const upiUrl = `upi://pay?pa=9519197798@upi&pn=Mahi%20Agency&am=${amount}&cu=INR`;
 
-  const handleUPIPay = () => {
-    setPaymentMethod("UPI");
+  // const handleUPIPay = () => {
+  //   setPaymentMethod("UPI");
 
-    if (isMobile) {
-      window.location.href = upiUrl;
-    } else {
-      setShowQR(true);
-    }
+  //   if (isMobile) {
+  //     window.location.href = upiUrl;
+  //   } else {
+  //     setShowQR(true);
+  //   }
 
-    setTimeout(() => {
-      placeOrder("UPI");
-    }, 8000);
-  };
+  //   setTimeout(() => {
+  //     placeOrder("UPI");
+  //   }, 8000);
+  // };
 
   const placeOrder = async (method = paymentMethod) => {
     setLoading(true);

@@ -1,115 +1,286 @@
+/* ProductDetail.module.css - Compact Version */
+
+/* Base styles (Desktop first) - Compact */
 .box {
-  max-width: 1100px;
-  margin: 40px auto;
-  padding: 20px;
-  display: flex;
-  gap: 40px;
-  background: #ffffff;
+  max-width: 1000px;
+  margin: 1.5rem auto;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 1.8rem;
+  background: white;
   border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
+/* Image Section - Compact */
 .box img {
-  width: 380px;
-  height: auto;
+  width: 100%;
+  height: 280px;
   object-fit: contain;
-  border-radius: 10px;
-  background: #f7f7f7;
-  padding: 20px;
+  border-radius: 8px;
+  background: #f8f9fa;
+  padding: 0.8rem;
 }
 
+/* Details Section - Compact */
 .details {
-  flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 0.8rem;
 }
 
-.product {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
+/* Product Name - Compact */
+.product-info:first-of-type {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0;
+  line-height: 1.2;
 }
 
-.product-info {
-  font-size: 18px;
-  color: #333;
-  font-weight: 500;
-}
-
-.product-info:first-child {
-  font-size: 26px;
+/* Price - Compact */
+.product-info:nth-of-type(2) {
+  font-size: 1.4rem;
   font-weight: 700;
+  color: #e74c3c;
+  margin: 0;
+}
+
+/* Description - Compact */
+.product-info:nth-of-type(3) {
+  font-size: 0.95rem;
+  color: #5d6d7e;
+  margin: 0.3rem 0;
+  padding: 0.8rem;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border-left: 3px solid #3498db;
 }
 
 .description {
-  font-weight: 400;
-  color: #555;
+  color: #2c3e50;
+  font-weight: 500;
 }
 
+/* Labels - Compact */
+.label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0.2rem 0;
+}
+
+/* Variant Selection - Compact */
+.unitBox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.2rem 0;
+}
+
+.unitBtn {
+  padding: 0.4rem 1rem;
+  background: white;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #2c3e50;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.unitBtn.active {
+  background: #3498db;
+  border-color: #3498db;
+  color: white;
+}
+
+/* Action Buttons - Compact */
 .buttons {
   display: flex;
-  gap: 20px;
-  margin-top: 30px;
+  gap: 0.8rem;
+  margin-top: 0.8rem;
 }
 
 .btn {
   flex: 1;
-  padding: 14px 0;
-  font-size: 16px;
-  font-weight: 600;
-  border-radius: 8px;
+  padding: 0.7rem 1rem;
   border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-.btn:first-child {
-  background: #1e88e5;
-  color: #fff;
+.btn:first-of-type {
+  background: #e67e22;
+  color: white;
 }
 
-.btn:first-child:hover {
-  background: #1565c0;
+.btn:last-of-type {
+  background: #27ae60;
+  color: white;
 }
 
-.btn:last-child {
-  background: #f5f5f5;
-  color: #333;
-  border: 1px solid #ccc;
+.btn:first-of-type:hover {
+  background: #d35400;
 }
 
-.btn:last-child:hover {
-  background: #e0e0e0;
+.btn:last-of-type:hover {
+  background: #229954;
 }
 
-/* Mobile View (max-width: 768px) */
-@media (max-width: 768px) {
+/* Mobile Styles (max-width: 768px) - Ultra Compact */
+@media screen and (max-width: 768px) {
   .box {
-    flex-direction: column;
-    gap: 20px;
-    margin: 20px;
+    margin: 0.8rem;
+    padding: 1rem;
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
   .box img {
-    width: 100%;
-    padding: 15px;
+    height: 200px;
+    padding: 0.5rem;
+    width: 80%;
+    margin: 0 auto;
   }
 
-  .product-info:first-child {
-    font-size: 22px;
+  .details {
+    gap: 0.6rem;
   }
 
-  .product-info {
-    font-size: 16px;
+  .product-info:first-of-type {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .product-info:nth-of-type(2) {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .product-info:nth-of-type(3) {
+    font-size: 0.9rem;
+    padding: 0.7rem;
+    margin: 0.2rem 0;
+  }
+
+  .label {
+    font-size: 0.85rem;
+    text-align: center;
+  }
+
+  .unitBox {
+    justify-content: center;
+    gap: 0.4rem;
+  }
+
+  .unitBtn {
+    padding: 0.35rem 0.9rem;
+    font-size: 0.8rem;
   }
 
   .buttons {
     flex-direction: column;
-    gap: 14px;
+    gap: 0.6rem;
+    margin-top: 0.6rem;
   }
 
   .btn {
-    width: 100%;
+    padding: 0.6rem;
+    font-size: 0.85rem;
   }
+}
+
+/* Small Mobile Styles (max-width: 480px) - Extra Compact */
+@media screen and (max-width: 480px) {
+  .box {
+    margin: 0.5rem;
+    padding: 0.8rem;
+  }
+
+  .box img {
+    height: 160px;
+    width: 70%;
+  }
+
+  .product-info:first-of-type {
+    font-size: 1rem;
+  }
+
+  .product-info:nth-of-type(2) {
+    font-size: 1.1rem;
+  }
+
+  .product-info:nth-of-type(3) {
+    font-size: 0.85rem;
+    padding: 0.6rem;
+  }
+
+  .unitBtn {
+    padding: 0.3rem 0.8rem;
+    font-size: 0.75rem;
+  }
+
+  .btn {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Tablet Styles (769px - 1024px) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .box {
+    margin: 1rem;
+    padding: 1.2rem;
+    gap: 1.2rem;
+  }
+
+  .box img {
+    height: 240px;
+  }
+
+  .product-info:first-of-type {
+    font-size: 1.3rem;
+  }
+
+  .product-info:nth-of-type(2) {
+    font-size: 1.3rem;
+  }
+}
+
+/* Remove animations and effects to save space */
+* {
+  animation: none !important;
+  transition: all 0.1s ease !important;
+}
+
+/* Minimal hover effects */
+@media (hover: hover) {
+  .unitBtn:hover {
+    border-color: #3498db;
+  }
+  
+  .btn:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+  }
+}
+
+/* Compact Toast notifications */
+:global(.Toastify__toast) {
+  border-radius: 6px !important;
+  padding: 8px 12px !important;
+  font-size: 0.85rem !important;
+  min-height: auto !important;
+}
+
+:global(.Toastify__toast-body) {
+  padding: 0 !important;
 }

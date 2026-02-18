@@ -19,6 +19,7 @@ const Address = () => {
   //  CART CHECKOUT
   const cartItems = location.state?.cartItems || [];
   const totalAmount = location.state?.totalAmount || 0;
+  const isCheckout = !!product || cartItems.length > 0;
 
   const [formData, setFormData] = useState({
     state: "",
@@ -131,6 +132,19 @@ const Address = () => {
     setShowForm(true);
   };
 
+  const handleDeliver = (addr) => {
+    const checkoutData = {
+      address: addr,
+      product: JSON.parse(localStorage.getItem("buyNowProduct")),
+      cartItems: JSON.parse(localStorage.getItem("cart")) || [],
+      totalAmount: 0,
+    };
+
+    localStorage.setItem("checkoutData", JSON.stringify(checkoutData));
+
+    navigate("/order-summary");
+  };
+
   return (
     <div className={addressCSS.container}>
       <ToastContainer
@@ -146,13 +160,13 @@ const Address = () => {
           {/* <p>{addr.area}, {addr.city}</p>
           <p>{addr.state} - {addr.pincode}</p>
           {addr.landmark && <p>Landmark: {addr.landmark}</p>} */}
-          
+
           <p>{addr.state}, {addr.city}</p>
           <p>{addr.area} - {addr.landmark && <p>Landmark: {addr.landmark}</p>}
-          {addr.pincode}</p>
+            {addr.pincode}</p>
 
           {/*  DELIVER BUTTON (AUTO HANDLES CART / SINGLE PRODUCT) */}
-          <button
+          {/* <button
             className={addressCSS.btn}
             onClick={() =>
               navigate("/order-summary", {
@@ -167,7 +181,26 @@ const Address = () => {
             }
           >
             Deliver Here
-          </button>
+          </button> */}
+
+          {isCheckout && (
+            <button
+              className={addressCSS.btn}
+              onClick={() =>
+                navigate("/order-summary", {
+                  replace: true,
+                  state: {
+                    address: addr,
+                    product: product || null,
+                    cartItems: cartItems.length ? cartItems : null,
+                    totalAmount: totalAmount || null,
+                  },
+                })
+              }
+            >
+              Deliver Here
+            </button>
+          )}
 
           <div className={addressCSS.cardButtons}>
             <button
@@ -395,7 +428,7 @@ export default Address;
 //               className={addressCSS.btn}
 //               onClick={() =>
 //                 navigate("/order-summary", {
-//                   replace: true,        
+//                   replace: true,
 //                   state: { product, address: addr },
 //                 })
 //               }

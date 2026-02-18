@@ -1,8 +1,12 @@
 .container {
   max-width: 800px;
   margin: 20px auto;
-  padding: 15px;
-  box-sizing: border-box;
+}
+
+.heading {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .orderCard {
@@ -11,42 +15,64 @@
   margin-bottom: 15px;
   border-radius: 8px;
   background-color: #fff;
-  transition: transform 0.3s ease;
+  transition: box-shadow 0.2s ease;
+}
+
+.orderCardCancelled {
+  background-color: #f8d7da;
 }
 
 .orderCard:hover {
-  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.cancelled {
-  background-color: #f8d7da; /* light red */
+.orderDetail {
+  margin: 5px 0;
 }
 
-.cancelledText {
+.status {
+  font-weight: bold;
+}
+
+.statusCancelled {
   color: red;
-  font-weight: bold;
 }
 
-.activeText {
+.statusActive {
   color: green;
-  font-weight: bold;
+}
+
+.productList {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
 }
 
 .productItem {
   display: flex;
   align-items: center;
-  margin-bottom: 8px;
+  gap: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.productItem:hover {
+  transform: translateX(3px);
 }
 
 .productImage {
-  width: 50px;
-  height: 50px;
+  width: 60px;
   object-fit: cover;
-  border-radius: 5px;
-  margin-right: 10px;
+  border-radius: 6px;
 }
 
-.cancelBtn {
+.productInfo {
+  font-size: 14px;
+  color: #333;
+}
+
+.cancelButton {
   background-color: red;
   color: white;
   border: none;
@@ -54,35 +80,24 @@
   border-radius: 4px;
   cursor: pointer;
   margin-top: 10px;
-  transition: all 0.3s ease;
+  transition: background-color 0.2s ease;
 }
 
-.cancelBtn:hover {
+.cancelButton:hover {
   background-color: darkred;
 }
 
-/* Mobile View (max-width: 768px) */
-@media (max-width: 768px) {
-  .container {
-    margin: 10px;
-    padding: 10px;
-  }
+.noOrders {
+  text-align: center;
+  font-size: 16px;
+  color: #555;
+}
 
-  .productImage {
-    width: 40px;
-    height: 40px;
-  }
-
-  .cancelBtn {
-    padding: 6px 10px;
-    font-size: 14px;
-  }
-
-  .orderCard {
-    padding: 10px;
-  }
-
-  .productItem {
-    font-size: 14px;
-  }
+.supportText {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #555;
+  background: #f8f8f8;
+  padding: 8px 10px;
+  border-radius: 6px;
 }
