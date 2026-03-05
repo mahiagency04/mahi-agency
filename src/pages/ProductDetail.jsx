@@ -82,7 +82,8 @@
     }, [selectedVariant]);
 
     useEffect(() => {
-      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      // const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const cart = JSON.parse(localStorage.getItem("cart") || "[]");
       const exists = cart.find(
         (item) =>
           item.productId === product.productId &&
@@ -187,7 +188,8 @@
         return;
       }
 
-      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      // let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      let cart = JSON.parse(localStorage.getItem("cart") || "[]");
       const alreadyInCart = cart.find(
         (item) => item.productId === product.productId &&
           item.variant?.size === selectedVariant.size &&
