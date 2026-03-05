@@ -8,7 +8,7 @@ import Contact from "./pages/Contact.jsx";
 import Dealership from "./pages/Dealership.jsx";
 import Franchise from "./pages/Franchise.jsx";
 import Profile from "./pages/Profile.jsx";
-import Navbar from "./components/navbar.jsx";
+import Navbar from "./components/Navbar.jsx";
 import ResetPassword from "./pages/ResetPassword.jsx";
 import Address from "./pages/orders/Address.jsx";
 import EditDetails from "./pages/EditDetails.jsx";
