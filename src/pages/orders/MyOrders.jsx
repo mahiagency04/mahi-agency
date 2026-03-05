@@ -43,7 +43,7 @@ const MyOrders = () => {
 
     const fetchOrders = async () => {
         try {
-            const res = await axios.get("http://192.168.29.234:4000/api/order/my-orders", {
+            const res = await axios.get("https://backend-api-wi3p.onrender.com/api/order/my-orders", {
                 headers: { Authorization: `Bearer ${token}` },
             });
             if (res.data.success) {
@@ -79,7 +79,7 @@ const MyOrders = () => {
 
         try {
             const res = await axios.put(
-                `http://192.168.29.234:4000/api/order/cancel-order/${orderId}`,
+                `https://backend-api-wi3p.onrender.com/api/order/cancel-order/${orderId}`,
                 {},
                 {
                     headers: { Authorization: `Bearer ${token}` },

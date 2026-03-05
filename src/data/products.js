@@ -9,8 +9,7 @@ const products = [
     name: "Apt-Act syrup",
     // mrp: 60,
     // image: "/Images/SBherbals/EZYDAY-PD.webp",
-    // image: "/uploads/products/sbherbals/Ayurvedic Syrups, Drops & Malts/Apt-Act syrup/Apt-Act syrup.jpg",
-    image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic Syrups, Drops & Malts/Apt-Act syrup/Apt-Act syrup.jpg`,
+    image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic-Syrups-Drops-Malts/Apt-Act-syrup/Apt-Act-syrup.jpg`,
     description: `
       Appetizer & Digestive
       भूख बढ़ाने व पाचन में उपयोगी
@@ -36,7 +35,7 @@ const products = [
     name: "Asthma Act Syrup",
     // mrp: 50,
     // image: "/Images/SBherbals/Oesto-flex.webp",
-    image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic Syrups, Drops & Malts/Asthama act syrup/Asthma Act Syrup.jpg`,
+    image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic-Syrups-Drops-Malts/Asthama-act-syrup/Asthma-Act-Syrup.jpg`,
     description: `
     Advanced Formula For Respiratory Support
     दमा तथा एलेर्जी में लाभकारी
@@ -71,7 +70,7 @@ const products = [
 //     name: "Cyst-yog syrup",
 //     // mrp: 80,
 //     // image: "/Images/SBherbals/CYST_YOG-600x600-2.webp",
-//     image: "/uploads/products/sbherbals/Ayurvedic Syrups, Drops & Malts/Cyst-yog syrup/Cyst-yog syrup.jpg",
+//     image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic-Syrups-Drops-Malts/Cyst-yog-syrup/Cyst-yog-syrup.jpg`,
 //     description: `
 //     SPECIALLY FORMULATED FOR DISSOLVING ANY TYPE OF CYST IN OVARY, BREAST, UTERUS.
 
@@ -104,7 +103,7 @@ const products = [
 //     name: "Ezyday pd",
 //     // mrp: 90,
 //     // image: "/Images/SBherbals/dentoAct.webp",
-//     image: "/uploads/products/sbherbals/Ayurvedic Syrups, Drops & Malts/Ezyday pd/Ezyday pd.jpg",
+//     image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic-Syrups-Drops-Malts/Ezyday-pd/Ezyday-pd.jpg`,
 //     description: `
 // TONIC FOR KIDS
 
@@ -136,7 +135,7 @@ const products = [
     name: "Gripvon grip water",
     // mrp: 80,
     // image: "/Images/SBherbals/Ibs set.webp",
-    image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic Syrups, Drops & Malts/Gripvob grip water/Gripvon grip water.jpg`,
+    image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic-Syrups-Drops-Malts/Gripvon-grip-water/Gripvon-grip-water.jpg`,
     description: `
 GIVES INSTANT RELIEF TO INFANTS AND BABIES CRYING DUE TO GRIPE AND STOMACH PAIN CAUSED BY GAS, ACIDITY AND INDIGESTION.
 
@@ -164,7 +163,7 @@ Indications: Indigestion, Abdominal Pain, Acidity, Loss of Appetite, Helps in fl
 //     name: "Mediliv Drops",
 //     // mrp: 80,
 //     // image: "/Images/SBherbals/CYST_YOG-600x600-2.webp",
-//     image: "/uploads/products/sbherbals/Ayurvedic Syrups, Drops & Malts/Mediliv Drops/Mediliv Drops.jpg",
+//     image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic-Syrups-Drops-Malts/Mediliv-Drops/Mediliv-Drops.jpg`,
 //     description: `
 // LIVER PROTECTOR DROPS
 
@@ -194,7 +193,7 @@ Indications: Indigestion, Abdominal Pain, Acidity, Loss of Appetite, Helps in fl
     name: "Medliv plus",
     // mrp: 90,
     // image: "/Images/SBherbals/dentoAct.webp",
-    image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic Syrups, Drops & Malts/Medliv plus/Medliv plus.jpg`,
+    image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic-Syrups-Drops-Malts/Medliv-plus/Medliv-plus.jpg`,
     description: `
 FOR HEALTHY LIVER & ENZYME FUNCTION
 
@@ -249,7 +248,7 @@ Loss of appetite, Jaundice, Viral Hepatitis.
     name: "Medliv-DS Liver Tonic",
     // mrp: 60,
     // image: "/Images/SBherbals/EZYDAY-PD.webp",
-    image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic Syrups, Drops & Malts/Medliv-DS Liver Tonic/Medliv-DS Liver Tonic.jpg`,
+    image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic-Syrups-Drops-Malts/Medliv-DS-Liver-Tonic/Medliv-DS-Liver-Tonic.jpg`,
     description: `
 FORMULA FOR ENLARGED LIVER, LIVER DISORDER
 
@@ -310,7 +309,7 @@ Usage and Benefits :
 //     name: "Nefrawin kft syrup",
 //     // mrp: 150,
 //     // image: "/Images/SBherbals/WARTCURE.webp",
-//     image: "/uploads/products/sbherbals/Ayurvedic Syrups, Drops & Malts/Nefrawin kst syrup/Nefrawin kft syrup.jpg",
+//     image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic-Syrups-Drops-Malts/Nefrawin-kst-syrup/Nefrawin-kft-syrup.jpg`,
 //     description: `
 // A COMPLETE KIDNEY CARE SYRUP
 
@@ -364,7 +363,7 @@ Usage and Benefits :
     name: "Otiherb ear drops",
     // mrp: 90,
     // image: "/Images/SBherbals/dentoAct.webp",
-    image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic Syrups, Drops & Malts/Otiherb ear drops/Otiherb ear drops.jpg`,
+    image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic-Syrups-Drops-Malts/Otiherb-ear-drops/Otiherb-ear-drops.jpg`,
     description: `
 NATURAL REMEDY FOR EAR CARE
 ओटीहर्ब कान की ड्राप
@@ -397,7 +396,7 @@ Indications: Ear Ache, Ear Infection and Congested Ear`,
     name: "Brain-o-herb malt",
     // mrp: 70,
     // image: "/Images/SBherbals/prostoAct.webp",
-    image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic Syrups, Drops & Malts/Brain-o-herb malt/Brain-o-herb malt.jpg`,
+    image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic-Syrups-Drops-Malts/Brain-o-herb-malt/Brain-o-herb-malt.jpg`,
     description: `
 SHARPENS MEMORY & MIND FOR ALL AGE GROUP
 मस्तिष्क की दुर्बलता और याददाश्त की कमजोरी दूर करने में सहायक
@@ -437,7 +436,7 @@ Benefits :
     name: "SuperAct Vital",
     // mrp: 80,
     // image: "/Images/SBherbals/CYST_YOG-600x600-2.webp",
-    image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic Syrups, Drops & Malts/SuperAct Vital/SuperAct Vital.jpg`,
+    image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic-Syrups-Drops-Malts/SuperAct-Vital/SuperAct-Vital.jpg`,
     description: `
 AYURVEDIC TASTEFUL MALT
 ENRICHED WITH ASHWAGANDHA SHILAJIT
@@ -486,7 +485,7 @@ EXCIPIENTS: SOD. BENZOATE M.P.S. & P.P.S. FLAVOUR`,
     name: "Shilajit malt",
     // mrp: 150,
     // image: "/Images/SBherbals/WARTCURE.webp",
-    image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic Syrups, Drops & Malts/Shilajit malt/Shilajit malt.jpg`,
+    image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic-Syrups-Drops-Malts/Shilajit-malt/Shilajit-malt.jpg`,
     description: `
 शिलाजीत माल्ट
 
@@ -510,7 +509,7 @@ Malt ext 100 mg, Base Liquid Glucose & Malt ext`,
 //     name: "Kidset drops",
 //     // mrp: 60,
 //     // image: "/Images/SBherbals/STONEACT.webp",
-//     image: "/uploads/products/sbherbals/Ayurvedic Syrups, Drops & Malts/Kidset drops/Kidset drops.jpg",
+//     image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic-Syrups-Drops-Malts/Kidset-drops/Kidset-drops.jpg`,
 //     description: `
 // DIGESTIVE TONIC
 
@@ -543,7 +542,7 @@ Malt ext 100 mg, Base Liquid Glucose & Malt ext`,
     name: "Leucoset syrup",
     // mrp: 60,
     // image: "/Images/SBherbals/Apple cider vinegar.webp",
-    image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic Syrups, Drops & Malts/Leucoset Syrup/Leucoset syrup.jpg`,
+    image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic-Syrups-Drops-Malts/Leucoset-Syrup/Leucoset-syrup.jpg`,
     description: `
 र में उपयोगी
 
@@ -568,7 +567,7 @@ Leucoset is an ayurvedic herbal product with no side effects. It cures and preve
     name: "Pregbless syrup",
     // mrp: 80,
     // image: "/Images/SBherbals/Ibs set.webp",
-    image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic Syrups, Drops & Malts/Pregbless syrup/Pregbless syrup.jpg`,
+    image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic-Syrups-Drops-Malts/Pregbless-syrup/Pregbless-syrup.jpg`,
     description: `
 FOR MAINTAINING HEALTHY PREGNANCY
 स्वस्थ गर्भावस्था बनाए रखने में उपयोगी
@@ -601,7 +600,7 @@ Pregbless Womb Nourishing Syrup is thoughtfully crafted to provide holistic supp
     name: "Sbron syrup",
     // mrp: 70,
     // image: "/Images/SBherbals/prostoAct.webp",
-    image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic Syrups, Drops & Malts/Sbron syrup/Sbron syrup.jpg`,
+    image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic-Syrups-Drops-Malts/Sbron-syrup/Sbron-syrup.jpg`,
     description: `
 TONIC WITH CALCIUM & IRON
 आयरन एवं कैलियम की कमी और विभिन्न प्रकार के एनीमिया में उपयोगी
@@ -631,14 +630,14 @@ Weakness, Anaemia due to iron, Calcium Deficiency and Lack of appetite.`,
     ]
   },
 
-  // Ayurvedic Juices
+  // Ayurvedic-Juices
 //   {
 //     // 14
 //     productId: "Alovera_juice",
 //     name: "Alovera juice",
 //     // mrp: 60,
 //     // image: "/Images/SBherbals/Apple cider vinegar.webp",
-//     image: "/uploads/products/sbherbals/Ayurvedic Juices/Alovera_juice/Alovera_juice.jpg",
+//     image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic-Juices/Alovera-juice/Alovera-juice.jpg`,
 //     description: `
 // COMPLETE DIGESTIVE TONIC
 
@@ -671,7 +670,7 @@ Weakness, Anaemia due to iron, Calcium Deficiency and Lack of appetite.`,
 //     name: "Apple cider vinegar - sugar free",
 //     // mrp: 90,
 //     // image: "/Images/SBherbals/dentoAct.webp",
-//     image: "/uploads/products/sbherbals/Ayurvedic Juices/Apple cider vinegar - sugar free/Apple cider vinegar - sugar free.jpg",
+//     image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic-Juices/Apple-cider-vinegar-sugar-free/Apple-cider-vinegar-sugar-free.jpg`,
 //     description: `
 // WITH GINGER AND GARLIC
 
@@ -698,7 +697,7 @@ Weakness, Anaemia due to iron, Calcium Deficiency and Lack of appetite.`,
 //     name: "Amla juice",
 //     // mrp: 80,
 //     // image: "/Images/SBherbals/CYST_YOG-600x600-2.webp",
-//     image: "/uploads/products/sbherbals/Ayurvedic Juices/Amla juice/Amla juice.jpg",
+//     image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic-Juices/Amla-juice/Amla-juice.jpg`,
 //     description: `
 // • GOOD FOR IMMUNITY
 // • EFFECTIVE ANTIOXIDANT
@@ -730,7 +729,7 @@ Weakness, Anaemia due to iron, Calcium Deficiency and Lack of appetite.`,
     name: "Arjun Aswarganda ras",
     // mrp: 110,
     // image: "/Images/SBherbals/NervoAct.webp",
-    image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic Juices/Arjun Ashwarganda raj/Arjun Aswarganda ras.jpg`,
+    image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic-Juices/Arjun-Ashwarganda-raj/Arjun-Aswarganda-ras.jpg`,
     description: `
 KEEP YOUR HEART & BODY HEALTHY
 ह्रदय एवं शरीर को शक्ति वर्धक एवं बलदायक बनाने में सहायक
@@ -762,7 +761,7 @@ Benefits of Arjuna
     name: "Giloy juice",
     // mrp: 60,
     // image: "/Images/SBherbals/EZYDAY-PD.webp",
-    image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic Juices/Giloy juice/Giloy juice.jpg`,
+    image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic-Juices/Giloy-juice/Giloy-juice.jpg`,
     description: `
 NATURAL HEALING JUICE
 
@@ -790,7 +789,7 @@ Diabetes, Chronic Fever, Typhoid, Dengue Fever, Generalised Tonic`,
 //     name: "Neem karela jamun",
 //     // mrp: 50,
 //     // image: "/Images/SBherbals/Oesto-flex.webp",
-//     image: "/uploads/products/sbherbals/Ayurvedic Juices/Neem Karela Jamun/Neem karela jamun.jpg",
+//     image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic-Juices/Neem-Karela-Jamun/Neem-karela-jamun.jpg`,
 //     description: `
 // SKIN CARE, CHOLESTEROL & DIABETIC SPECIAL
 
@@ -823,7 +822,7 @@ Diabetes, Chronic Fever, Typhoid, Dengue Fever, Generalised Tonic`,
 //     name: "Noni juice",
 //     // mrp: 80,
 //     // image: "/Images/SBherbals/CYST_YOG-600x600-2.webp",
-//     image: "/uploads/products/sbherbals/Ayurvedic Juices/Noni juice/Noni juice.jpg",
+//     image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic-Juices/Noni-juice/Noni-juice.jpg`,
 //     description: `
 // WITH THE BENEFITS OF GARCINIA & WHEATGRASS
 
@@ -862,7 +861,7 @@ Diabetes, Chronic Fever, Typhoid, Dengue Fever, Generalised Tonic`,
     name: "Nirgundi ras",
     // mrp: 60,
     // image: "/Images/SBherbals/Apple cider vinegar.webp",
-    image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic Juices/Nirgundi ras/Nirgundi ras.jpg`,
+    image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic-Juices/Nirgundi-ras/Nirgundi-ras.jpg`,
     description: `
 NATURALLY HELPS REDUCE BODY AND JOINT PAINS (BACK PAIN, SHOULDER PAIN, KNEE PAIN, HANDS AND LEG PAIN , MUSCLE CRAMPS)
 
@@ -890,14 +889,14 @@ Benefits of Nirgundi
     ]
   },
 
-  // Ayurvedic Capsules
+  // Ayurvedic-Capsules
   {
     // 20
     productId: "Cyst_yog_capsule",
     name: "Cyst-yog capsule",
     // mrp: 60,
     // image: "/Images/SBherbals/Apple cider vinegar.webp",
-    image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic Capsules/Cyst-yog capsule/Cyst-yog capsule.jpg`,
+    image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic-Capsules/Cyst-yog-capsule/Cyst-yog-capsule.jpg`,
     description: `
 SPECIALLY FORMULATED FOR DISSOLVING ANY TYPE OF CYST IN OVARY, BREAST, UTERUS.
 
@@ -921,7 +920,7 @@ Benign tumors, Cysts in overy, Breast, Uterus Cysts in men, Lipoma, Fibroid and 
     name: "IBS set",
     // mrp: 50,
     // image: "/Images/SBherbals/Oesto-flex.webp",
-    image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic Capsules/IBS set/IBS set.jpg`,
+    image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic-Capsules/IBS-set/IBS-set.jpg`,
     description: `
 CAPSULE FOR IRRITABLE BOWEL SYNDROME
 इरिटेबल बाउल सिंड्रोम, आंतो के रोग, पेट दर्द, पेट फूलना, इरिटेबल बाउल सिंड्रोम की वजह से होने वाले कब्ज या दस्त में सहायक।
@@ -950,7 +949,7 @@ promotes easy daily bowel movement`,
 //     name: "Migraset capsule",
 //     // mrp: 80,
 //     // image: "/Images/SBherbals/Ibs set.webp",
-//     image: "/uploads/products/sbherbals/Ayurvedic Capsules/Migraset capsule/Migraset capsule.jpg",
+//     image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic-Capsules/Migraset-capsule/Migraset-capsule.jpg`,
 //     description: `
 // NATURAL HERBS FOR MIGRAINE & STRESS
 // माइग्रेन के दर्द में उपयोगी
@@ -986,7 +985,7 @@ promotes easy daily bowel movement`,
     name: "YouSlim - weight loss capsule",
     // mrp: 60,
     // image: "/Images/SBherbals/STONEACT.webp",
-    image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic Capsules/Youslim - weight loss capsule/YouSlim - weight loss capsule.jpg`,
+    image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic-Capsules/Youslim-weight-loss-capsule/YouSlim-weight-loss-capsule.jpg`,
     description: `
 WEIGHT LOSS CAPSULES
 शरीर के बढ़े हुए वजन को कम करने में सहायक
@@ -1013,7 +1012,7 @@ Indications :
     name: "Pcodset",
     // mrp: 60,
     // image: "/Images/SBherbals/EZYDAY-PD.webp",
-    image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic Capsules/Pcodset/Pcodset.jpg`,
+    image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic-Capsules/Pcodset/Pcodset.jpg`,
     description: `
 MEDICINE FOR IRREGULAR PERIODS
 असामान्य पीरियड्स में लाभकारी
@@ -1036,7 +1035,7 @@ PCODSET capsules are made from a mixture of herbs like Ashoka, Shatayari and Lod
     name: "SBFLAM-ESR",
     // mrp: 50,
     // image: "/Images/SBherbals/Oesto-flex.webp",
-    image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic Capsules/SBFLAM-ESR/SBFLAM-ESR.jpg`,
+    image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic-Capsules/SBFLAM-ESR/SBFLAM-ESR.jpg`,
     description: `
 ANTI-INFLAMMATORY
 REDUCES ESR
@@ -1066,7 +1065,7 @@ Increases anti-body forming cells, anti-inflammatory & body resistance to infect
     name: "Uricset capsules",
     // mrp: 60,
     // image: "/Images/SBherbals/EZYDAY-PD.webp",
-    image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic Capsules/Uricset capsules/Uricset capsules.jpg`,
+    image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic-Capsules/Uricset-capsules/Uricset-capsules.jpg`,
     description: `
 URIC ACID MANAGEMENT
 शरीर में बढ़े हुए यूरिक एसिड के स्तर को कम करने में सहायक
@@ -1095,7 +1094,7 @@ Benefits :
     name: "Varicoset",
     // mrp: 80,
     // image: "/Images/SBherbals/Ibs set.webp",
-    image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic Capsules/Varicoset/Varicoset.jpg`,
+    image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic-Capsules/Varicoset/Varicoset.jpg`,
     description: `
 RELIEVES SWELLING & PAIN
 IMPROVES BLOOD CIRCULATION
@@ -1132,7 +1131,7 @@ Improves Blood Circulation.`,
     name: "Ovumset - capsule for women",
     // mrp: 110,
     // image: "/Images/SBherbals/NervoAct.webp",
-    image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic Capsules/Ovumset - capsule for women/Ovumset - capsule for women.jpg`,
+    image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic-Capsules/Ovumset-capsule-for-women/Ovumset-capsule-for-women.jpg`,
     description: `
 Helps Improve egg growth & quality
 अंडा कोशिकाएं एवं गुणवत्ता वर्धक
@@ -1161,7 +1160,7 @@ strengthen reproductive system.`,
     ]
   },
   
-  // Ayurvedic Tablets
+  // Ayurvedic-Tablets
 
   {
     // 24
@@ -1169,7 +1168,7 @@ strengthen reproductive system.`,
     name: "Mindease Tablet",
     // mrp: 110,
     // image: "/Images/SBherbals/NervoAct.webp",
-    image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic Tablets/MindEase Tablet/Mindease Tablet.jpg`,
+    image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic-Tablets/MindEase-Tablet/Mindease-Tablet.jpg`,
     description: `
 STRESS RELIEF TABLET
 मानसिक तनाव, चिंता एवं बेचैनी में सहायक
@@ -1201,7 +1200,7 @@ Useful in :
     name: "SuperAct-99 senior with shudh shilajit",
     // mrp: 90,
     // image: "/Images/SBherbals/dentoAct.webp",
-    image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic Tablets/SuperAct-99 senior with shudh shilajit/SuperAct-99 senior with shudh shilajit.jpg`,
+    image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic-Tablets/SuperAct-99-senior-with-shudh-shilajit/SuperAct-99-senior-with-shudh-shilajit.jpg`,
     description: `
 SUPPORTS PERFORMANCE, VITALITY & STAMINA
 
@@ -1240,7 +1239,7 @@ Loss of Libido, Psychic Sexual Disturbance, Erectile dysfunction, Loss of Vigour
     // name: "Rasraj ras with gold",
     // mrp: 110,
     // image: "/Images/SBherbals/NervoAct.webp",
-//     image: "/uploads/products/sbherbals/Ayurvedic Tablets/Rasraj ras witgold/Rasraj ras with gold.jpg",
+//     image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic-Tablets/Rasraj-ras-withgold/Rasraj-ras-with-gold.jpg`,
 //     description: `
 // Uses & Benefits:
 // • Improves digestion and gut health
@@ -1262,7 +1261,7 @@ Loss of Libido, Psychic Sexual Disturbance, Erectile dysfunction, Loss of Vigour
     name: "Sciavin",
     // mrp: 60,
     // image: "/Images/SBherbals/STONEACT.webp",
-    image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic Tablets/Sciavin/Sciavin.jpg`,
+    image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic-Tablets/Sciavin/Sciavin.jpg`,
     description: `
 TABLET FOR SCIATICA
 
@@ -1294,14 +1293,14 @@ Low Back Ache (Pain), Pain in the hips, thighs & flanks, Arthritis conditions, M
     ]
   },
 
-  // Ayurvedic Softgel Capsules
+  // Ayurvedic-Softgel-Capsules
   {
     // 17
     productId: "Heelset",
     name: "Heelset",
     // mrp: 110,
     // image: "/Images/SBherbals/NervoAct.webp",
-    image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic Softgel Capsules/Heelset/Heelset.jpg`,
+    image: `${BASE_URL}/uploads/products/sbherbals/Ayurvedic-Softgel-Capsules/Heelset/Heelset.jpg`,
     description: `
 SOFTGEL CAPSULE
 
@@ -1361,7 +1360,7 @@ Benefits :
 //     name: "Weight gain management powder",
 //     // mrp: 50,
 //     // image: "/Images/SBherbals/Oesto-flex.webp",
-//     image: "/uploads/products/sbherbals/PowderGrnules & Sachets/Weight gain management powder/Weight gain management powder.jpg",
+//     image: `${BASE_URL}/uploads/products/sbherbals/PowderGrnules-Sachets/Weight-gain-management-powder/Weight-gain-management-powder.jpg`,
 //     description: `
 // HERBAL FORMULA FOR WEIGHT MANAGEMENT
 // वजन बढ़ाने में सहायक
@@ -1392,7 +1391,7 @@ Benefits :
     name: "Aratavin alopecia areta spray",
     // mrp: 80,
     // image: "/Images/SBherbals/Ibs set.webp",
-    image: `${BASE_URL}/uploads/products/sbherbals/PowderGrnules & Sachets/Aratavin alopecia areta spray/Aratavin alopecia areta spray.jpg`,
+    image: `${BASE_URL}/uploads/products/sbherbals/PowderGrnules-Sachets/Aratavin-alopecia-areta-spray/Aratavin-alopecia-areta-spray.jpg`,
     description: `
 FOR ALOPECIA AREATA
 (PATCHY HAIR LOSS)
@@ -1417,7 +1416,7 @@ Processed with lemon (Citrus limon) to give refreshing Lemon Flavour and to prom
     name: "Lactoadd grandnules",
     // mrp: 150,
     // image: "/Images/SBherbals/WARTCURE.webp",
-    image: `${BASE_URL}/uploads/products/sbherbals/PowderGrnules & Sachets/Lacktoadd grandnules/Lactoadd grandnules.jpg`,
+    image: `${BASE_URL}/uploads/products/sbherbals/PowderGrnules-Sachets/Lacktoadd-grandnules/Lactoadd-grandnules.jpg`,
     description: `
 FOR BREASTFEEDING MOTHERS
 स्तनपान करवाने वाली महिलाओं में मां के दूध की मात्रा को बढ़ाने में सहायक
@@ -1442,14 +1441,14 @@ Helps to normalize the uterus.`,
   },
 
 
-  // Herbal Cosmetics
+  // Herbal-Cosmetics
 //   {
 //     // 28
 //     productId: "Charcoal_facewash",
 //     name: "Charcoal facewash",
 //     // mrp: 60,
 //     // image: "/Images/SBherbals/STONEACT.webp",
-//     image: "/uploads/products/sbherbals/Herbal Cosmetics/Charcoal facewash/Charcoal facewash.jpg",
+//     image: `${BASE_URL}/uploads/products/sbherbals/Herbal-Cosmetics/Charcoal-facewash/Charcoal-facewash.jpg`,
 //     description: `
 // DEEP CLEAN FACEWASH
 
@@ -1478,7 +1477,7 @@ Helps to normalize the uterus.`,
     name: "Charcoal soap",
     // mrp: 150,
     // image: "/Images/SBherbals/WARTCURE.webp",
-    image: `${BASE_URL}/uploads/products/sbherbals/Herbal Cosmetics/Charcoal soap/Charcoal soap.jpg`,
+    image: `${BASE_URL}/uploads/products/sbherbals/Herbal-Cosmetics/Charcoal-soap/Charcoal-soap.jpg`,
     description: `
 Uses & Benefits:
 • Deeply cleans skin pores
@@ -1503,7 +1502,7 @@ Uses & Benefits:
     name: "DentoAct herbal tothpaste",
     // mrp: 90,
     // image: "/Images/SBherbals/dentoAct.webp",
-    image: `${BASE_URL}/uploads/products/sbherbals/Herbal Cosmetics/DentoAct herbal tothpaste/DentoAct herbal tothpaste.jpg`,
+    image: `${BASE_URL}/uploads/products/sbherbals/Herbal-Cosmetics/DentoAct-herbal-tothpaste/DentoAct-herbal-tothpaste.jpg`,
     description: `
 NATURAL PROTECTION FOR STRONG TEETH & HEALTHY GUMS
 मसूड़ों में खून, पायोरिया, दांत दर्द, ठंडा गर्म लगने में उपयोगी
@@ -1532,7 +1531,7 @@ Benefits :
     name: "Kesh 101",
     // mrp: 70,
     // image: "/Images/SBherbals/prostoAct.webp",
-    image: `${BASE_URL}/uploads/products/sbherbals/Herbal Cosmetics/Kesh 101/Kesh 101.jpg`,
+    image: `${BASE_URL}/uploads/products/sbherbals/Herbal-Cosmetics/Kesh-101/Kesh-101.jpg`,
     description: `
 HAIR OIL
 
@@ -1564,7 +1563,7 @@ Til Oil q.s.`,
     name: "Neem tulsi alovera",
     // mrp: 60,
     // image: "/Images/SBherbals/STONEACT.webp",
-    image: `${BASE_URL}/uploads/products/sbherbals/Herbal Cosmetics/Neem tulsi alvovera/Neem tulsi alovera.jpg`,
+    image: `${BASE_URL}/uploads/products/sbherbals/Herbal-Cosmetics/Neem-tulsi-alvovera/Neem-tulsi-alovera.jpg`,
     description: `
 ACNE & OIL CONTROL FACEWASH
 
@@ -1594,7 +1593,7 @@ SBHERBALS NEEM TULSI ALOEVERA FACEWASH is an excellent skin cleanser, removes ex
     name: "Neem tulsi alovera soap",
     // mrp: 70,
     // image: "/Images/SBherbals/prostoAct.webp",
-    image: `${BASE_URL}/uploads/products/sbherbals/Herbal Cosmetics/Neem tulsi alover - soap/Neem tulsi alovera soap.jpg`,
+    image: `${BASE_URL}/uploads/products/sbherbals/Herbal-Cosmetics/Neem-tulsi-alover-soap/Neem-tulsi-alovera-soap.jpg`,
     description: `
 Uses & Benefits:
 • Improves digestion and gut health
@@ -1620,7 +1619,7 @@ Hindi – उपयोग व फायदे:
     name: "Youshine",
     // mrp: 70,
     // image: "/Images/SBherbals/prostoAct.webp",
-    image: `${BASE_URL}/uploads/products/sbherbals/Herbal Cosmetics/Youshine/Youshine.jpg`,
+    image: `${BASE_URL}/uploads/products/sbherbals/Herbal-Cosmetics/Youshine/Youshine.jpg`,
     description: `
 UBTAN FACEWASH
 

@@ -9,6 +9,7 @@ const Cart = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    // const savedCart = JSON.parse(localStorage.getItem("cart")) || [];
     const savedCart = JSON.parse(localStorage.getItem("cart")) || [];
     setCart(savedCart);
   }, []);
@@ -142,7 +143,8 @@ const Cart = () => {
             >
               <img
                 // src={item.image}
-                src={`${BASE_URL}${item.image}`}
+                // src={`${BASE_URL}${item.image}`}
+                src={`https://backend-api-wi3p.onrender.com${item.image}`}
                 alt={item.name}
                 className={styles.productImage}
               />
