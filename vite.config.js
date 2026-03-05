@@ -1,21 +1,30 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
-import sitemap from 'vite-plugin-sitemap'
 
 export default defineConfig({
   plugins: [
-    react(),
-    sitemap({
-      hostname: 'https://www.mahiagency.in',
-      robots: [
-        {
-          userAgent: '*',
-          allow: '/',
-        }
-      ]
-    })
+    react()
   ],
 })
+
+// import { defineConfig } from 'vite'
+// import react from '@vitejs/plugin-react-swc'
+// import sitemap from 'vite-plugin-sitemap'
+
+// export default defineConfig({
+//   plugins: [
+//     react(),
+//     sitemap({
+//       hostname: 'https://www.mahiagency.in',
+//       robots: [
+//         {
+//           userAgent: '*',
+//           allow: '/',
+//         }
+//       ]
+//     })
+//   ],
+// })
 
 // import { defineConfig } from 'vite'
 // import react from '@vitejs/plugin-react-swc'
