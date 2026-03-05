@@ -10,9 +10,19 @@ const Profile = () => {
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
 
-    if (storedUser) {
-      setUserData(JSON.parse(storedUser));
+    // if (storedUser) {
+    //   setUserData(JSON.parse(storedUser));
+    // }
+
+    if (storedUser && storedUser !== "undefined") {
+    try {
+      const parsedUser = JSON.parse(storedUser);
+      setUserData(parsedUser);
+    } catch (error) {
+      console.error("Invalid user data");
+      localStorage.removeItem("user");
     }
+  }
   }, []);
 
   return (
