@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { ToastContainer, toast, Bounce } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+// import { ToastContainer, toast, Bounce } from "react-toastify";
+// import "react-toastify/dist/ReactToastify.css";
 import resetpassword from "./ResetPassword.module.css";
 
 const ResetPassword = () => {
@@ -12,10 +12,13 @@ const ResetPassword = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [loading, setLoading] = useState(false);
+   const [message, setMessage] = useState("");
+  const [messageType, setMessageType] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    setMessage("");
 
     try {
       const res = await axios.post(
@@ -26,21 +29,34 @@ const ResetPassword = () => {
 
 
       if (res.data.status === "success") {
-        toast.success(res.data.message, { position: "top-center", autoClose: 2000 });
+        // toast.success(res.data.message, { position: "top-center", autoClose: 2000 });
+        setMessage(res.data.message || "Password reset successfully");
+        setMessageType("success");
 
 
         setTimeout(() => navigate("/login"), 2000);
       } else {
-        toast.error(res.data.message, { position: "top-center", autoClose: 3000 });
+        // toast.error(res.data.message, { position: "top-center", autoClose: 3000 });
+        setMessage(
+        error.response?.data?.message || "Something went wrong"
+      );
+      setMessageType("error");
       }
 
     } catch (error) {
-      toast.error(error.response?.data?.message || "Something went wrong", {
-        position: "top-center",
-        autoClose: 3000,
-      });
+      // toast.error(error.response?.data?.message || "Something went wrong", {
+      //   position: "top-center",
+      //   autoClose: 3000,
+      // });
+      setMessage(
+        error.response?.data?.message || "Something went wrong"
+      );
+      setMessageType("error");
     } finally {
       setLoading(false);
+      setTimeout(() => {
+        setMessage("");
+      }, 2000);
     }
   };
 
@@ -66,6 +82,23 @@ const ResetPassword = () => {
             onChange={(e) => setConfirmPassword(e.target.value)}
             required
           />
+
+          {message && (
+            <div
+              style={{
+                marginBottom: "10px",
+                padding: "8px",
+                borderRadius: "5px",
+                fontSize: "14px",
+                textAlign: "center",
+                color: messageType === "success" ? "#155724" : "#721c24",
+                backgroundColor:
+                  messageType === "success" ? "#d4edda" : "#f8d7da"
+              }}
+            >
+              {message}
+            </div>
+          )}
           <button className={resetpassword.button} type="submit" disabled={loading}>
             {loading ? "Resetting..." : "Reset Password"}
           </button>

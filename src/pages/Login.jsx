@@ -1,8 +1,8 @@
 import React, { useEffect, useContext, useState } from "react";
 import login from "./Login.module.css"
 import axios from "axios"
-import { ToastContainer, toast, Bounce } from 'react-toastify';
-import "react-toastify/dist/ReactToastify.css";
+// import { ToastContainer, toast, Bounce } from 'react-toastify';
+// import "react-toastify/dist/ReactToastify.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import context from "../context/Context";
@@ -13,6 +13,7 @@ const Login = () => {
         const navigate = useNavigate();
         const location = useLocation();
         const redirectPath = location.state?.from || "/";
+        const [message, setMessage] = useState(null);
 
         useEffect(() => {
                 if (isAuthenticated) {
@@ -77,11 +78,15 @@ const Login = () => {
         const handleSubmit = async (e) => {
                 e.preventDefault();
 
+                if (!identifier || !password) {
+                        return setMessage({
+                                type: "error",
+                                text: "Email/Mobile and Password are required",
+                        });
+                }
+
                 try {
-                        const api = await axios.post(`http://192.168.29.234:4000/api/user/login`, {
-                                identifier,
-                                password
-                        },
+                        const api = await axios.post(`http://192.168.29.234:4000/api/user/login`, { identifier, password },
                                 {
                                         headers: {
                                                 "Content-Type": "application/json"
@@ -91,17 +96,19 @@ const Login = () => {
                         console.log("Response:", api.data);
 
                         // console.log(api)
-                        toast.success(api.data.message, {
-                                position: "top-center",
-                                autoClose: 5000,
-                                hideProgressBar: false,
-                                closeOnClick: false,
-                                pauseOnHover: true,
-                                draggable: true,
-                                progress: undefined,
-                                theme: "dark",
-                                transition: Bounce,
-                        });
+                        // toast.success(api.data.message, {
+                        //         position: "top-center",
+                        //         autoClose: 5000,
+                        //         hideProgressBar: false,
+                        //         closeOnClick: false,
+                        //         pauseOnHover: true,
+                        //         draggable: true,
+                        //         progress: undefined,
+                        //         theme: "dark",
+                        //         transition: Bounce,
+                        // });
+
+
 
                         localStorage.setItem("token", api.data.token);
 
@@ -117,6 +124,10 @@ const Login = () => {
                         // auth.setIsAuthenticated(true);
                         // localStorage.setItem("token", api.data.token);
                         setIsAuthenticated(true);
+                        setMessage({
+                                type: "success",
+                                text: api.data.message,
+                        });
 
                         // toast.success(api.data.message, {
                         //         position: "top-center",
@@ -146,22 +157,29 @@ const Login = () => {
                         // window.history.replaceState(null, document.title, redirectPath);
                 } catch (error) {
                         // console.log(error)
-                        toast.error(error.response.data.message, {
-                                position: "top-center",
-                                autoClose: 5000,
-                                hideProgressBar: false,
-                                closeOnClick: false,
-                                pauseOnHover: true,
-                                draggable: true,
-                                progress: undefined,
-                                theme: "dark",
-                                transition: Bounce,
+                        // toast.error(error.response.data.message, {
+                        //         position: "top-center",
+                        //         autoClose: 5000,
+                        //         hideProgressBar: false,
+                        //         closeOnClick: false,
+                        //         pauseOnHover: true,
+                        //         draggable: true,
+                        //         progress: undefined,
+                        //         theme: "dark",
+                        //         transition: Bounce,
+                        // });
+                        setIsAuthenticated(false);
+                        setMessage({
+                                type: "error",
+                                text:
+                                        error.response?.data?.message ||
+                                        "Login failed. Please try again.",
                         });
 
                         navigate("/login", { replace: true });
                         console.log("Error:", error.response?.data || error.message);
                         // auth.setIsAuthenticated(false);
-                        setIsAuthenticated(false);
+                        // setIsAuthenticated(false);
                 }
 
                 console.log({ identifier, password });
@@ -170,12 +188,16 @@ const Login = () => {
 
         const handleResetPassword = async () => {
                 if (!identifier) {
-                        return toast.error("Please enter your Email", {
-                                position: "top-center",
-                                theme: "dark",
+                        // return toast.error("Please enter your Email", {
+                        //         position: "top-center",
+                        //         theme: "dark",
+                        // });
+                        return setMessage({
+                                type: "error",
+                                text: "Please enter your Email",
                         });
-                }
 
+                }
                 try {
                         setResetLoading(true);
 
@@ -185,15 +207,27 @@ const Login = () => {
                                 { headers: { "Content-Type": "application/json" } }
                         );
 
-                        toast.success(res.data.message, {
-                                position: "top-center",
-                                theme: "dark",
+                        // toast.success(res.data.message, {
+                        //         position: "top-center",
+                        //         theme: "dark",
+                        // });
+
+                        setMessage({
+                                type: "success",
+                                text: res.data.message,
                         });
 
                 } catch (error) {
-                        toast.error(error.response?.data?.message || "Unable to send email", {
-                                position: "top-center",
-                                theme: "dark",
+                        // toast.error(error.response?.data?.message || "Unable to send email", {
+                        //         position: "top-center",
+                        //         theme: "dark",
+                        // });
+
+                        setMessage({
+                                type: "error",
+                                text:
+                                        error.response?.data?.message ||
+                                        "Unable to send email",
                         });
                 } finally {
                         setResetLoading(false);
@@ -202,22 +236,23 @@ const Login = () => {
 
         return (
                 <div className={login.loginContainer}>
-                        <ToastContainer
-                                position="top-center"
-                                autoClose={1500}
-                                hideProgressBar={false}
-                                newestOnTop={false}
-                                closeOnClick={false}
-                                rtl={false}
-                                pauseOnFocusLoss
-                                draggable
-                                pauseOnHover
-                                theme="dark"
-                                transition={Bounce}
-                        />
+                        {/* <ToastContainer
+                        position="top-center"
+                        autoClose={1500}
+                        hideProgressBar={false}
+                        newestOnTop={false}
+                        closeOnClick={false}
+                        rtl={false}
+                        pauseOnFocusLoss
+                        draggable
+                        pauseOnHover
+                        theme="dark"
+                        transition={Bounce}
+                /> */}
                         <h1 className={login.h1}>Mahi Agency</h1>
                         <p className={login.p}>Login</p>
                         <form className={login.form} onSubmit={handleSubmit} style={{ height: "613px" }}>
+
                                 <input className={login.formInput} type="text" placeholder="Email or Mobile Number" value={identifier} onChange={(e) => setIdentifier(e.target.value)} /> <br />
                                 {/* <hr style={{ visibility: "hidden"}}/> */}
                                 {/* <input className={login.formInput} type="text" name="GSTIN" placeholder="GSTIN" /><b /> */}
@@ -234,7 +269,27 @@ const Login = () => {
                                                 {resetLoading ? "Sending..." : "Reset Password"}
                                         </span>
                                 </div>
-
+                                        {message && (
+                                        <div
+                                                style={{
+                                                        background:
+                                                                message.type === "success"
+                                                                        ? "#d4edda"
+                                                                        : "#f8d7da",
+                                                        color:
+                                                                message.type === "success"
+                                                                        ? "#155724"
+                                                                        : "#721c24",
+                                                        padding: "10px",
+                                                        marginBottom: "15px",
+                                                        borderRadius: "6px",
+                                                        textAlign: "center",
+                                                        fontWeight: "500",
+                                                }}
+                                        >
+                                                {message.text}
+                                        </div>
+                                )}
                                 <input className={login.submit} type="submit" value="Login" />
 
                                 <div className={login.switchAuth}>

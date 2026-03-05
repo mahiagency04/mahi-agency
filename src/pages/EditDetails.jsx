@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from "react";
 import EditDetailsCSS from "./EditDetails.module.css";
 import axios from "axios";
-import { ToastContainer, toast, Bounce } from "react-toastify";
+// import { ToastContainer, toast, Bounce } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-import "react-toastify/dist/ReactToastify.css";
+// import "react-toastify/dist/ReactToastify.css";
 
 const EditDetails = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
+
+  const [message, setMessage] = useState("");
+  const [messageType, setMessageType] = useState("");
 
   const [formData, setFormData] = useState({
     name: "",
@@ -42,10 +45,12 @@ const EditDetails = () => {
         });
 
       } catch (error) {
-        toast.error("User data load nahi ho paya", {
-          theme: "dark",
-          transition: Bounce
-        });
+        // toast.error("User data load nahi ho paya", {
+        //   theme: "dark",
+        //   transition: Bounce
+        // });
+        setMessage("User data load nahi ho paya");
+        setMessageType("error");
       }
     };
 
@@ -62,7 +67,7 @@ const EditDetails = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-
+    setMessage("");
     try {
       const res = await axios.put(
         "http://192.168.29.234:4000/api/user/edit-details",
@@ -75,43 +80,53 @@ const EditDetails = () => {
         }
       );
 
-      toast.success(res.data.message, {
-        theme: "dark",
-        transition: Bounce
-      });
+      // toast.success(res.data.message, {
+      //   theme: "dark",
+      //   transition: Bounce
+      // });
+
+      setMessage(res.data.message || "Details Updated Successfully");
+      setMessageType("success");
 
       setTimeout(() => {
         navigate("/profile");
       }, 1500);
 
     } catch (error) {
-      toast.error(
-        error.response?.data?.message || "Update failed",
-        {
-          theme: "dark",
-          transition: Bounce
-        }
+      // toast.error(
+      //   error.response?.data?.message || "Update failed",
+      //   {
+      //     theme: "dark",
+      //     transition: Bounce
+      //   }
+      // );
+      setMessage(
+        error.response?.data?.message || "Update failed"
       );
+      setMessageType("error");
     } finally {
       setLoading(false);
+      setTimeout(() => {
+        setMessage("");
+      }, 2000);
     }
   };
 
   return (
     <div className={EditDetailsCSS.container}>
-      <ToastContainer
-              position="top-center"
-              autoClose={1500}
-              hideProgressBar={false}
-              newestOnTop={false}
-              closeOnClick={false}
-              rtl={false}
-              pauseOnFocusLoss
-              draggable
-              pauseOnHover
-              theme="dark"
-              transition={Bounce}
-            />
+      {/* <ToastContainer
+        position="top-center"
+        autoClose={1500}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+        transition={Bounce}
+      /> */}
 
       <h2 className={EditDetailsCSS.heading}>Edit Details</h2>
 
@@ -122,6 +137,22 @@ const EditDetails = () => {
         <input className={EditDetailsCSS.input} name="GSTIN" value={formData.GSTIN} onChange={handleChange} placeholder="GSTIN" />
         <input className={EditDetailsCSS.input} name="Mobile_NO" value={formData.Mobile_NO} onChange={handleChange} placeholder="Mobile Number" />
         <input className={EditDetailsCSS.input} name="Email" value={formData.Email} onChange={handleChange} placeholder="Email" />
+        {message && (
+          <div
+            style={{
+              marginBottom: "10px",
+              padding: "8px",
+              borderRadius: "5px",
+              fontSize: "14px",
+              textAlign: "center",
+              color: messageType === "success" ? "#155724" : "#721c24",
+              backgroundColor:
+                messageType === "success" ? "#d4edda" : "#f8d7da"
+            }}
+          >
+            {message}
+          </div>
+        )}
 
         <button className={EditDetailsCSS.button} disabled={loading}>
           {loading ? "Updating..." : "Update Details"}

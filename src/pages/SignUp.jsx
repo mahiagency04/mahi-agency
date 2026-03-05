@@ -1,8 +1,8 @@
 import React, { useEffect, useContext, useState } from "react";
 import signup from "./SignUp.module.css"
 import axios from "axios"
-import { ToastContainer, toast, Bounce } from 'react-toastify';
-import "react-toastify/dist/ReactToastify.css";
+// import { ToastContainer, toast, Bounce } from 'react-toastify';
+// import "react-toastify/dist/ReactToastify.css";
 import context from "../context/Context";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -25,6 +25,8 @@ const SignUp = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [confirm_password, setConfirmPassword] = useState("");
+  const [message, setMessage] = useState("");
+  const [messageType, setMessageType] = useState("");
 
   // useEffect(() => {
   //   if (isAuthenticated) {
@@ -51,9 +53,31 @@ const SignUp = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setMessage("");
+    if (
+      !name ||
+      !medical_store_name ||
+      !city ||
+      !gstin ||
+      !mobile_no ||
+      !email ||
+      !password ||
+      !confirm_password
+    ) {
+      setMessage("All fields are required");
+      setMessageType("error");
+      return;
+    }
+
+    if (password !== confirm_password) {
+      setMessage("Passwords do not match");
+      setMessageType("error");
+      return;
+    }
+
 
     try {
-      const api = await axios.post(`http://192.168.29.234:4000/api/user/register`, {
+      const api = await axios.post(`https://backend-api-wi3p.onrender.com/api/user/register`, {
         name,
         Medical_Store_Name: medical_store_name,
         City: city,
@@ -68,20 +92,25 @@ const SignUp = () => {
             "Content-Type": "application/json"
           },
           withCredentials: true,
-        });
+        }
+      );
 
       // console.log(api)
-      toast.success(api.data.message, {
-        position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: false,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-        transition: Bounce,
-      });
+      // toast.success(api.data.message, {
+      //   position: "top-center",
+      //   autoClose: 5000,
+      //   hideProgressBar: false,
+      //   closeOnClick: false,
+      //   pauseOnHover: true,
+      //   draggable: true,
+      //   progress: undefined,
+      //   theme: "dark",
+      //   transition: Bounce,
+      // });
+
+      setMessage(api.data.message);
+      setMessageType("success");
+
 
       localStorage.setItem("token", api.data.token);
 
@@ -113,42 +142,35 @@ const SignUp = () => {
       // window.history.replaceState(null, document.title, redirectPath);
 
     } catch (error) {
-      // console.log(error)
-      toast.error(error.response.data.message, {
-        position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: false,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-        transition: Bounce,
-      });
-
-      // auth.setIsAuthenticated(false);
+      setMessage(
+        error.response?.data?.message || "Registration failed"
+      );
+      setMessageType("error");
       setIsAuthenticated(false);
     }
-
-    console.log(name, medical_store_name, city, gstin, mobile_no, email, password)
   }
+  // console.log(error)
+  // toast.error(error.response.data.message, {
+  //   position: "top-center",
+  //   autoClose: 5000,
+  //   hideProgressBar: false,
+  //   closeOnClick: false,
+  //   pauseOnHover: true,
+  //   draggable: true,
+  //   progress: undefined,
+  //   theme: "dark",
+  //   transition: Bounce,
+
+
+  // auth.setIsAuthenticated(false);
+
+
+
   return (
     <div className={signup.signupContainer}>
-      <ToastContainer
-        position="top-center"
-        autoClose={1500}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick={false}
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="dark"
-        transition={Bounce}
-      />
       <h1 className={signup.h1}>Mahi Agency</h1>
       <p className={signup.p}>Sign Up</p>
+      
 
       <form onSubmit={handleSubmit} className={signup.form} action="form.php" method="post">
         <input
@@ -225,6 +247,22 @@ const SignUp = () => {
           placeholder="Confirm password"
         />
         <hr style={{ visibility: "hidden" }} />
+
+        {message && (
+        <div
+          style={{
+            backgroundColor:
+              messageType === "success" ? "#1e7e34" : "#b02a37",
+            color: "white",
+            padding: "10px",
+            marginBottom: "15px",
+            borderRadius: "5px",
+            textAlign: "center",
+          }}
+        >
+          {message}
+        </div>
+      )}
 
         <input
           className={signup.submit}

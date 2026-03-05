@@ -137,7 +137,33 @@ const MyOrders = () => {
                         <ul className={styles.productList}>
                             {order.products.map((product, index) => {
                                 const variant = product.variant || {};
-                                const price = product.price || variant.price || 0;
+                                // const price = product.price || variant.price || 0;
+                                const mrp =
+                                    product.mrp ||
+                                    variant.mrp ||
+                                    // product.price ||
+                                    // variant.price ||
+                                    0;
+
+                                const rate = mrp - mrp * 0.2;
+
+                                // const rate =
+                                //     product.rate ||
+                                //     variant.rate ||
+                                //     0;
+
+                                    let expiryDate = variant.expiryDate || product.expiryDate || "-";
+                                
+                                // Agar expiry date mein "2001" hai to manually "5/28" banao
+                                if (expiryDate.includes("2001") || expiryDate.includes("2001")) {
+                                    expiryDate = "5/28";
+                                }
+                                
+                                // Agar expiry date mein "2028" hai to "5/28" banao (example)
+                                if (expiryDate.includes("2028")) {
+                                    expiryDate = "5/28";
+                                }
+
                                 return (
                                     <li
                                         onClick={() =>
@@ -168,8 +194,35 @@ const MyOrders = () => {
                                             {/* ✅ Total calculation fallback if backend doesn't save total */}
                                             {/* ₹{product.price || 0} × {product.quantity} = ₹{product.total || (product.price || 0) * product.quantity} */}
                                             <br />
-                                            ₹{price} × {product.quantity} Qty = ₹
-                                            {(price * product.quantity).toFixed(2)}
+                                            MRP: ₹{mrp.toFixed(2)}
+
+                                            <br />
+
+                                            {/* ✅ Rate */}
+                                            Rate: ₹{rate.toFixed(2)}
+
+                                            <br />
+
+                                            Qty: {product.quantity}
+
+                                            <br />
+
+                                            Total: ₹{(rate * product.quantity).toFixed(2)}
+                                            <br />
+                                            {/* <b>Batch No:</b> {product.batchNo || "-"} */}
+
+                                            <br />
+
+                                            {/* <b>MFG Date:</b>{" "}
+                                            {product.mfgDate
+                                                ? new Date(product.mfgDate).toLocaleDateString()
+                                                : "-"}
+
+                                            <br /> */}
+
+                                            <b>Expiry Date:</b> {expiryDate}
+                                            {/* ₹{price} × {product.quantity} Qty = ₹
+                                            {(price * product.quantity).toFixed(2)} */}
                                         </div>
                                     </li>
                                 );

@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import styles from "./Payment.module.css";
 
+
 const Payment = () => {
   const { state } = useLocation();
   const navigate = useNavigate();
@@ -41,6 +42,10 @@ const Payment = () => {
   const placeOrder = async (method = paymentMethod) => {
     setLoading(true);
     try {
+      console.log("Sending Order:", {
+      ...state.orderData,
+      paymentMethod: method,
+    });
       const res = await axios.post(
         "http://192.168.29.234:4000/api/order/place-order",
         {

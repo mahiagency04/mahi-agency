@@ -1,4 +1,4 @@
-// import BASE_URL from "../pages/config";
+import BASE_URL from "../pages/config";
 
 const products = [
   // SB herbals product
@@ -7,7 +7,7 @@ const products = [
     // 1
     productId: "Apt_Act_syrup",
     name: "Apt-Act syrup",
-    // price: 60,
+    // mrp: 60,
     // image: "/Images/SBherbals/EZYDAY-PD.webp",
     image: "/uploads/products/sbherbals/Ayurvedic Syrups, Drops & Malts/Apt-Act syrup/Apt-Act syrup.jpg",
     description: `
@@ -25,7 +25,7 @@ const products = [
     `,
     slug: "Apt_Act_syrup",
     variants: [
-      { size: 200, unit: "ml", price: 145 },
+      { batchNo: "MS-846",size: 200, unit: "ml", mrp: 145, expiryDate: "5/28" },
     ]
   },
 
@@ -33,7 +33,7 @@ const products = [
     // 2
     productId: "Asthma_Act_Syrup",
     name: "Asthma Act Syrup",
-    // price: 50,
+    // mrp: 50,
     // image: "/Images/SBherbals/Oesto-flex.webp",
     image: "/uploads/products/sbherbals/Ayurvedic Syrups, Drops & Malts/Asthama act syrup/Asthma Act Syrup.jpg",
     description: `
@@ -60,79 +60,80 @@ const products = [
     `,
     slug: "Asthma_Act_Syrup",
     variants: [
-      { size: 200, unit: "ml", price: 170 },
+      { batchNo: "MS-929",size: 200, unit: "ml", mrp: 170, expiryDate: "10/28" },
     ]
   },
 
-  {
-    // 3
-    productId: "Cyst_yog_syrup",
-    name: "Cyst-yog syrup",
-    // price: 80,
-    // image: "/Images/SBherbals/CYST_YOG-600x600-2.webp",
-    image: "/uploads/products/sbherbals/Ayurvedic Syrups, Drops & Malts/Cyst-yog syrup/Cyst-yog syrup.jpg",
-    description: `
-    SPECIALLY FORMULATED FOR DISSOLVING ANY TYPE OF CYST IN OVARY, BREAST, UTERUS.
+//   {
+//     // 3
+//     productId: "Cyst_yog_syrup",
+//     name: "Cyst-yog syrup",
+//     // mrp: 80,
+//     // image: "/Images/SBherbals/CYST_YOG-600x600-2.webp",
+//     image: "/uploads/products/sbherbals/Ayurvedic Syrups, Drops & Malts/Cyst-yog syrup/Cyst-yog syrup.jpg",
+//     description: `
+//     SPECIALLY FORMULATED FOR DISSOLVING ANY TYPE OF CYST IN OVARY, BREAST, UTERUS.
 
-गर्भाशय में गांठ और स्तन की सूजन तथा गांठ में उपयोगी
+// गर्भाशय में गांठ और स्तन की सूजन तथा गांठ में उपयोगी
 
-Each 10ml syrup contains aqua extracts of :
+// Each 10ml syrup contains aqua extracts of :
 
-Ushba (Sariva) – Hemidesmus indicus – Rt – 800 mg
-Dhamasa – Fagonia arabica – W.P. – 400 mg
-Kachnar – Bauhinia variegate – Bk – 400 mg
-Majishta – Rubia cordifolia – Rt – 400 mg
-Saunf – Foeniculum vulgara – Sd – 200 mg
-Unnab – Zizyphus jujuba – Frt – 250 mg
-Sapistan – Cordiamyxa – Frt – 125 mg
-Hansraj – Adiantum innulatum – W.P. – 100 mg
-Gajwan – Onosmabracteatum – W.P. – 100 mg
+// Ushba (Sariva) – Hemidesmus indicus – Rt – 800 mg
+// Dhamasa – Fagonia arabica – W.P. – 400 mg
+// Kachnar – Bauhinia variegate – Bk – 400 mg
+// Majishta – Rubia cordifolia – Rt – 400 mg
+// Saunf – Foeniculum vulgara – Sd – 200 mg
+// Unnab – Zizyphus jujuba – Frt – 250 mg
+// Sapistan – Cordiamyxa – Frt – 125 mg
+// Hansraj – Adiantum innulatum – W.P. – 100 mg
+// Gajwan – Onosmabracteatum – W.P. – 100 mg
 
-Useful in :
-Benign tumors, Cysts in overy, Breast, Uterus Cysts in men, Lipoma, Fibroid and Breast Swelling etc.
-    `,
-    slug: "Cyst_yog_syrup",
-    variants: [
-      { size: 200, unit: "ml", price: 210 },
-    ]
-  },
+// Useful in :
+// Benign tumors, Cysts in overy, Breast, Uterus Cysts in men, Lipoma, Fibroid and Breast Swelling etc.
+//     `,
+//     slug: "Cyst_yog_syrup",
+//     variants: [
+//       { batchNo: "250522",size: 200, unit: "ml", mrp: 210,  expiryDate: "4/28" },
+//     ]
+//   },
 
-  {
-    // 4
-    productId: "Ezyday_pd",
-    name: "Ezyday pd",
-    // price: 90,
-    // image: "/Images/SBherbals/dentoAct.webp",
-    image: "/uploads/products/sbherbals/Ayurvedic Syrups, Drops & Malts/Ezyday pd/Ezyday pd.jpg",
-    description: `
-TONIC FOR KIDS
+//   {
+//     // 4
+//     productId: "Ezyday_pd",
+//     name: "Ezyday pd",
+//     // mrp: 90,
+//     // image: "/Images/SBherbals/dentoAct.webp",
+//     image: "/uploads/products/sbherbals/Ayurvedic Syrups, Drops & Malts/Ezyday pd/Ezyday pd.jpg",
+//     description: `
+// TONIC FOR KIDS
 
-LAXATIVE & DIGESTIVE TONIC FOR KIDS
-बच्चों में कब्ज एवं
-अपच में लाभदायक
+// LAXATIVE & DIGESTIVE TONIC FOR KIDS
+// बच्चों में कब्ज एवं
+// अपच में लाभदायक
 
-Each 5ml. contains aqua extracts of :
-Mullethi 125 mg, Amaltas 125 mg, Munabka 125 mg,
-Katuki 125 mg, Amla 125 mg, Harad 125 mg,
-Bahera 125 mg, Patol 125 mg,
-Preservative : Sodium Benzoate 0.5%,
-MPS 0.2%, PPS 0.02%
+// Each 5ml. contains aqua extracts of :
+// Mullethi 125 mg, Amaltas 125 mg, Munabka 125 mg,
+// Katuki 125 mg, Amla 125 mg, Harad 125 mg,
+// Bahera 125 mg, Patol 125 mg,
+// Preservative : Sodium Benzoate 0.5%,
+// MPS 0.2%, PPS 0.02%
 
-Indications :
-• Improves concentration
-• Enhances memory
-• Strengthens the mind`,
-    slug: "Ezyday_pd",
-    variants: [
-      { size: 100, unit: "ml", price: 85 },
-    ]
-  },
+// Indications :
+// • Improves concentration
+// • Enhances memory
+// • Strengthens the mind`,
+//     slug: "Ezyday_pd",
+//     variants: [
+//       { batchNo: "AA2025B01",size: 100, unit: "ml", mrp: 85,  mfgDate: "2025-01-10",
+//       expiryDate: "2027-01-09" },
+//     ]
+//   },
 
   {
     // 5
     productId: "Gripvon_grip_water",
     name: "Gripvon grip water",
-    // price: 80,
+    // mrp: 80,
     // image: "/Images/SBherbals/Ibs set.webp",
     image: "/uploads/products/sbherbals/Ayurvedic Syrups, Drops & Malts/Gripvob grip water/Gripvon grip water.jpg",
     description: `
@@ -152,44 +153,45 @@ Syrup base
 Indications: Indigestion, Abdominal Pain, Acidity, Loss of Appetite, Helps in flatulence disorder of the bowels, Vomiting and diarrhoea at the time of teething and other complaints, Keeps baby healthy and growing.`,
     slug: "Gripvon_grip_water",
     variants: [
-      { size: 150, unit: "ml", price: 150 }
+      { batchNo: "250236",size: 150, unit: "ml", mrp: 150,  expiryDate: "1/27" }
     ]
   },
 
-  {
-    // 6
-    productId: "Mediliv_Drops",
-    name: "Mediliv Drops",
-    // price: 80,
-    // image: "/Images/SBherbals/CYST_YOG-600x600-2.webp",
-    image: "/uploads/products/sbherbals/Ayurvedic Syrups, Drops & Malts/Mediliv Drops/Mediliv Drops.jpg",
-    description: `
-LIVER PROTECTOR DROPS
+//   {
+//     // 6
+//     productId: "Mediliv_Drops",
+//     name: "Mediliv Drops",
+//     // mrp: 80,
+//     // image: "/Images/SBherbals/CYST_YOG-600x600-2.webp",
+//     image: "/uploads/products/sbherbals/Ayurvedic Syrups, Drops & Malts/Mediliv Drops/Mediliv Drops.jpg",
+//     description: `
+// LIVER PROTECTOR DROPS
 
-बच्चों में लिवर रोग, हेपेटाइटिस,
-भूख न लगने में उपयोगी
+// बच्चों में लिवर रोग, हेपेटाइटिस,
+// भूख न लगने में उपयोगी
 
-Each 1 ml. contains aqua extracts of :
-Kutki 16 mg, Punarnava 16 mg, Bhrungraj 16 mg,
-Bhumiamalaki 16 mg, Yashtimadhuk 16 mg,
-Guduchi 16 mg, Daruharidra 8 mg, Kakmachi 8 mg,
-Sharpunkha 8 mg, Sunthi 8 mg, Marica 8 mg,
-Pippali 8 mg, Trifla 20 mg, Henna 8 mg,
-Indian Sorrel 8 mg, Nisoth 8 mg, Arjuna 16 mg
+// Each 1 ml. contains aqua extracts of :
+// Kutki 16 mg, Punarnava 16 mg, Bhrungraj 16 mg,
+// Bhumiamalaki 16 mg, Yashtimadhuk 16 mg,
+// Guduchi 16 mg, Daruharidra 8 mg, Kakmachi 8 mg,
+// Sharpunkha 8 mg, Sunthi 8 mg, Marica 8 mg,
+// Pippali 8 mg, Trifla 20 mg, Henna 8 mg,
+// Indian Sorrel 8 mg, Nisoth 8 mg, Arjuna 16 mg
 
-Indications :
-Loss of appetite, Jaundice, Viral Hepatitis.`,
-    slug: "Mediliv_Drops",
-    variants: [
-      { size: 30, unit: "ml", price: 65 }
-    ]
-  },
+// Indications :
+// Loss of appetite, Jaundice, Viral Hepatitis.`,
+//     slug: "Mediliv_Drops",
+//     variants: [
+//       { batchNo: "AA2025B01",size: 30, unit: "ml", mrp: 65,  mfgDate: "2025-01-10",
+//       expiryDate: "2027-01-09" }
+//     ]
+//   },
 
   {
     // 7
     productId: "Medliv_plus",
     name: "Medliv plus",
-    // price: 90,
+    // mrp: 90,
     // image: "/Images/SBherbals/dentoAct.webp",
     image: "/uploads/products/sbherbals/Ayurvedic Syrups, Drops & Malts/Medliv plus/Medliv plus.jpg",
     description: `
@@ -236,7 +238,7 @@ Loss of appetite, Jaundice, Viral Hepatitis.
 `,
     slug: "Medliv_plus",
     variants: [
-      { size: 200, unit: "ml", price: 160 }
+      { batchNo: "MS-916",size: 200, unit: "ml", mrp: 160, expiryDate: "9/28" }
     ]
   },
   
@@ -244,7 +246,7 @@ Loss of appetite, Jaundice, Viral Hepatitis.
     // 8
     productId: "Medliv_DS_Liver_Tonic",
     name: "Medliv-DS Liver Tonic",
-    // price: 60,
+    // mrp: 60,
     // image: "/Images/SBherbals/EZYDAY-PD.webp",
     image: "/uploads/products/sbherbals/Ayurvedic Syrups, Drops & Malts/Medliv-DS Liver Tonic/Medliv-DS Liver Tonic.jpg",
     description: `
@@ -297,68 +299,69 @@ Usage and Benefits :
 `,
     slug: "Medliv_DS_Liver_Tonic",
     variants: [
-      { size: 200, unit: "ml", price: 170 }
+      { batchNo: "MS-784",size: 200, unit: "ml", mrp: 170, expiryDate: "1/28" }
     ]
   },
 
-  {
-    // 9
-    productId: "Nefrawin_kft_syrup",
-    name: "Nefrawin kft syrup",
-    // price: 150,
-    // image: "/Images/SBherbals/WARTCURE.webp",
-    image: "/uploads/products/sbherbals/Ayurvedic Syrups, Drops & Malts/Nefrawin kst syrup/Nefrawin kft syrup.jpg",
-    description: `
-A COMPLETE KIDNEY CARE SYRUP
+//   {
+//     // 9
+//     productId: "Nefrawin_kft_syrup",
+//     name: "Nefrawin kft syrup",
+//     // mrp: 150,
+//     // image: "/Images/SBherbals/WARTCURE.webp",
+//     image: "/uploads/products/sbherbals/Ayurvedic Syrups, Drops & Malts/Nefrawin kst syrup/Nefrawin kft syrup.jpg",
+//     description: `
+// A COMPLETE KIDNEY CARE SYRUP
 
-स्वस्थ गुर्दे, मूत्र प्रणाली को मजबूत बनाये
-एवं पीठ के निचले हिस्से के दर्द में उपयोगी
+// स्वस्थ गुर्दे, मूत्र प्रणाली को मजबूत बनाये
+// एवं पीठ के निचले हिस्से के दर्द में उपयोगी
 
-Each 10ml syrup contains :
+// Each 10ml syrup contains :
 
-Punernava 1000 mg,
-Kasni 1000 mg,
-Makoya 600 mg,
-Guduchi 500 mg,
-Kamal Kakdi 500 mg,
-Palash 400 mg,
-Gokhru 300 mg,
-Kamal 300 mg,
-Sirisa 200 mg,
-Netrabala 200 mg,
-Haridra 200 mg,
-Sigru 300 mg,
-Ushira 200 mg,
-Anantmool 150 mg,
-Dhania 150 mg,
-Varun 100 mg,
-Chaulai 100 mg,
-Revand Chini 100 mg,
-Kakri Beej 100 mg,
-Papita Jad 100 mg,
-Papita 50 mg,
-Panchtrin Mool 50 mg,
-Sheetal Chini 90 mg,
-Pine Apple 0.5 ml,
-Lauki 0.5 ml,
-Dhania 0.5 ml,
-Amla 0.5 ml,
-Swet Prapati 100 mg
+// Punernava 1000 mg,
+// Kasni 1000 mg,
+// Makoya 600 mg,
+// Guduchi 500 mg,
+// Kamal Kakdi 500 mg,
+// Palash 400 mg,
+// Gokhru 300 mg,
+// Kamal 300 mg,
+// Sirisa 200 mg,
+// Netrabala 200 mg,
+// Haridra 200 mg,
+// Sigru 300 mg,
+// Ushira 200 mg,
+// Anantmool 150 mg,
+// Dhania 150 mg,
+// Varun 100 mg,
+// Chaulai 100 mg,
+// Revand Chini 100 mg,
+// Kakri Beej 100 mg,
+// Papita Jad 100 mg,
+// Papita 50 mg,
+// Panchtrin Mool 50 mg,
+// Sheetal Chini 90 mg,
+// Pine Apple 0.5 ml,
+// Lauki 0.5 ml,
+// Dhania 0.5 ml,
+// Amla 0.5 ml,
+// Swet Prapati 100 mg
 
-Indications :
+// Indications :
 
-Nephritis, Nephropathy, Impaired GFR, Poor Renal Function, Anasarca, Odema & Other Urinary Disorders.`,
-    slug: "Nefrawin_kft_syrup",
-    variants: [
-      { size: 200, unit: "ml", price: 295 }
-    ]
-  },
+// Nephritis, Nephropathy, Impaired GFR, Poor Renal Function, Anasarca, Odema & Other Urinary Disorders.`,
+//     slug: "Nefrawin_kft_syrup",
+//     variants: [
+//       { batchNo: "AA2025B01",size: 200, unit: "ml", mrp: 295,   mfgDate: "2025-01-10",
+//       expiryDate: "2027-01-09" }
+//     ]
+//   },
 
   {
     // 10
     productId: "Otiherb_ear_drops",
     name: "Otiherb ear drops",
-    // price: 90,
+    // mrp: 90,
     // image: "/Images/SBherbals/dentoAct.webp",
     image: "/uploads/products/sbherbals/Ayurvedic Syrups, Drops & Malts/Otiherb ear drops/Otiherb ear drops.jpg",
     description: `
@@ -383,7 +386,7 @@ Til oil (Sesamum indicum) – q.s
 Indications: Ear Ache, Ear Infection and Congested Ear`,
     slug: "Otiherb_ear_drops",
     variants: [
-      { size: 15, unit: "ml", price: 95 }
+      { batchNo: "250505",size: 15, unit: "ml", mrp: 95,  expiryDate: "2027-01-09" }
     ]
   },
 
@@ -391,7 +394,7 @@ Indications: Ear Ache, Ear Infection and Congested Ear`,
     // 11
     productId: "Brain_o_herb_malt",
     name: "Brain-o-herb malt",
-    // price: 70,
+    // mrp: 70,
     // image: "/Images/SBherbals/prostoAct.webp",
     image: "/uploads/products/sbherbals/Ayurvedic Syrups, Drops & Malts/Brain-o-herb malt/Brain-o-herb malt.jpg",
     description: `
@@ -423,7 +426,7 @@ Benefits :
 • Useful for problems of short term memory loss`,
     slug: "Brain_o_herb_malt",
     variants: [
-      { size: 400, unit: "gm", price: 375 }
+      { batchNo: "RHL-15788",size: 400, unit: "gm", mrp: 375, expiryDate: "4/28" }
     ]
   },
 
@@ -431,7 +434,7 @@ Benefits :
     // 12
     productId: "SuperAct_Vital",
     name: "SuperAct Vital",
-    // price: 80,
+    // mrp: 80,
     // image: "/Images/SBherbals/CYST_YOG-600x600-2.webp",
     image: "/uploads/products/sbherbals/Ayurvedic Syrups, Drops & Malts/SuperAct Vital/SuperAct Vital.jpg",
     description: `
@@ -472,7 +475,7 @@ Liquid Glucose Base – Q.S.
 EXCIPIENTS: SOD. BENZOATE M.P.S. & P.P.S. FLAVOUR`,
     slug: "SuperAct_Vital",
     variants: [
-      { size: 400, unit: "gm", price: 340 }
+      { batchNo: "RHL-16162",size: 400, unit: "gm", mrp: 340, expiryDate: "5/28" }
     ]
   },
 
@@ -480,7 +483,7 @@ EXCIPIENTS: SOD. BENZOATE M.P.S. & P.P.S. FLAVOUR`,
     // 13
     productId: "Shilajit_malt",
     name: "Shilajit malt",
-    // price: 150,
+    // mrp: 150,
     // image: "/Images/SBherbals/WARTCURE.webp",
     image: "/uploads/products/sbherbals/Ayurvedic Syrups, Drops & Malts/Shilajit malt/Shilajit malt.jpg",
     description: `
@@ -496,47 +499,48 @@ Gokhru 200 mg, Amruta 40 mg,
 Malt ext 100 mg, Base Liquid Glucose & Malt ext`,
     slug: "Shilajit_malt",
     variants: [
-      { size: 400, unit: "gm", price: 380 }
+      { batchNo: "RHL-16129",size: 400, unit: "gm", mrp: 380, expiryDate: "5/28" }
     ]
   },
 
-  {
-    // 20 
-    productId: "Kidset_drops",
-    name: "Kidset drops",
-    // price: 60,
-    // image: "/Images/SBherbals/STONEACT.webp",
-    image: "/uploads/products/sbherbals/Ayurvedic Syrups, Drops & Malts/Kidset drops/Kidset drops.jpg",
-    description: `
-DIGESTIVE TONIC
+//   {
+//     // 20 
+//     productId: "Kidset_drops",
+//     name: "Kidset drops",
+//     // mrp: 60,
+//     // image: "/Images/SBherbals/STONEACT.webp",
+//     image: "/uploads/products/sbherbals/Ayurvedic Syrups, Drops & Malts/Kidset drops/Kidset drops.jpg",
+//     description: `
+// DIGESTIVE TONIC
 
-TONIC FOR HEALTHY GROWTH
-पाचन को बढ़ाता है, दस्त, कब्ज और पेट दर्द में राहत, दांतों के निकलने में सहायक
+// TONIC FOR HEALTHY GROWTH
+// पाचन को बढ़ाता है, दस्त, कब्ज और पेट दर्द में राहत, दांतों के निकलने में सहायक
 
-Composition :
-Each 1 ml contains extracts of :
-Aswagandha 30 mg, Anjeer ext. 30 mg, Sowa ext. 30 mg,
-Nagarmoth ext. 20 mg, Khubkalan ext. 20 mg,
-Mulethi ext. 20 mg, Varahikand ext. 20 mg,
-Vidarikand ext. 20 mg, Jeera ext. 10 mg,
-Katad ext. 10 mg, Vach ext. 10 mg, Elaichi ext. q.s.
-Flavoured Syrupy base
-Colour : Ponceau 4R
+// Composition :
+// Each 1 ml contains extracts of :
+// Aswagandha 30 mg, Anjeer ext. 30 mg, Sowa ext. 30 mg,
+// Nagarmoth ext. 20 mg, Khubkalan ext. 20 mg,
+// Mulethi ext. 20 mg, Varahikand ext. 20 mg,
+// Vidarikand ext. 20 mg, Jeera ext. 10 mg,
+// Katad ext. 10 mg, Vach ext. 10 mg, Elaichi ext. q.s.
+// Flavoured Syrupy base
+// Colour : Ponceau 4R
 
-Indications :
-Abdominal Pain, Colic and griping Pain,
-Growth Failure, Indigestion, Anorexia.`,
-    slug: "Kidset_drops",
-    variants: [
-      { size: 30, unit: "gm", price: 52 }
-    ]
-  },
+// Indications :
+// Abdominal Pain, Colic and griping Pain,
+// Growth Failure, Indigestion, Anorexia.`,
+//     slug: "Kidset_drops",
+//     variants: [
+//       { batchNo: "AA2025B01",size: 30, unit: "gm", mrp: 52,  mfgDate: "2025-01-10",
+// expiryDate: "2027-01-09" }
+//     ]
+//   },
 
   {
     // 22
     productId: "Leucoset_syrup",
     name: "Leucoset syrup",
-    // price: 60,
+    // mrp: 60,
     // image: "/Images/SBherbals/Apple cider vinegar.webp",
     image: "/uploads/products/sbherbals/Ayurvedic Syrups, Drops & Malts/Leucoset Syrup/Leucoset syrup.jpg",
     description: `
@@ -553,7 +557,7 @@ Leucoset is an ayurvedic herbal product with no side effects. It cures and preve
     slug: "Leucoset_syrup",
     // unit: "ml", // unit type
     variants: [
-      { size: 200, unit: "ml", price: 145 }
+      { batchNo: "MS-908",size: 200, unit: "ml", mrp: 145, expiryDate: "8/28" }
     ]
   },
 
@@ -561,7 +565,7 @@ Leucoset is an ayurvedic herbal product with no side effects. It cures and preve
     // 36
     productId: "Pregbless_syrup",
     name: "Pregbless syrup",
-    // price: 80,
+    // mrp: 80,
     // image: "/Images/SBherbals/Ibs set.webp",
     image: "/uploads/products/sbherbals/Ayurvedic Syrups, Drops & Malts/Pregbless syrup/Pregbless syrup.jpg",
     description: `
@@ -586,7 +590,7 @@ Indication :
 Pregbless Womb Nourishing Syrup is thoughtfully crafted to provide holistic support to expecting mothers, promoting the well-being of both mother and child. It contains a perfect blend of herbal ingredients known for their nourishing properties, ensuring the right balance of nutrients for the mother and growing baby.`,
     slug: "Pregbless_syrup",
     variants: [
-      { size: 200, unit: "ml", price: 360 }
+      { batchNo: "250741",size: 200, unit: "ml", mrp: 360,  expiryDate: "6/28" }
     ]
   },
 
@@ -594,7 +598,7 @@ Pregbless Womb Nourishing Syrup is thoughtfully crafted to provide holistic supp
     // 39
     productId: "Sbron_syrup",
     name: "Sbron syrup",
-    // price: 70,
+    // mrp: 70,
     // image: "/Images/SBherbals/prostoAct.webp",
     image: "/uploads/products/sbherbals/Ayurvedic Syrups, Drops & Malts/Sbron syrup/Sbron syrup.jpg",
     description: `
@@ -622,105 +626,108 @@ Indications:
 Weakness, Anaemia due to iron, Calcium Deficiency and Lack of appetite.`,
     slug: "Sbron_syrup",
     variants: [
-      { size: 200, unit: "ml", price: 145 }
+      { batchNo: "MS-827",size: 200, unit: "ml", mrp: 145,  expiryDate: "4/28" }
     ]
   },
 
   // Ayurvedic Juices
-  {
-    // 14
-    productId: "Alovera_juice",
-    name: "Alovera juice",
-    // price: 60,
-    // image: "/Images/SBherbals/Apple cider vinegar.webp",
-    image: "/uploads/products/sbherbals/Ayurvedic Juices/Alovera_juice/Alovera_juice.jpg",
-    description: `
-COMPLETE DIGESTIVE TONIC
+//   {
+//     // 14
+//     productId: "Alovera_juice",
+//     name: "Alovera juice",
+//     // mrp: 60,
+//     // image: "/Images/SBherbals/Apple cider vinegar.webp",
+//     image: "/uploads/products/sbherbals/Ayurvedic Juices/Alovera_juice/Alovera_juice.jpg",
+//     description: `
+// COMPLETE DIGESTIVE TONIC
 
-Each 100ml contains:
-Ghrit Kumari (Aloe barbadensis) Lv. 98%
-Excipients q.s.
+// Each 100ml contains:
+// Ghrit Kumari (Aloe barbadensis) Lv. 98%
+// Excipients q.s.
 
-Benefits:
-• Soothes arthritis pain
-• Hydrates the skin
-• Reduces high blood pressure & cholesterol
-• Lubricates the digestive tracts
-• Helpful in curing eczema, burns, inflammation & wounds
-• Detoxifies the body
-• Stabilizes blood sugar
-• Supports immune system
-• Boosts physical endurance`,
-    slug: "Alovera_juice",
-    // unit: "ml", // unit type
-    variants: [
-      { size: 500, unit: "ml", price: 240 },
-    ]
-  },
+// Benefits:
+// • Soothes arthritis pain
+// • Hydrates the skin
+// • Reduces high blood pressure & cholesterol
+// • Lubricates the digestive tracts
+// • Helpful in curing eczema, burns, inflammation & wounds
+// • Detoxifies the body
+// • Stabilizes blood sugar
+// • Supports immune system
+// • Boosts physical endurance`,
+//     slug: "Alovera_juice",
+//     // unit: "ml", // unit type
+//     variants: [
+//       { batchNo: "AA2025B01",size: 500, unit: "ml", mrp: 240,   mfgDate: "2025-01-10",
+//       expiryDate: "2027-01-09" },
+//     ]
+//   },
   
 
-  {
-    // 15
-    productId: "Apple_cider_vinegar_sugar_free",
-    name: "Apple cider vinegar - sugar free",
-    // price: 90,
-    // image: "/Images/SBherbals/dentoAct.webp",
-    image: "/uploads/products/sbherbals/Ayurvedic Juices/Apple cider vinegar - sugar free/Apple cider vinegar - sugar free.jpg",
-    description: `
-WITH GINGER AND GARLIC
+//   {
+//     // 15
+//     productId: "Apple_cider_vinegar_sugar_free",
+//     name: "Apple cider vinegar - sugar free",
+//     // mrp: 90,
+//     // image: "/Images/SBherbals/dentoAct.webp",
+//     image: "/uploads/products/sbherbals/Ayurvedic Juices/Apple cider vinegar - sugar free/Apple cider vinegar - sugar free.jpg",
+//     description: `
+// WITH GINGER AND GARLIC
 
-Each 10ml contains:
-Seb Sheet Ras Sidhu — Frt 8 ml
-(Apple Cider Vinegar) (Pyrus malus)
-Garlic (Allium sativum) — Blb 1 ml
-Ginger (Zingiber officinale) — Rzm 1 ml
+// Each 10ml contains:
+// Seb Sheet Ras Sidhu — Frt 8 ml
+// (Apple Cider Vinegar) (Pyrus malus)
+// Garlic (Allium sativum) — Blb 1 ml
+// Ginger (Zingiber officinale) — Rzm 1 ml
 
-Useful in:
-• Helps Burn Excess Fat
-• Helps Boost Immunity
-• Helps Improve Skin Health`,
-    slug: "Apple_cider_vinegar_sugar_free",
-    variants: [
-      { size: 500, unit: "ml", price: 520 }
-    ]
-  },
+// Useful in:
+// • Helps Burn Excess Fat
+// • Helps Boost Immunity
+// • Helps Improve Skin Health`,
+//     slug: "Apple_cider_vinegar_sugar_free",
+//     variants: [
+//       { batchNo: "AA2025B01",size: 500, unit: "ml", mrp: 520,   mfgDate: "2025-01-10",
+//       expiryDate: "2027-01-09" }
+//     ]
+//   },
 
-  {
-    // 16
-    productId: "Amla_juice",
-    name: "Amla juice",
-    // price: 80,
-    // image: "/Images/SBherbals/CYST_YOG-600x600-2.webp",
-    image: "/uploads/products/sbherbals/Ayurvedic Juices/Amla juice/Amla juice.jpg",
-    description: `
-• GOOD FOR IMMUNITY
-• EFFECTIVE ANTIOXIDANT
+//   {
+//     // 16
+//     productId: "Amla_juice",
+//     name: "Amla juice",
+//     // mrp: 80,
+//     // image: "/Images/SBherbals/CYST_YOG-600x600-2.webp",
+//     image: "/uploads/products/sbherbals/Ayurvedic Juices/Amla juice/Amla juice.jpg",
+//     description: `
+// • GOOD FOR IMMUNITY
+// • EFFECTIVE ANTIOXIDANT
 
-INGREDIENTS :
-Pure Amla Juice (Fr.) – 99.8%
-(Embelica officinalis)
-Preservatives – 0.2%
+// INGREDIENTS :
+// Pure Amla Juice (Fr.) – 99.8%
+// (Embelica officinalis)
+// Preservatives – 0.2%
 
-Benefits
-• Prevents premature greying and anti-hairfall
-• Improves eye sight • Excellent blood purifier
-• Rich in Vitamin C and acts as a power booster
-• Strengthens the liver and increases appetite
-• Anti ageing • Keeps blood pressure under control
-• Makes body slim and smart
-• Increases haemoglobin levels
-• Effective in skin diseases`,
-    slug: "Amla_juice",
-    variants: [
-      { size: 500, unit: "ml", price: 240 }
-    ]
-  },
+// Benefits
+// • Prevents premature greying and anti-hairfall
+// • Improves eye sight • Excellent blood purifier
+// • Rich in Vitamin C and acts as a power booster
+// • Strengthens the liver and increases appetite
+// • Anti ageing • Keeps blood pressure under control
+// • Makes body slim and smart
+// • Increases haemoglobin levels
+// • Effective in skin diseases`,
+//     slug: "Amla_juice",
+//     variants: [
+//       { batchNo: "AA2025B01",size: 500, unit: "ml", mrp: 240,   mfgDate: "2025-01-10",
+//       expiryDate: "2027-01-09" }
+//     ]
+//   },
 
   {
     // 6
     productId: "Arjun_Aswarganda_ras",
     name: "Arjun Aswarganda ras",
-    // price: 110,
+    // mrp: 110,
     // image: "/Images/SBherbals/NervoAct.webp",
     image: "/uploads/products/sbherbals/Ayurvedic Juices/Arjun Ashwarganda raj/Arjun Aswarganda ras.jpg",
     description: `
@@ -744,7 +751,7 @@ Benefits of Arjuna
 • Helps in promoting long lasting stamina`,
     slug: "Arjun_Aswarganda_ras",
     variants: [
-      { size: 500, unit: "ml", price: 260 }
+      { batchNo: "RHL-16131", size: 500, unit: "ml", mrp: 260,  expiryDate: "5/28" }
     ]
   },
 
@@ -752,7 +759,7 @@ Benefits of Arjuna
     // 17
     productId: "Giloy_juice",
     name: "Giloy juice",
-    // price: 60,
+    // mrp: 60,
     // image: "/Images/SBherbals/EZYDAY-PD.webp",
     image: "/uploads/products/sbherbals/Ayurvedic Juices/Giloy juice/Giloy juice.jpg",
     description: `
@@ -772,85 +779,87 @@ Approved preservatives used
 Diabetes, Chronic Fever, Typhoid, Dengue Fever, Generalised Tonic`,
     slug: "Giloy_juice",
     variants: [
-      { size: 500, unit: "ml", price: 240 }
+      { batchNo: "RHL-16329",size: 500, unit: "ml", mrp: 240, expiryDate: "6/28" }
     ]
   },
 
-  {
-    // 18
-    productId: "Neem_karela_jamun",
-    name: "Neem karela jamun",
-    // price: 50,
-    // image: "/Images/SBherbals/Oesto-flex.webp",
-    image: "/uploads/products/sbherbals/Ayurvedic Juices/Neem Karela Jamun/Neem karela jamun.jpg",
-    description: `
-SKIN CARE, CHOLESTEROL & DIABETIC SPECIAL
+//   {
+//     // 18
+//     productId: "Neem_karela_jamun",
+//     name: "Neem karela jamun",
+//     // mrp: 50,
+//     // image: "/Images/SBherbals/Oesto-flex.webp",
+//     image: "/uploads/products/sbherbals/Ayurvedic Juices/Neem Karela Jamun/Neem karela jamun.jpg",
+//     description: `
+// SKIN CARE, CHOLESTEROL & DIABETIC SPECIAL
 
-Ingredients
-Each 10ml. Contains liquid Ext OF:
-Neem (Azadirachta indica) – It. 20 mg
-Karela (Momordia charantia) – Ft. 100 mg
-Jamun (Syzygium cumini) – Ft. 500 mg
-Ashwagandha (Withania somnifera) – Rs: 100 mg
-Gudmar (Gymnema sylvestre) – It. 200 mg
-Preservative added – q.s.
+// Ingredients
+// Each 10ml. Contains liquid Ext OF:
+// Neem (Azadirachta indica) – It. 20 mg
+// Karela (Momordia charantia) – Ft. 100 mg
+// Jamun (Syzygium cumini) – Ft. 500 mg
+// Ashwagandha (Withania somnifera) – Rs: 100 mg
+// Gudmar (Gymnema sylvestre) – It. 200 mg
+// Preservative added – q.s.
 
-Benefits
-• Controls blood sugar level.
-• Enhance the body defence mechanism.
-• Helps in digestion and strengthens the digestive system.
-• It is useful in constipated stools and disease like hemorrhoids (piles).
-• It helps in destroying worms present in gastro intestinal tract.
-• It works as an appetizer.`,
-    slug: "Neem_karela_jamun",
-    variants: [
-      { size: 500, unit: "ml", price: 240 }
-    ]
-  },
+// Benefits
+// • Controls blood sugar level.
+// • Enhance the body defence mechanism.
+// • Helps in digestion and strengthens the digestive system.
+// • It is useful in constipated stools and disease like hemorrhoids (piles).
+// • It helps in destroying worms present in gastro intestinal tract.
+// • It works as an appetizer.`,
+//     slug: "Neem_karela_jamun",
+//     variants: [
+//       { batchNo: "AA2025B01",size: 500, unit: "ml", mrp: 240,   mfgDate: "2025-01-10",
+//       expiryDate: "2027-01-09" }
+//     ]
+//   },
 
-  {
-    // 19
-    productId: "Noni_juice",
-    name: "Noni juice",
-    // price: 80,
-    // image: "/Images/SBherbals/CYST_YOG-600x600-2.webp",
-    image: "/uploads/products/sbherbals/Ayurvedic Juices/Noni juice/Noni juice.jpg",
-    description: `
-WITH THE BENEFITS OF GARCINIA & WHEATGRASS
+//   {
+//     // 19
+//     productId: "Noni_juice",
+//     name: "Noni juice",
+//     // mrp: 80,
+//     // image: "/Images/SBherbals/CYST_YOG-600x600-2.webp",
+//     image: "/uploads/products/sbherbals/Ayurvedic Juices/Noni juice/Noni juice.jpg",
+//     description: `
+// WITH THE BENEFITS OF GARCINIA & WHEATGRASS
 
 
-Composition Latin Name        Part Used
+// Composition Latin Name        Part Used
 
-Noni Ras (Morinda citrifolia) Fr. 95%
-Vrikshamla Ras (Garcinia cambogia) Fr. 3%
-Wheatgrass Ras (Triticum aestibum) Lf. 2%
+// Noni Ras (Morinda citrifolia) Fr. 95%
+// Vrikshamla Ras (Garcinia cambogia) Fr. 3%
+// Wheatgrass Ras (Triticum aestibum) Lf. 2%
 
-Benefits Of Vrikshamla
-• Powerful appetite suppressant
-• Excellent metabolism booster
-• Reduces stomach acidity
-• Stops lipid cellular damages
-• Improves serotonin levels
-• Positive stimulant for brain
+// Benefits Of Vrikshamla
+// • Powerful appetite suppressant
+// • Excellent metabolism booster
+// • Reduces stomach acidity
+// • Stops lipid cellular damages
+// • Improves serotonin levels
+// • Positive stimulant for brain
 
-Benefits Of Noni Fruit
-• Aids in reducing risk of Type-II diabetes
-• Stimulates release of digestive enzymes
-• Prevents cerebral ischemic stress
-• Speeds up healing of wounds
-• Improves cerebral blood flow & memory functions
-• Protects against cancer & liver diseases`,
-    slug: "Noni_juice",
-    variants: [
-      { size: 500, unit: "ml", price: 330 } 
-    ]
-  },
+// Benefits Of Noni Fruit
+// • Aids in reducing risk of Type-II diabetes
+// • Stimulates release of digestive enzymes
+// • Prevents cerebral ischemic stress
+// • Speeds up healing of wounds
+// • Improves cerebral blood flow & memory functions
+// • Protects against cancer & liver diseases`,
+//     slug: "Noni_juice",
+//     variants: [
+//       { batchNo: "AA2025B01",size: 500, unit: "ml", mrp: 330,  mfgDate: "2025-01-10",
+//       expiryDate: "2027-01-09" } 
+//     ]
+//   },
 
   {
     // 32
     productId: "Nirgundi_ras",
     name: "Nirgundi ras",
-    // price: 60,
+    // mrp: 60,
     // image: "/Images/SBherbals/Apple cider vinegar.webp",
     image: "/uploads/products/sbherbals/Ayurvedic Juices/Nirgundi ras/Nirgundi ras.jpg",
     description: `
@@ -876,7 +885,7 @@ Benefits of Nirgundi
     slug: "Nirgundi_ras",
     // unit: "ml", // unit type
     variants: [
-      { size: 500, unit: "ml", price: 240 }
+      { batchNo: "RHL-16130",size: 500, unit: "ml", mrp: 240,  expiryDate: "5/28" }
     ]
   },
 
@@ -885,7 +894,7 @@ Benefits of Nirgundi
     // 20
     productId: "Cyst_yog_capsule",
     name: "Cyst-yog capsule",
-    // price: 60,
+    // mrp: 60,
     // image: "/Images/SBherbals/Apple cider vinegar.webp",
     image: "/uploads/products/sbherbals/Ayurvedic Capsules/Cyst-yog capsule/Cyst-yog capsule.jpg",
     description: `
@@ -901,7 +910,7 @@ Benign tumors, Cysts in overy, Breast, Uterus Cysts in men, Lipoma, Fibroid and 
     slug: "Cyst_yog_capsule",
     // unit: "ml", // unit type
     variants: [
-      { size: 30, unit: "capsule", price: 450 }
+      { batchNo: "260114",size: 30, unit: "capsule", mrp: 450,  expiryDate: "12/28" }
     ]
   },
 
@@ -909,7 +918,7 @@ Benign tumors, Cysts in overy, Breast, Uterus Cysts in men, Lipoma, Fibroid and 
     // 21
     productId: "IBS_set",
     name: "IBS set",
-    // price: 50,
+    // mrp: 50,
     // image: "/Images/SBherbals/Oesto-flex.webp",
     image: "/uploads/products/sbherbals/Ayurvedic Capsules/IBS set/IBS set.jpg",
     description: `
@@ -928,52 +937,53 @@ Support health digestion
 promotes easy daily bowel movement`,
     slug: "IBS_set",
     variants: [
-      { size: 30, unit: "capsule", price: 450 }
+      { batchNo: "251236",size: 30, unit: "capsule", mrp: 450, expiryDate: "11/28" }
     ]
   },
 
   
 
-  {
-    // 22
-    productId: "Migraset_capsule",
-    name: "Migraset capsule",
-    // price: 80,
-    // image: "/Images/SBherbals/Ibs set.webp",
-    image: "/uploads/products/sbherbals/Ayurvedic Capsules/Migraset capsule/Migraset capsule.jpg",
-    description: `
-NATURAL HERBS FOR MIGRAINE & STRESS
-माइग्रेन के दर्द में उपयोगी
+//   {
+//     // 22
+//     productId: "Migraset_capsule",
+//     name: "Migraset capsule",
+//     // mrp: 80,
+//     // image: "/Images/SBherbals/Ibs set.webp",
+//     image: "/uploads/products/sbherbals/Ayurvedic Capsules/Migraset capsule/Migraset capsule.jpg",
+//     description: `
+// NATURAL HERBS FOR MIGRAINE & STRESS
+// माइग्रेन के दर्द में उपयोगी
 
-Composition :
-Each 500 mg Capsule contain:
-Jatamansi (Nardostachys jatamansi) 80 mg
-Tagar (Valeriana wallichii) 50 mg
-Guduchi (Tinospora cordifolia) 50 mg
-Brahmi (Bacopa monnieri) 50 mg
-Shankpushpi (Convolvulus pluricaulis) 50 mg
-Sarpagandh (Rauvolfia serpentina) 50 mg
-Pippali (Piper longum) 20 mg
-Triphala (Emblica officinalis) 10 mg
-Kiratatikta (Swertia chirata) 10 mg
-Haldi (Curcuma longa) 10 mg
-Neem Azadirachta indica) 10 mg
-Sonth (Zingiber officinale) 10 mg
-Godanti Bhasam (Calcium Sulfate) 40 mg
+// Composition :
+// Each 500 mg Capsule contain:
+// Jatamansi (Nardostachys jatamansi) 80 mg
+// Tagar (Valeriana wallichii) 50 mg
+// Guduchi (Tinospora cordifolia) 50 mg
+// Brahmi (Bacopa monnieri) 50 mg
+// Shankpushpi (Convolvulus pluricaulis) 50 mg
+// Sarpagandh (Rauvolfia serpentina) 50 mg
+// Pippali (Piper longum) 20 mg
+// Triphala (Emblica officinalis) 10 mg
+// Kiratatikta (Swertia chirata) 10 mg
+// Haldi (Curcuma longa) 10 mg
+// Neem Azadirachta indica) 10 mg
+// Sonth (Zingiber officinale) 10 mg
+// Godanti Bhasam (Calcium Sulfate) 40 mg
 
-Useful in :
-Migraine, Stress & Headache`,
-    slug: "Migraset_capsule",
-    variants: [
-      { size: 30, unit: "capsule", price: 360 }
-    ]
-  },
+// Useful in :
+// Migraine, Stress & Headache`,
+//     slug: "Migraset_capsule",
+//     variants: [
+//       { batchNo: "AA2025B01",size: 30, unit: "capsule", mrp: 360,   mfgDate: "2025-01-10",
+//       expiryDate: "2027-01-09" }
+//     ]
+//   },
 
   {
     // 23
     productId: "YouSlim_weight_loss_capsule",
     name: "YouSlim - weight loss capsule",
-    // price: 60,
+    // mrp: 60,
     // image: "/Images/SBherbals/STONEACT.webp",
     image: "/uploads/products/sbherbals/Ayurvedic Capsules/Youslim - weight loss capsule/YouSlim - weight loss capsule.jpg",
     description: `
@@ -992,7 +1002,7 @@ Indications :
 • Skin, Blood & Tissue Health`,
     slug: "YouSlim_weight_loss_capsule",
     variants: [
-      { size: 60, unit: "capsule", price: 1200 }
+      { batchNo: "251025",size: 60, unit: "capsule", mrp: 1200,  expiryDate: "9/28" }
     ]
   },
 
@@ -1000,7 +1010,7 @@ Indications :
     // 35
     productId: "Pcodset",
     name: "Pcodset",
-    // price: 60,
+    // mrp: 60,
     // image: "/Images/SBherbals/EZYDAY-PD.webp",
     image: "/uploads/products/sbherbals/Ayurvedic Capsules/Pcodset/Pcodset.jpg",
     description: `
@@ -1015,7 +1025,7 @@ Usage and Benefits :
 PCODSET capsules are made from a mixture of herbs like Ashoka, Shatayari and Lodhra which support uterine health and controls discomforts associated with menstruation. Due to its antioxidant activity and ability to modulate the cellular response to stress, assists women to combat physical and emotional discomfort during menstruation.`,
     slug: "Pcodset",
     variants: [
-      { size: 30, unit: "capsule", price: 360 }
+      { batchNo: "260127",size: 30, unit: "capsule", mrp: 360,  expiryDate: "12/28" }
     ]
   },
 
@@ -1023,7 +1033,7 @@ PCODSET capsules are made from a mixture of herbs like Ashoka, Shatayari and Lod
     // 38
     productId: "SBFLAM_ESR",
     name: "SBFLAM-ESR",
-    // price: 50,
+    // mrp: 50,
     // image: "/Images/SBherbals/Oesto-flex.webp",
     image: "/uploads/products/sbherbals/Ayurvedic Capsules/SBFLAM-ESR/SBFLAM-ESR.jpg",
     description: `
@@ -1045,7 +1055,7 @@ Indication :
 Increases anti-body forming cells, anti-inflammatory & body resistance to infection, reduces ESR.`,
     slug: "SBFLAM_ESR",
     variants: [
-      { size: 30, unit: "capsule", price: 390 }
+      { batchNo: "250742",size: 30, unit: "capsule", mrp: 390,  expiryDate: "6/27" }
     ]
   },
 
@@ -1053,7 +1063,7 @@ Increases anti-body forming cells, anti-inflammatory & body resistance to infect
     // 44
     productId: "Uricset_capsules",
     name: "Uricset capsules",
-    // price: 60,
+    // mrp: 60,
     // image: "/Images/SBherbals/EZYDAY-PD.webp",
     image: "/uploads/products/sbherbals/Ayurvedic Capsules/Uricset capsules/Uricset capsules.jpg",
     description: `
@@ -1074,7 +1084,7 @@ Benefits :
 • Promotes Normal Kidney Function`,
     slug: "Uricset_capsules",
     variants: [
-      { size: 30, unit: "capsule", price: 285 }
+      { batchNo: "250836",size: 30, unit: "capsule", mrp: 285,  expiryDate: "8/28" }
     ]
   },
 
@@ -1082,7 +1092,7 @@ Benefits :
     // 45
     productId: "Varicoset",
     name: "Varicoset",
-    // price: 80,
+    // mrp: 80,
     // image: "/Images/SBherbals/Ibs set.webp",
     image: "/uploads/products/sbherbals/Ayurvedic Capsules/Varicoset/Varicoset.jpg",
     description: `
@@ -1111,7 +1121,7 @@ Varicose & Spider Veins, Swelling, Pain &
 Improves Blood Circulation.`,
     slug: "Varicoset",
     variants: [
-      { size: 30, unit: "capsule", price: 390 }
+      { batchNo: "251022",size: 30, unit: "capsule", mrp: 390,  expiryDate: "9/28" }
     ]
   },
 
@@ -1119,7 +1129,7 @@ Improves Blood Circulation.`,
     // 46
     productId: "Ovumset_capsule_for_women",
     name: "Ovumset - capsule for women",
-    // price: 110,
+    // mrp: 110,
     // image: "/Images/SBherbals/NervoAct.webp",
     image: "/uploads/products/sbherbals/Ayurvedic Capsules/Ovumset - capsule for women/Ovumset - capsule for women.jpg",
     description: `
@@ -1146,7 +1156,7 @@ supports timely ovulation and helps
 strengthen reproductive system.`,
     slug: "Ovumset_capsule_for_women",
     variants: [
-      { size: 30, unit: "capsule", price: 540 }
+      { batchNo: "251201", size: 30, unit: "capsule", mrp: 540,  expiryDate: "11/28" }
     ]
   },
   
@@ -1156,7 +1166,7 @@ strengthen reproductive system.`,
     // 24
     productId: "Mindease_Tablet",
     name: "Mindease Tablet",
-    // price: 110,
+    // mrp: 110,
     // image: "/Images/SBherbals/NervoAct.webp",
     image: "/uploads/products/sbherbals/Ayurvedic Tablets/MindEase Tablet/Mindease Tablet.jpg",
     description: `
@@ -1180,7 +1190,7 @@ Useful in :
 • Helps to fight mental fatigue`,
     slug: "Mindease_Tablet",
     variants: [
-      { size: "10 x 10" ,unit: "Tablets", price: 540 }
+      { batchNo: "MT-225",size: "10 x 10" ,unit: "Tablets", mrp: 540,  expiryDate: "2/28" }
     ]
   },
 
@@ -1188,7 +1198,7 @@ Useful in :
     // 25
     productId: "SuperAct_99_senior_with_shudh_shilajit",
     name: "SuperAct-99 senior with shudh shilajit",
-    // price: 90,
+    // mrp: 90,
     // image: "/Images/SBherbals/dentoAct.webp",
     image: "/uploads/products/sbherbals/Ayurvedic Tablets/SuperAct-99 senior with shudh shilajit/SuperAct-99 senior with shudh shilajit.jpg",
     description: `
@@ -1217,40 +1227,41 @@ Indications :
 Loss of Libido, Psychic Sexual Disturbance, Erectile dysfunction, Loss of Vigour, Vitality, Sexual debility & General Weakness.`,
     slug: "SuperAct_99_senior_with_shudh_shilajit",
     variants: [
-      { size: 30, unit: "Tablets", price: 960 },
-      { size: 60, unit: "Tablets", price: 1920 }
+      { batchNo: "SL-1083A",size: 30, unit: "Tablets", mrp: 960,  expiryDate: "9/28" },
+      // { size: 60, unit: "Tablets", mrp: 1920,   mfgDate: "2025-01-10",
+      // expiryDate: "2027-01-09" }
     ]
   },
 
-  {
+  // {
     // 37 yeh nhi mila
-    productId: "Rasraj_ras_with_gold",
-    name: "Rasraj ras with gold",
-    // price: 110,
+    // productId: "Rasraj_ras_with_gold",
+    // name: "Rasraj ras with gold",
+    // mrp: 110,
     // image: "/Images/SBherbals/NervoAct.webp",
-    image: "/uploads/products/sbherbals/Ayurvedic Tablets/Rasraj ras witgold/Rasraj ras with gold.jpg",
-    description: `
-Uses & Benefits:
-• Improves digestion and gut health
-• Helps relieve constipation and acidity
-• Detoxifies the body naturally
-• Supports healthy skin and immunity
+//     image: "/uploads/products/sbherbals/Ayurvedic Tablets/Rasraj ras witgold/Rasraj ras with gold.jpg",
+//     description: `
+// Uses & Benefits:
+// • Improves digestion and gut health
+// • Helps relieve constipation and acidity
+// • Detoxifies the body naturally
+// • Supports healthy skin and immunity
 
-Hindi – उपयोग व फायदे:
-• पाचन क्रिया को बेहतर बनाता है
-• कब्ज और एसिडिटी में लाभकारी
-• शरीर को प्राकृतिक रूप से डिटॉक्स करता है
-• त्वचा व रोग प्रतिरोधक क्षमता को मजबूत करता है`,
-    slug: "Rasraj_ras_with_gold",
-  },
+// Hindi – उपयोग व फायदे:
+// • पाचन क्रिया को बेहतर बनाता है
+// • कब्ज और एसिडिटी में लाभकारी
+// • शरीर को प्राकृतिक रूप से डिटॉक्स करता है
+// • त्वचा व रोग प्रतिरोधक क्षमता को मजबूत करता है`,
+//     slug: "Rasraj_ras_with_gold",
+//   },
 
   {
     // 40
     productId: "Sciavin",
     name: "Sciavin",
-    // price: 60,
+    // mrp: 60,
     // image: "/Images/SBherbals/STONEACT.webp",
-    image: "/uploads/products/sbherbals/Ayurvedic Tablets/Sciavin/Sciavin Tablets.jpg",
+    image: "/uploads/products/sbherbals/Ayurvedic Tablets/Sciavin/Sciavin.jpg",
     description: `
 TABLET FOR SCIATICA
 
@@ -1276,9 +1287,9 @@ Excipients – q.s.
 
 Indications :
 Low Back Ache (Pain), Pain in the hips, thighs & flanks, Arthritis conditions, Muscle twitches and stiffness, Sciatica, IVDP, Lumbar Spondylosis, Muscular & Nervous degenerative conditions and Hemiplegia or paraplegia.`,
-    slug: "Sciavin_Tablets_for_sciatica",
+    slug: "Sciavin",
     variants: [
-      { size: 30, unit: "Tablets", price: 270 },
+      { batchNo: "MT-323",size: 30, unit: "Tablets", mrp: 270,  expiryDate: "12/28" },
     ]
   },
 
@@ -1287,7 +1298,7 @@ Low Back Ache (Pain), Pain in the hips, thighs & flanks, Arthritis conditions, M
     // 17
     productId: "Heelset",
     name: "Heelset",
-    // price: 110,
+    // mrp: 110,
     // image: "/Images/SBherbals/NervoAct.webp",
     image: "/uploads/products/sbherbals/Ayurvedic Softgel Capsules/Heelset/Heelset.jpg",
     description: `
@@ -1338,46 +1349,47 @@ Benefits :
 • Helps reduce swelling`,
     slug: "Heelset",
     variants: [
-      { size: "10 x 1 x 10 ", unit: "capsule", price: 1200 },
+      { batchNo: "RHC-4838",size: "10 x 1 x 10 ", unit: "capsule", mrp: 1200,  expiryDate: "10/28" },
     ]
   },
 
   // Powder/Grnules & Sachets
-  {
-    // 26
-    productId: "Weight_gain_management_powder",
-    name: "Weight gain management powder",
-    // price: 50,
-    // image: "/Images/SBherbals/Oesto-flex.webp",
-    image: "/uploads/products/sbherbals/PowderGrnules & Sachets/Weight gain management powder/Weight gain management powder.jpg",
-    description: `
-HERBAL FORMULA FOR WEIGHT MANAGEMENT
-वजन बढ़ाने में सहायक
+//   {
+//     // 26
+//     productId: "Weight_gain_management_powder",
+//     name: "Weight gain management powder",
+//     // mrp: 50,
+//     // image: "/Images/SBherbals/Oesto-flex.webp",
+//     image: "/uploads/products/sbherbals/PowderGrnules & Sachets/Weight gain management powder/Weight gain management powder.jpg",
+//     description: `
+// HERBAL FORMULA FOR WEIGHT MANAGEMENT
+// वजन बढ़ाने में सहायक
 
-Each 10 g powder contains :
-Ashwaganda Withania somnifera Rt 1.25g
-Shatavri Asparagus racemosus Rt 1.25g
-Vidarikand Pueraria tuberosa Rt 1.25g
-Bala Sida cordifolia WP 1.25g
-Jeeraka Cuminum cyminum Frt 200 mg
-Kalanamak Sodium chloride Pdr 200 mg
-Sugar Candy q.s.
+// Each 10 g powder contains :
+// Ashwaganda Withania somnifera Rt 1.25g
+// Shatavri Asparagus racemosus Rt 1.25g
+// Vidarikand Pueraria tuberosa Rt 1.25g
+// Bala Sida cordifolia WP 1.25g
+// Jeeraka Cuminum cyminum Frt 200 mg
+// Kalanamak Sodium chloride Pdr 200 mg
+// Sugar Candy q.s.
 
-Usage :
-• Supports weight gain
-• Supports muscle growth
-• Improves strength`,
-    slug: "Weight_gain_management_powder",
-    variants: [
-      { size: "135 gm (30 sachets x 4.5 g)", unit: "Pack", price: 900 },
-    ]
-  },
+// Usage :
+// • Supports weight gain
+// • Supports muscle growth
+// • Improves strength`,
+//     slug: "Weight_gain_management_powder",
+//     variants: [
+//       { batchNo: "AA2025B01",size: "135 gm (30 sachets x 4.5 g)", unit: "Pack", mrp: 900,  mfgDate: "2025-01-10",
+//       expiryDate: "2027-01-09" },
+//     ]
+//   },
   
   {
     // 27
     productId: "Aratavin_alopecia_areta_spray",
     name: "Aratavin alopecia areta spray",
-    // price: 80,
+    // mrp: 80,
     // image: "/Images/SBherbals/Ibs set.webp",
     image: "/uploads/products/sbherbals/PowderGrnules & Sachets/Aratavin alopecia areta spray/Aratavin alopecia areta spray.jpg",
     description: `
@@ -1394,7 +1406,7 @@ Alopecia (Baldness)
 Processed with lemon (Citrus limon) to give refreshing Lemon Flavour and to promote hair health and growth.`,
     slug: "Aratavin_alopecia_areta_spray",
     variants: [
-      { size: 100, unit: "ml", price: 495 }
+      { batchNo: "250903",size: 100, unit: "ml", mrp: 495, expiryDate: "8/27" }
     ]
   },
 
@@ -1402,7 +1414,7 @@ Processed with lemon (Citrus limon) to give refreshing Lemon Flavour and to prom
     // 21
     productId: "Lactoadd_grandnules",
     name: "Lactoadd grandnules",
-    // price: 150,
+    // mrp: 150,
     // image: "/Images/SBherbals/WARTCURE.webp",
     image: "/uploads/products/sbherbals/PowderGrnules & Sachets/Lacktoadd grandnules/Lactoadd grandnules.jpg",
     description: `
@@ -1424,45 +1436,46 @@ Helps to balance hormonal changes,
 Helps to normalize the uterus.`,
     slug: "Lactoadd_grandnules",
     variants: [
-      { size: 200, unit: "gm", price: 298 }
+      { batchNo: "MP-34",size: 200, unit: "gm", mrp: 298,  expiryDate: "1/27" }
     ]
   },
 
 
   // Herbal Cosmetics
-  {
-    // 28
-    productId: "Charcoal_facewash",
-    name: "Charcoal facewash",
-    // price: 60,
-    // image: "/Images/SBherbals/STONEACT.webp",
-    image: "/uploads/products/sbherbals/Herbal Cosmetics/Charcoal facewash/Charcoal facewash.jpg",
-    description: `
-DEEP CLEAN FACEWASH
+//   {
+//     // 28
+//     productId: "Charcoal_facewash",
+//     name: "Charcoal facewash",
+//     // mrp: 60,
+//     // image: "/Images/SBherbals/STONEACT.webp",
+//     image: "/uploads/products/sbherbals/Herbal Cosmetics/Charcoal facewash/Charcoal facewash.jpg",
+//     description: `
+// DEEP CLEAN FACEWASH
 
-REJUVENATING & REMOVES EXCESS OIL
+// REJUVENATING & REMOVES EXCESS OIL
 
-Composition : Each 100 gm contains :
-Activated Charcoal 2%, Aloevera (Aloe barbadensis) 3%,
-Haldi Ext. (Curcuma longa) 2%, Tulsi Ext. (Ocimum sanctum) 2%,
-Neem Ext. (Azadirachta indica) 2%, Papaya Ext.
-(Carica papaya) 2%, Base q.s.
+// Composition : Each 100 gm contains :
+// Activated Charcoal 2%, Aloevera (Aloe barbadensis) 3%,
+// Haldi Ext. (Curcuma longa) 2%, Tulsi Ext. (Ocimum sanctum) 2%,
+// Neem Ext. (Azadirachta indica) 2%, Papaya Ext.
+// (Carica papaya) 2%, Base q.s.
 
-CHARCOAL FACEWASH evacuates excessive oil and purified skin
+// CHARCOAL FACEWASH evacuates excessive oil and purified skin
 
-• It wipes out bacteria, dirt, impurities, toxins caused due to excessive exposure of pollution
-• It helps in opening up the clogged pores and removing whiteheads.`,
-    slug: "Charcoal_facewash",
-    variants: [
-      { size: 100, unit: "ml", price: 180 }
-    ]
-  },
+// • It wipes out bacteria, dirt, impurities, toxins caused due to excessive exposure of pollution
+// • It helps in opening up the clogged pores and removing whiteheads.`,
+//     slug: "Charcoal_facewash",
+//     variants: [
+//       { batchNo: "AA2025B01",size: 100, unit: "ml", mrp: 180,   mfgDate: "2025-01-10",
+//       expiryDate: "2027-01-09" }
+//     ]
+//   },
 
   {
     // 10
     productId: "Charcoal_soap",
     name: "Charcoal soap",
-    // price: 150,
+    // mrp: 150,
     // image: "/Images/SBherbals/WARTCURE.webp",
     image: "/uploads/products/sbherbals/Herbal Cosmetics/Charcoal soap/Charcoal soap.jpg",
     description: `
@@ -1478,13 +1491,16 @@ Uses & Benefits:
 • पिंपल्स व मुहांसे कम करने में सहायक
 • मृत त्वचा कोशिकाएं हटाता है`,
     slug: "Charcoal_soap",
+    variants: [
+      { batchNo: "CS-09",size: 100, unit: "gm", mrp: 80,  expiryDate: "8/26" }
+    ]
   },
 
   {
     // 29
     productId: "DentoAct_herbal_tothpaste",
     name: "DentoAct herbal tothpaste",
-    // price: 90,
+    // mrp: 90,
     // image: "/Images/SBherbals/dentoAct.webp",
     image: "/uploads/products/sbherbals/Herbal Cosmetics/DentoAct herbal tothpaste/DentoAct herbal tothpaste.jpg",
     description: `
@@ -1505,7 +1521,7 @@ Benefits :
 • Helps prevent toothache and decay`,
     slug: "DentoAct_herbal_tothpaste",
     variants: [
-      { size: 100, unit: "gm", price: 125 }
+      { batchNo: "MO-208",size: 100, unit: "gm", mrp: 125, expiryDate: "12/27" }
     ]
   },
 
@@ -1513,7 +1529,7 @@ Benefits :
     // 30
     productId: "Kesh_101",
     name: "Kesh 101",
-    // price: 70,
+    // mrp: 70,
     // image: "/Images/SBherbals/prostoAct.webp",
     image: "/uploads/products/sbherbals/Herbal Cosmetics/Kesh 101/Kesh 101.jpg",
     description: `
@@ -1536,7 +1552,7 @@ Narikela 200 mg,
 Til Oil q.s.`,
     slug: "Kesh_101",
     variants: [
-      { size: 120, unit: "ml", price: 210 }
+      { batchNo: "250210",size: 120, unit: "ml", mrp: 210, expiryDate: "11/27" }
     ]
   },
   
@@ -1545,7 +1561,7 @@ Til Oil q.s.`,
     // 31
     productId: "Neem_tulsi_alovera",
     name: "Neem tulsi alovera",
-    // price: 60,
+    // mrp: 60,
     // image: "/Images/SBherbals/STONEACT.webp",
     image: "/uploads/products/sbherbals/Herbal Cosmetics/Neem tulsi alvovera/Neem tulsi alovera.jpg",
     description: `
@@ -1567,7 +1583,7 @@ Base q.s.
 SBHERBALS NEEM TULSI ALOEVERA FACEWASH is an excellent skin cleanser, removes excess oil, anti-bacterial, anti-septic, anti-inflammatory, treats acne, boils & ulcers. Improves general skin health & immunity.`,
     slug: "Neem_tulsi_alovera",
     variants: [
-      { size: 100, unit: "ml", price: 170 }
+      { batchNo: "CS-09",size: 100, unit: "ml", mrp: 110,  expiryDate: "8/26" }
     ]
   },
 
@@ -1575,7 +1591,7 @@ SBHERBALS NEEM TULSI ALOEVERA FACEWASH is an excellent skin cleanser, removes ex
     // 29
     productId: "Neem_tulsi_alovera_soap",
     name: "Neem tulsi alovera soap",
-    // price: 70,
+    // mrp: 70,
     // image: "/Images/SBherbals/prostoAct.webp",
     image: "/uploads/products/sbherbals/Herbal Cosmetics/Neem tulsi alover - soap/Neem tulsi alovera soap.jpg",
     description: `
@@ -1591,13 +1607,17 @@ Hindi – उपयोग व फायदे:
 • शरीर को प्राकृतिक रूप से डिटॉक्स करता है
 • त्वचा व रोग प्रतिरोधक क्षमता को मजबूत करता है`,
     slug: "Neem_tulsi_alovera_soap",
+    variants: [
+      { batchNo: "CS-09",size: 100, unit: "ml", mrp: 110,  expiryDate: "8/26" }
+    ] 
+    // baki hai
   },
 
   {
     // 32
     productId: "Youshine",
     name: "Youshine",
-    // price: 70,
+    // mrp: 70,
     // image: "/Images/SBherbals/prostoAct.webp",
     image: "/uploads/products/sbherbals/Herbal Cosmetics/Youshine/Youshine.jpg",
     description: `
@@ -1609,114 +1629,9 @@ HELPS CLEANSES & CLARIFY COMPLEXION
 YouShine Face Wash is a skin clarifying face wash that contains haldi chandan extract, pea sprout extract which helps to draw out impurities and give your skin a smooth texture. It also helps to removes dirt without disturbing your skin’s natural oil balance and brightens skin, restores natural radiance of the skin. The face wash help to manage your skin health, and prevents pollutants and free radicals from your skin.`,
     slug: "Youshine",
     variants: [
-      { size: 100, unit: "ml", price: 170 }
+      { batchNo: "251007",size: 60, unit: "ml", mrp: 165,  expiryDate: "9/28" }
     ]
   },
-
-  // Wilson Drugs product
-  //   {
-  //     // 1
-  //     productId: "Deflan-syrup",
-  //     name: "Deflan-syrup",
-  //     price: 60,
-  //     // image: "/Images/wilson drugs/Deflan-syrup.webp",
-  //     image: "/uploads/products/wilson drugs/Deflan-syrup.webp",
-  //     description: "Helps burn extra fat.",
-  //     slug: "Deflan-syrup",
-  //   },
-  //   {
-  //     // 2
-  //     productId: "Deflan-Tablet",
-  //     name: "Deflan-Tablet",
-  //     price: 80,
-  //     // image: "/Images/wilson drugs/Deflan-Tablet.webp",
-  //     image: "/uploads/products/wilson drugs/Deflan-Tablet.webp",
-  //     description: "Helps in hormonal balance.",
-  //     slug: "Deflan-Tabletr",
-  //   },
-  //   {
-  //     // 3
-  //     productId: "Derment-Ointment",
-  //     name: "Derment-Ointment",
-  //     price: 90,
-  //     // image: "/Images/wilson drugs/Derment-Ointment.webp",
-  //     image: "/uploads/products/wilson drugs/Derment-Ointment.webp",
-  //     description: "Maintains oral hygiene.",
-  //     slug: "Derment-Ointmen",
-  //   },
-
-  //   {
-  //     // 4
-  //     productId: "Kasanil-Syrup",
-  //     name: "Kasanil-Syrup",
-  //     price: 60,
-  //     // image: "/Images/wilson drugs/Kasanil-Syrup.webp",
-  //     image: "/uploads/products/wilson drugs/Kasanil-Syrup.webp",
-  //     description: "Helps burn extra fat.",
-  //     slug: "Kasanil-Syrup",
-  //   },
-  //   {
-  //     // 5
-  //     productId: "Livopick-Capsules",
-  //     name: "Livopick-Capsules",
-  //     price: 80,
-  //     // image: "/Images/wilson drugs/Livopick-Capsules.webp",
-  //     image: "/uploads/products/wilson drugs/Livopick-Capsules.webp",
-  //     description: "Helps in hormonal balance.",
-  //     slug: "Livopick-Capsules",
-  //   },
-  //   {
-  //     // 6
-  //     productId: "Livopick-D.S-Syrup",
-  //     name: "Livopick-D.S-Syrup",
-  //     price: 110,
-  //     // image: "/Images/wilson drugs/Livopick-D.S-Syrup.webp",
-  //     image: "/uploads/products/wilson drugs/Livopick-D.S-Syrup.webp",
-  //     description: "Maintains oral hygiene.",
-  //     slug: "Livopick-D.S-Syrup",
-  //   },
-
-  //   {
-  //     // 7
-  //     productId: "Livopick-Syrup",
-  //     name: "Livopick-Syrup",
-  //     price: 50,
-  //     // image: "/Images/wilson drugs/Livopick-Syrup.webp",
-  //     image: "/uploads/products/wilson drugs/Livopick-Syrup.webp",
-  //     description: "Helps burn extra fat.",
-  //     slug: "Livopick-Syrup",
-  //   },
-  //   {
-  //     // 8
-  //     productId: "Neurel-Tablet",
-  //     name: "Neurel-Tablet",
-  //     price: 70,
-  //     // image: "/Images/wilson drugs/Neurel-Tablet.webp",
-  //     image: "/uploads/products/wilson drugs/Neurel-Tablet.webp",
-  //     description: "Helps in hormonal balance.",
-  //     slug: "Neurel-Tablet",
-  //   },
-  //   {
-  //     // 9
-  //     productId: "Vatorine-Capsule",
-  //     name: "Vatorine-Capsule",
-  //     price: 60,
-  //     // image: "/Images/wilson drugs/Vatorine-Capsule.webp",
-  //     image: "/uploads/products/wilson drugs/Vatorine-Capsule.webp",
-  //     description: "Maintains oral hygiene.",
-  //     slug: "Vatorine-Capsule",
-  //   },
-
-  //   {
-  //     // 10
-  //     productId: "Wilsoplex-Syrup",
-  //     name: "Wilsoplex-Syrup",
-  //     price: 150,
-  //     // image: "/Images/wilson drugs/Wilsoplex-Syrup.webp",
-  //     image: "/uploads/products/wilson drugs/Wilsoplex-Syrup.webp",
-  //     description: "Maintains oral hygiene.",
-  //     slug: "Wilsoplex-Syrup",
-  //   }
 
 ];
 

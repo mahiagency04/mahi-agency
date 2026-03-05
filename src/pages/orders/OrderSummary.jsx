@@ -36,7 +36,7 @@ const OrderSummary = () => {
       // option: "qty", future enable
       // qty: item.quantity,   future enable
       // boxCount: Math.ceil(item.quantity / 10),   future enable
-      qty: 1,
+      qty: item.quantity || 1,
       // boxCount: 1,   future enable
     }))
   );
@@ -57,17 +57,20 @@ const OrderSummary = () => {
     // const variant = product.variant;
     // const variant = product.variant || { size: "", unit: "", price: 0 };
     const variant = product.variant || {};
-    const originalPrice = variant.price ?? product.price ?? 0;
-    const discountedPrice = getDiscountedPrice(originalPrice);
+    // const originalPrice = variant.price ?? product.price ?? 0;
+    const mrp = variant.mrp || 0;
+    const rate = variant.rate || 0;
+    const discountedPrice = getDiscountedPrice(mrp);
     // const finalQty = option === "box" ? boxCount * 10 : qty; future enable
     const finalQty = qty;
     // const finalQty = product.quantity || (option === "box" ? boxCount * 10 : qty);
     // const price = variant.price;
     // const price = variant.price || 0;
     // const price = variant.price || product.price || 0;
-    const price = variant.price ?? product.price ?? 0;
+    // const price = variant.price ?? product.price ?? 0;
     // subtotal = price * finalQty;
-     subtotal = discountedPrice * finalQty;
+    subtotal = discountedPrice * finalQty;
+    // subtotal = rate * finalQty;
 
     products = [
       {
@@ -82,8 +85,14 @@ const OrderSummary = () => {
         // variant: variant,
         // price: variant.price,
         variant,
+        mrp,
+        rate,
+        rate: discountedPrice,
+        // batchNo: product.variant?.batchNo,
+        // mfgDate: product.variant?.mfgDate,
+        expiryDate: product.variant?.expiryDate,
         // price,
-        price: discountedPrice,
+        // price: discountedPrice,
         // price: product.price,
         quantity: finalQty,
         // quantity: product.quantity || 1, 
@@ -101,12 +110,14 @@ const OrderSummary = () => {
   if (cartItems.length > 0) {
     products = cartItems.map((item) => {
       // const stateItem = cartQty.find(q => q.productId === item.productId);
-       const stateItem = cartQty.find(
+      const stateItem = cartQty.find(
         (q) => q.productId === item.productId
       );
       const variant = item.variant || {};
-      const originalPrice = variant.price ?? item.price ?? 0;
-      const discountedPrice = getDiscountedPrice(originalPrice);
+      // const originalPrice = variant.price ?? item.price ?? 0;
+      const mrp = variant.mrp || 0;
+      const discountedPrice = getDiscountedPrice(mrp);
+      // const rate = variant.rate || 0;
       // const variant = item.variant || { size: "", unit: "", price: 0 };
       // const price = variant.price || item.price || 0;
 
@@ -115,7 +126,8 @@ const OrderSummary = () => {
       //     ? stateItem.boxCount * 10
       //     : stateItem.qty;
 
-      const finalQty = stateItem.qty;
+      // const finalQty = stateItem.qty;
+      const finalQty = stateItem?.qty || 1;
 
       //   return {
       //     productId: item.productId,
@@ -141,11 +153,19 @@ const OrderSummary = () => {
       // subtotal = cartTotal || products.reduce((sum, item) => sum + item.total, 0);
       return {
         ...item,
-        // price,
-        price: discountedPrice,
+        // // price,
+        // price: discountedPrice,
+        mrp,
+        // rate,
+        rate: discountedPrice,
+        batchNo: item.variant?.batchNo,
+        mfgDate: item.variant?.mfgDate,
+        expiryDate: item.variant?.expiryDate,
         quantity: finalQty,
         // total: price * finalQty
-         total: discountedPrice * finalQty,
+        //  total: discountedPrice * finalQty,
+        // total: rate * finalQty,
+        total: discountedPrice * finalQty,
       };
     });
     subtotal = products.reduce((sum, item) => sum + item.total, 0);
@@ -159,7 +179,7 @@ const OrderSummary = () => {
   // const totalAmount = subtotal + cgst + sgst + igst;
 
   const totalAmount = subtotal;
-  
+
   const orderData = {
     address,
     products,
@@ -184,41 +204,25 @@ const OrderSummary = () => {
             alt={product.name} />
           <div className={ordersummaryCSS.productInfo}>
             <p className={ordersummaryCSS.productName}>{product.name}</p>
-             {(() => {
-              const original =
-                product.variant?.price ?? product.price ?? 0;
-              const discounted = getDiscountedPrice(original);
+            <p>
+              <strong>MRP:</strong> ₹{product.variant?.mrp || 0}
+            </p>
 
-              return (
-                <>
-                  <p>
-                    <span
-                      style={{
-                        textDecoration: "line-through",
-                        marginRight: "8px",
-                        color: "gray",
-                      }}
-                    >
-                      ₹{original.toFixed(2)}
-                    </span>
-                    <span
-                      style={{
-                        color: "green",
-                        fontWeight: "bold",
-                      }}
-                    >
-                      ₹{discounted.toFixed(2)}
-                    </span>
-                    <span style={{ color: "red", marginLeft: "8px" }}>
-                      {DISCOUNT_PERCENT}% OFF
-                    </span>
-                  </p>
-                </>
-              );
-            })()}
+            {/* <p>
+              <strong>Rate:</strong> ₹{product.variant?.rate || 0}
+            </p>
+             */}
+            <p>
+              <strong>Rate:</strong> ₹{product.variant?.rate ||
+                getDiscountedPrice(product.variant?.mrp || 0)}
+            </p>
+
+            {/* <p><strong>Batch No:</strong> {product.variant?.batchNo || "-"}</p> */}
+            {/* <p><strong>MFG Date:</strong> {product.variant?.mfgDate || "-"}</p> */}
+            <p><strong>Expiry Date:</strong> {product.variant?.expiryDate || "-"}</p>
             {/* <p>₹{product.price.toFixed(2)}</p> */}
             {/* <p>₹{(product.variant?.price || 0).toFixed(2)}</p> */}
-            <p>₹{(product.variant?.price || product.price || 0).toFixed(2)}</p>
+            {/* <p>₹{(product.variant?.price || product.price || 0).toFixed(2)}</p> */}
 
             {/* {product.size && product.unit && ( */}
             {/* {product?.variant && ( */}
@@ -279,7 +283,8 @@ const OrderSummary = () => {
             //     ? stateItem.boxCount * 10
             //     : stateItem.qty;
 
-            const finalQty = stateItem.qty;
+            // const finalQty = stateItem.qty;
+            const finalQty = stateItem?.qty || 1;
             return (
               <div key={index} className={ordersummaryCSS.cartItem}>
                 {/* <img src={item.image} */}
@@ -293,8 +298,22 @@ const OrderSummary = () => {
                       Variant: {item.variant?.size} {item.variant?.unit}
                     </p>
                   )}
+
+                  <p>
+                    <strong>MRP:</strong> ₹{item.variant?.mrp || 0}
+                  </p>
+
+                  <p>
+                    {/* <strong>Rate:</strong> ₹{item.variant?.rate || 0} */}
+                    <strong>Rate:</strong> ₹{item.variant?.rate ||
+                      getDiscountedPrice(item.variant?.mrp || 0)}
+                  </p>
+
+                  {/* <p><strong>Batch No:</strong> {item.variant?.batchNo || "-"}</p> */}
+                  {/* <p><strong>MFG Date:</strong> {item.variant?.mfgDate || "-"}</p> */}
+                  <p><strong>Expiry Date:</strong> {item.variant?.expiryDate || "-"}</p>
                   {/* <p>Qty: {item.quantity}</p> */}
-                  <p>Price: ₹{variant.price}</p>
+                  {/* <p>Price: ₹{variant.price}</p> */}
 
                   <div className={ordersummaryCSS.optionsRow}>
                     {/* <select future enable
@@ -348,29 +367,10 @@ const OrderSummary = () => {
                       >
                         −
                       </button>
-
                       <input
                         type="number"
                         min="1"
-                        value={
-                          stateItem.option === "box"
-                            ? stateItem.boxCount
-                            : stateItem.qty
-                        }
-                        // onChange={(e) => future
-                        //   setCartQty((prev) =>
-                        //     prev.map((q) =>
-                        //       q.productId === item.productId
-                        //         ? {
-                        //           ...q,
-                        //           [stateItem.option === "box"
-                        //             ? "boxCount"
-                        //             : "qty"]: Number(e.target.value),
-                        //         }
-                        //         : q
-                        //     )
-                        //   )
-                        // }
+                        value={stateItem?.qty || 1}
                         onChange={(e) =>
                           setCartQty((prev) =>
                             prev.map((q) =>
@@ -381,6 +381,38 @@ const OrderSummary = () => {
                           )
                         }
                       />
+                      {/* <input
+                        type="number"
+                        min="1"
+                        value={
+                          stateItem.option === "box"
+                            ? stateItem.boxCount
+                            : stateItem.qty
+                        }
+                        onChange={(e) => future
+                          setCartQty((prev) =>
+                            prev.map((q) =>
+                              q.productId === item.productId
+                                ? {
+                                  ...q,
+                                  [stateItem.option === "box"
+                                    ? "boxCount"
+                                    : "qty"]: Number(e.target.value),
+                                }
+                                : q
+                            )
+                          )
+                        }
+                        onChange={(e) =>
+                          setCartQty((prev) =>
+                            prev.map((q) =>
+                              q.productId === item.productId
+                                ? { ...q, qty: Number(e.target.value) }
+                                : q
+                            )
+                          )
+                        }
+                      /> */}
 
                       <button
                         // onClick={() => future
@@ -426,7 +458,7 @@ const OrderSummary = () => {
       {/*  PRICE SUMMARY */}
       <div className={ordersummaryCSS.summaryBox}>
         <ul>
-          <li>Subtotal: ₹{subtotal.toFixed(2)}</li>
+          {/* <li>Subtotal: ₹{subtotal.toFixed(2)}</li> */}
           {/* <li>CGST (9%): ₹{cgst.toFixed(2)}</li>
           <li>SGST (9%): ₹{sgst.toFixed(2)}</li>
           <li>IGST: ₹{igst.toFixed(2)}</li> */}
@@ -563,7 +595,7 @@ export default OrderSummary;
 //         className={ordersummaryCSS.btn}
 //         onClick={() =>
 //           navigate("/payment", {
-//             replace: true,   
+//             replace: true,
 //             state: { orderData }
 //           })
 //         }

@@ -19,10 +19,78 @@ const Cart = () => {
     localStorage.setItem("cart", JSON.stringify(updatedCart));
   };
 
+  // const formatDate = (dateString) => {
+  //   if (!dateString) return "-";
+  //   const date = new Date(dateString);
+  //   const day = String(date.getDate()).padStart(2, "0");
+  //   const month = String(date.getMonth() + 1).padStart(2, "0");
+  //   const year = date.getFullYear();
+  //   return `${day}-${month}-${year}`;
+  // };
+
+  const formatExpiryDate = (dateString) => {
+    if (!dateString || dateString === "-") return "-";
+
+    try {
+      // Agar already MM/YY format mein hai (jaise "5/28"), to waise hi return karo
+      if (typeof dateString === 'string' && /^\d{1,2}\/\d{2}$/.test(dateString)) {
+        return dateString;
+      }
+
+      // ISO date se month aur year nikalo
+      const date = new Date(dateString);
+      if (isNaN(date.getTime())) return "-";
+
+      const month = date.getMonth() + 1; // 0-11 -> 1-12
+      const year = date.getFullYear().toString().slice(-2); // 2001 -> 01, 2028 -> 28
+
+      return `${month}/${year}`;
+    } catch (error) {
+      return "-";
+    }
+  };
+
+  //  Special function for expiry display
+  const getExpiryDisplay = (expiryDate) => {
+    if (!expiryDate || expiryDate === "-") return "-";
+
+    // Agar "5/28" format mein hai to seedha return karo
+    if (typeof expiryDate === 'string' && /^\d{1,2}\/\d{2}$/.test(expiryDate)) {
+      return expiryDate;
+    }
+
+    // Agar ISO date hai to month/year nikalo
+    try {
+      const date = new Date(expiryDate);
+      if (isNaN(date.getTime())) return "-";
+
+      const month = date.getMonth() + 1;
+      const year = date.getFullYear().toString().slice(-2);
+
+      return `${month}/${year}`;
+    } catch {
+      return "-";
+    }
+  };
+
   const totalAmount = cart.reduce((total, item) => {
-    const price = item.variant?.price || item.price || 0;
+    // const price = item.variant?.price || item.price || 0;
     // return total + item.price * item.quantity;
-    return total + price * item.quantity;
+    const variant = item.variant || {};
+    // return total + price * item.quantity;
+    const mrp =
+      item.mrp ||
+      variant.mrp ||
+      item.price ||
+      variant.price ||
+      0;
+
+    // const rate =
+    //   variant.rate ||
+    //   0;
+    const rate = mrp - mrp * 0.2;
+
+    return total + rate * item.quantity;
   }, 0);
 
   const handleBuyNow = () => {
@@ -44,7 +112,26 @@ const Cart = () => {
 
       {cart.map((item, index) => {
         const variant = item.variant || {};
-        const price = variant.price || item.price || 0;
+        // const price = variant.price || item.price || 0;
+        // const mrp =
+        //   item.mrp ||
+        //   variant.mrp ||
+        //   item.price ||
+        //   variant.price ||
+        //   0;
+
+        const mrp =
+          variant.mrp ||
+          0;
+
+        const rate = mrp - mrp * 0.2;
+
+        // const rate =
+        //   variant.rate ||
+        //   0;
+
+        const expiryDate = variant.expiryDate || "-";
+        const displayExpiry = getExpiryDisplay(expiryDate);
 
         return (
           <div key={index} className={styles.cartItem}>
@@ -68,13 +155,33 @@ const Cart = () => {
                   </p>
                 )}
 
-                {/* <p>₹{item.price}</p> */}
-                <p>₹{price}</p>
-                {/* <p>Qty: {item.quantity}</p> */}
+                <p>
+                  <strong>Expiry Date:</strong> {displayExpiry}
+                </p>
+
+                {/* <p>
+                  Batch No: {variant.batchNo || "-"}
+                </p> */}
+
+                {/* <p>
+                  MFG Date: {formatDate(variant.mfgDate)}
+                </p> */}
 
                 <p>
-                  {/* Subtotal: ₹{(price * item.quantity).toFixed(2)} */}
+                  MRP: ₹{mrp.toFixed(2)}
                 </p>
+
+                <p>
+                  Rate: ₹{rate.toFixed(2)}
+                </p>
+
+                {/* <p>₹{item.price}</p> */}
+                {/* <p>₹{price}</p> */}
+                {/* <p>Qty: {item.quantity}</p> */}
+
+                {/* <p> */}
+                {/* Subtotal: ₹{(price * item.quantity).toFixed(2)} */}
+                {/* </p> */}
               </div>
             </div>
 
@@ -171,7 +278,7 @@ export default Cart;
 //           <button
 //             className={styles.removeBtn}
 //             onClick={(e) => {
-//               e.stopPropagation(); 
+//               e.stopPropagation();
 //               removeFromCart(item.productId);
 //             }}
 //           >

@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
 import addressCSS from "./Address.module.css";
 import axios from "axios";
-import { ToastContainer, toast, Bounce } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+// import { ToastContainer, toast, Bounce } from "react-toastify";
+// import "react-toastify/dist/ReactToastify.css";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const Address = () => {
   const [addresses, setAddresses] = useState([]);
   const [showForm, setShowForm] = useState(false);
   const [editingId, setEditingId] = useState(null);
+  const [message, setMessage] = useState("");
+  const [messageType, setMessageType] = useState("");
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -40,10 +42,12 @@ const Address = () => {
         );
         setAddresses(res.data.addresses || []);
       } catch (error) {
-        toast.error(error.response?.data?.message, {
-          theme: "dark",
-          transition: Bounce,
-        });
+        // toast.error(error.response?.data?.message, {
+        //   theme: "dark",
+        //   transition: Bounce,
+        // });
+         setMessage(error.response?.data?.message || "Failed to load addresses");
+        setMessageType("error");
       }
     };
     fetchAddresses();
@@ -55,6 +59,12 @@ const Address = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setMessage("");
+    if (!formData.state || !formData.city || !formData.area || !formData.pincode) {
+      setMessage("Please fill all required fields");
+      setMessageType("error");
+      return;
+    }
 
     try {
       let res;
@@ -80,10 +90,13 @@ const Address = () => {
         setAddresses(res.data.addresses);
       }
 
-      toast.success(res.data.message, {
-        theme: "dark",
-        transition: Bounce,
-      });
+      // toast.success(res.data.message, {
+      //   theme: "dark",
+      //   transition: Bounce,
+      // });
+
+      setMessage(res.data.message);
+      setMessageType("success");
 
       setFormData({
         state: "",
@@ -96,10 +109,12 @@ const Address = () => {
       setShowForm(false);
       setEditingId(null);
     } catch (error) {
-      toast.error(error.response?.data?.message, {
-        theme: "dark",
-        transition: Bounce,
-      });
+      // toast.error(error.response?.data?.message, {
+      //   theme: "dark",
+      //   transition: Bounce,
+      // });
+      setMessage(error.response?.data?.message || "Operation failed");
+      setMessageType("error");
     }
   };
 
@@ -110,13 +125,17 @@ const Address = () => {
         { headers: { Authorization: `Bearer ${token}` } }
       );
 
-      toast.success(res.data.message, { theme: "dark", transition: Bounce });
+      // toast.success(res.data.message, { theme: "dark", transition: Bounce });
+       setMessage(res.data.message);
+      setMessageType("success");
       setAddresses(addresses.filter((addr) => addr._id !== id));
     } catch (error) {
-      toast.error(error.response?.data?.message, {
-        theme: "dark",
-        transition: Bounce,
-      });
+      // toast.error(error.response?.data?.message, {
+      //   theme: "dark",
+      //   transition: Bounce,
+      // });
+      setMessage(error.response?.data?.message || "Delete failed");
+      setMessageType("error");
     }
   };
 
@@ -147,12 +166,13 @@ const Address = () => {
 
   return (
     <div className={addressCSS.container}>
-      <ToastContainer
+      {/* <ToastContainer
         position="top-center"
         autoClose={1500}
         theme="dark"
         transition={Bounce}
-      />
+      /> */}
+      
 
       {addresses.map((addr) => (
         <div key={addr._id} className={addressCSS.card}>
@@ -229,6 +249,21 @@ const Address = () => {
             <input className={addressCSS.input} name="area" value={formData.area} onChange={handleChange} placeholder="Area" />
             <input className={addressCSS.input} name="landmark" value={formData.landmark} onChange={handleChange} placeholder="Landmark" />
             <input className={addressCSS.input} name="pincode" value={formData.pincode} onChange={handleChange} placeholder="Pincode" />
+            {message && (
+        <div
+          style={{
+            backgroundColor:
+              messageType === "success" ? "#1e7e34" : "#b02a37",
+            color: "white",
+            padding: "10px",
+            marginBottom: "15px",
+            borderRadius: "5px",
+            textAlign: "center",
+          }}
+        >
+          {message}
+        </div>
+      )}
             <div className={addressCSS.formButtons}>
               <button type="submit" className={addressCSS.btn}>Save Address</button>
               <button

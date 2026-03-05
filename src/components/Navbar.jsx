@@ -3,58 +3,61 @@ import { Link, useNavigate } from "react-router-dom";
 import navbar from "./Navbar.module.css"
 import Context from "../context/Context.jsx";
 import SearchBar from "../context/SearchBar"
-import { ToastContainer, toast, Bounce } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+// import { ToastContainer, toast, Bounce } from "react-toastify";
+// import "react-toastify/dist/ReactToastify.css";
 
 
 const Navbar = () => {
   const { isAuthenticated, logout } = useContext(Context);
   const navigate = useNavigate();
+  const [message, setMessage] = useState("");
 
 
   const handleLogout = () => {
-   localStorage.clear();
-  logout();
+    localStorage.clear();
+    logout();
+    setMessage(" Logout successfully");
 
-  // Login page par navigate karo replace ke saath
-  // navigate("/login", { replace: true });
+    // Login page par navigate karo replace ke saath
+    // navigate("/login", { replace: true });
 
-  // History stack ko reset karo
-  window.history.pushState(null, "", "/login");  // current page
-  window.history.pushState(null, "", "/");
+    // History stack ko reset karo
+    window.history.pushState(null, "", "/login");  // current page
+    window.history.pushState(null, "", "/");
 
-    toast.success("Logout successfully", {
-      position: "top-center",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: false,
-      pauseOnHover: true,
-      draggable: true,
-      theme: "dark",
-      transition: Bounce,
-    });
+    // toast.success("Logout successfully", {
+    //   position: "top-center",
+    //   autoClose: 5000,
+    //   hideProgressBar: false,
+    //   closeOnClick: false,
+    //   pauseOnHover: true,
+    //   draggable: true,
+    //   theme: "dark",
+    //   transition: Bounce,
+    // });
 
-      // navigate("/login", { replace: true });   
+    // navigate("/login", { replace: true });   
 
 
     // navigate("/login", { replace: true });
     // navigate("/login", { replace: true });
     // window.history.replaceState(null, document.title, "/login");
     // setTimeout(() => {
-      // navigate("/login", { replace: true });
+    // navigate("/login", { replace: true });
     //   window.history.replaceState(null, document.title, "/login");
     // }, 1500);
 
     setTimeout(() => {
+      setMessage(""); 
       navigate("/login", { replace: true });
     }, 1500);
   };
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    
+
     <header className={navbar.header}>
-      <ToastContainer
+      {/* <ToastContainer
         position="top-center"
         autoClose={1500}
         hideProgressBar={false}
@@ -66,7 +69,7 @@ const Navbar = () => {
         pauseOnHover
         theme="dark"
         transition={Bounce}
-      />
+      /> */}
       <nav className={navbar.nav}>
 
 
@@ -113,14 +116,14 @@ const Navbar = () => {
           <input type="text" placeholder="Search" />
         </div> */}
 
-        <div className={navbar.search}>
+        {/* <div className={navbar.search}>
           <SearchBar />
-        </div>
+        </div> */}
 
         <ul className={`${navbar.menu} ${menuOpen ? navbar.active : ""}`}>
           {/* <li>🛒 Cart</li> */}
-          <li>Dealership</li>
-          <li>Franchise</li>
+          {/* <li>Dealership</li>
+          <li>Franchise</li> */}
           {!isAuthenticated && (
             <>
               <li><Link to="/login">Login</Link></li>
@@ -130,10 +133,11 @@ const Navbar = () => {
           <li><Link to="/contact">Contact</Link></li>
           {isAuthenticated && (
             <>
-              <li><Link to="/setting">Setting</Link></li>
+              {/* <li><Link to="/setting">Setting</Link></li> */}
               <li onClick={handleLogout} style={{ cursor: "pointer" }}>
                 Logout
               </li>
+              
             </>
           )}
         </ul>
@@ -148,6 +152,7 @@ const Navbar = () => {
 
       </nav>
     </header>
+    
   )
 }
 
