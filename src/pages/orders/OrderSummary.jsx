@@ -87,7 +87,7 @@ const OrderSummary = () => {
         variant,
         mrp,
         rate,
-        rate: discountedPrice,
+        // rate: discountedPrice,
         // batchNo: product.variant?.batchNo,
         // mfgDate: product.variant?.mfgDate,
         expiryDate: product.variant?.expiryDate,
