@@ -1619,7 +1619,7 @@ Hindi – उपयोग व फायदे:
     name: "Youshine",
     // mrp: 70,
     // image: "/Images/SBherbals/prostoAct.webp",
-    image: `${BASE_URL}/uploads/products/sbherbals/Herbal-Cosmetics/Youshine/Youshine.jpg`y,
+    image: `${BASE_URL}/uploads/products/sbherbals/Herbal-Cosmetics/Youshine/Youshine.jpg`,
     description: `
 UBTAN FACEWASH
 
